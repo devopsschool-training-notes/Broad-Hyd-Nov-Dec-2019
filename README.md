@@ -1,4 +1,3 @@
 # learn_chef_httpd
 
-TODO: Enter the cookbook description here.
-
+This basic cookbook configures Apache on Red Hat Enterprise Linux.
