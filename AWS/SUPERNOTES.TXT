@@ -1,1 +1,116 @@
-dsada
+Company Name - BroadRidge
+Prod - BroadX
+       -------------
+       IR - EACH COMMIT MUST GO TO PROD OR MUST BE ELIGLIBLE 4 PROD
+       - Quality REDEFINED
+       - Cost Reduction
+            - DEV Cost
+            - RUN Cost
+        ----
+        1 MONTH - 10 FEA
+        1 MONTH - 30 FEA
+
+---------
+Release 
+            MAJOR - 3 months ---> 1 DAY
+            MINOR - 1 month  ---> 1 Hour
+            PATCH - 2 Weeks  ---> 10 Mins
+===============================================
+Manager - MgrX
+---------------------------
+Hiring 
+
+PLAN -> CODE -> TEST -> DEPLOY
+-------------------------------
+
+Architect - JIRA - Confluence
+Code - 10 DEV - 10 FEA - 10 MS
+    IDE - VS - EC
+    Code Integ - GIT
+    Code Review - 
+        PEER - 
+        STATIC - SonarQUBE
+    Build mgmt - Maven - MSBULD
+    UNit Testing - 
+    Package
+        SYS
+        APP
+    Package Rpeo - 
+    Dep2QA - 
+    BroadX50.5 -----> 100 SERVER
+    - 50 W - 50 L
+    - 50 AP - 50 NG
+    - 25 TOM - 25 IIS - 25 - JB - 25 WL
+    - 25 MYSQL 25 OR 25 MS 25 PS
+    - 100 Config
+    ==============================
+    1 DEP - 9 mins.....
+    100 DEP - 9 mins?????
+    ---------
+    Parrell Dep
+        - Ansible
+        - Puppet
+        - Chef
+        - Salt
+    
+        - Octocpus DEPLOY
+        - UDeploy
+    --------------------------
+    100 OR 1000 Deployment - 1 SEC.
+            Docker and KUBERNETE
+
+    AT - 
+    Code Coverage - JACOCO, NCOVER
+    ------------------------------------
+---------------------------------------------------
+                JENKINS
+
+            SCHEDLUING
+            FEEDBACk        
+                    EMAIL
+                    WHATSAPP
+                    DASHBOARD
+            REPORTING
+
+    IF FAILED - BUT DONE AUTOMATICALLY- IMM FEEDBACk ->>>CI
+    IF PASSED - 
+             Continous Delivery - 
+             Continous Deployment  
+=============================================
+Deployment
+        Parrell Dep
+        - Ansible
+        - Puppet
+        - Chef
+        - Salt
+    
+        - Octocpus DEPLOY
+        - UDeploy
+Monitoring
+        INFRA - Nagios, Data
+        PERFORMANING - NEWRELIC, APPDYNA
+        LOG - SPLUNK - ELK
+====================================================
+PLATFORM 
+        PHYSICAL MACHINE
+        VMS
+            CLOUD
+                PUBLIC CLOUD - AWS - GC - AZ
+                PRIVATE CLOUD - OPENSTAKE
+==================================================
+https://www.devopsschool.com/path/
+
+DevOps
+---------------------------
+https://www.youtube.com/watch?v=-VaVmb_UOC8  - 8 HOURS
+
+Preparatiosn DONE - 
+https://github.com/devopsschool-lab-exercise/Broad-Hyd-Nov-Dec-2019
+
+Task 1 - Goto github.com and register and verlify one account.
+Task 2 - Fill this form http://bit.ly/2p3HAVO
+Task 3 - RULES ARE RULES
+https://github.com/devopsschool-lab-exercise/Broad-Hyd-Nov-Dec-2019
+
+
+=============
