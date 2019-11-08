@@ -114,3 +114,41 @@ https://github.com/devopsschool-lab-exercise/Broad-Hyd-Nov-Dec-2019
 
 
 =============
+https://broadridgefinancial.webex.com/join/Debasish.Mishra
+
+===========================================
+
+
+AWS
+    Foundation Services
+        COMPUTE
+                EC2 AKA VIRTUAL MACHINE
+        STORAGE 
+
+        NETWORKING
+    PLATFORM
+    SOFTWARE
+
+EC2 AKA VIRTUAL MACHINE
+==============================
+How to get EC2 created on AWS.
+
+Step1 - Login to AWS using MASTER ACCOUNT.
+                - HAS ACCESS OF EVERYTHING
+==========================================
+MASTER ACCOUNT
+            SHARED WITH MULTIPLE WITH PEOPLE + SPECIFIC ACCESS 
+            USING
+            IAM - 
+                HUMEN   to SERVICE - GROUP -> USER
+                SERVICE to SERVICE - ROLE 
+
+POLICY(S)
+        --> GROUP       
+                -> USER
+------IAM ------------------------
+https://devopsschool.signin.aws.amazon.com/console
+
+
+
+ 
