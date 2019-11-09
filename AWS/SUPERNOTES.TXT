@@ -215,3 +215,20 @@ Public DNS	ec2-13-233-255-63.ap-south-1.compute.amazonaws.com
 User name	Administrator
 Password	
 UO8HcUDnWedZJlZlS@R!)YQdIGZUHj?X
+====================================
+RULE - 
+ - Region IRELAND
+ - 
+
+13.126.239.213
+ssh -i "RAJESH1.pem" ec2-user@ec2-13-126-239-213.ap-south-1.compute.amazonaws.com
+
+MINE efs
+---------------------
+fs-1a1fd5cb.efs.ap-south-1.amazonaws.com
+
+https://www.devopsschool.com/notes/aws/notes/EFS.txt
+
+sudo mount -t nfs -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2 fs-1a1fd5cb.efs.ap-south-1.amazonaws.com:/   /rajesh
+
+sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2 fs-1a1fd5cb.efs.ap-south-1.amazonaws.com:/ rajesh
