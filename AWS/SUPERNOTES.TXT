@@ -256,5 +256,5 @@ O*JeBbiyvETf-23AqupV7gF*oR%&g3mn
 
 
 
-
+ssh -i "RAJESH1.pem" ec2-user@ec2-52-66-243-164.ap-south-1.compute.amazonaws.com
 
