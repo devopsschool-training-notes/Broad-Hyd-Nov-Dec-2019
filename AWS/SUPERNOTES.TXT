@@ -284,12 +284,95 @@ vi index.html
 https://broadridgefinancial.webex.com/join/Sai.Rajputh
 
 
+EC2 + AutoScaling + Load Balancers  - DONE
+========================================
+
+SNS  -
+SES  -
+-------------------------
+Step 1- VERIFY YOUR DOMAIN
+
+Step 2- verify your REAL Email ADDRESS
+
+Step 3 - Get your SMTP from SES
+
+Step 4 - get your SMTP credentials from IAM.
+
+email-smtp.eu-west-1.amazonaws.com
+Port:	25, 465 or 587
+
+ ses-smtp-user.20191110-131445
+SMTP Username:
+AKIAZDCVQDIX5FMCZUH5
+SMTP Password:
+BAZsusZ9eJCVk17XOFmJtcnBAOgiXTTFOVg4W3vbaQpg
+
+Step 5
+WHERE TO DRAFT EMAIL
+WHOm TO SEND ?
+
+SQS  -
+
+
+RAJESH KUMAR
+SENIOR DEVOPS MANAGER / PRINCIPLE ARCHITECT
+
+
+Elastic Container Service (ECS) - NOT APPLICABLE
+
+Lambda - -----
+
+S3 + Glacier
+
+Elastic Block Store (Amazon EBS) - DONE
+
+----------------
+RDS
+DynamoDB  
+----------------
+
+Route53 - DONE
+Virtual Private Cloud (Amazon VPC)  - DONE
+
+Identity and Access Management (IAM)  - DONE
+Key Management Service (KMS)
+
+CloudWatch  - DONE
+CloudTrail  
+
+Systems Manager - NA
+Elastic File System (Amazon EFS)  - DONE
+
+CloudFront
+Direct Connect
+
+Simple Queue Service (SQS) 
+Simple Notification Service (SNS)       DONE
+SES                                     DONE
+
+Secret Manager
+==============================================
+==============================================
+
+
+Initial database name- broadridge
+
+
+database-1.csqxnjhkttpc.eu-west-1.rds.amazonaws.com
+
+3306
+
+admin
+
+5DWPMhVTxHJTtdITJ5hl
 
 
 
+RAJESH-IRE
 
+34.253.178.116
+ssh -i "RAJESH-IRE.pem" ec2-user@ec2-34-253-178-116.eu-west-1.compute.amazonaws.com
 
-
-
-
-
+database-2
+admin
+cfsrLEeQ4yl7yuyEvq6P
