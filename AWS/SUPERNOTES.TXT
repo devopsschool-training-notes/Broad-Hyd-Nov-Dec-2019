@@ -253,10 +253,43 @@ Public IP 	13.233.93.215
 User name 	Administrator
 Password 	
 O*JeBbiyvETf-23AqupV7gF*oR%&g3mn
+=======================================
+P 	15.206.151.213
+User name 	Administrator
+DTT%D4g.GPPHs%molAJ4@KohhZTWhXtI
 
+=================================
+VPC 1
+ALL -- VPC2
+===================================================
 
+VPC 2
+ALL - VPC2
+====================================================
+13.232.88.151
+13.126.65.207
+ssh -i "RAJESH1.pem" ec2-user@13.232.88.151
+ssh -i "RAJESH1.pem" ec2-user@13.126.65.207
+ssh -i "RAJESH1.pem" ec2-user@13.233.32.218
 
-ssh -i "RAJESH1.pem" ec2-user@ec2-52-66-243-164.ap-south-1.compute.amazonaws.com
-
+sudo -s
+yum install httpd
+systemctl start httpd
+cd /var/www/html
+vi index.html
+---
+<h1> Welcome to AWS Page 1</h1>
+<h1> Welcome to AWS Page 2</h1>
+=====================================
 https://broadridgefinancial.webex.com/join/Sai.Rajputh
+
+
+
+
+
+
+
+
+
+
 
