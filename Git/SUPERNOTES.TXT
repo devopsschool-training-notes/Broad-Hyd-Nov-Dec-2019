@@ -329,9 +329,127 @@ git push https://gitlab.com/rajeshkumarin/broadx.git master
   578  ls
   579  clear
   580  history
+==============
+
+BRANCHING AND Merging
+=================================
+TYPES
+============
+LOCAL BRANCH
+REMOTE BRANCH
+TEMPORARY BRANCH
+
+PULL = FETCH + MERGE
+=============================
 
 
+TYPES OF MERGES
+=======================
+--> FAST FOrWArD
+--> RECUSRIVE - 3 WAY MERGE
+--> CHERRY PICK
 
+
+  604  git branch -a
+  605  clear
+  606  ls
+  607  git log --oneline
+  608  clear
+  609  git checkout 717dc9e
+  610  git branch -a
+  611  git checkout master
+  612  git branch -a
+  613  clear
+  614  git branch
+  615  git branch fea1
+  616  git branch
+  617  git checkout fea1
+  618  ls
+  619  clear
+  620  git branch
+  621  touch fea1.txt;git add .;git commit -m"adding"
+  622  git diff master
+  623  touch fea2.txt;git add .;git commit -m"adding"
+  624  git diff master
+  625*
+  626  git checkout -b fea2
+  627  git diff master
+  628  git checkout fea1
+  629  clear
+  630  git push origin fea1
+  631  clear
+  632  git checkout master
+  633  touch fetech.txt;git add .;git commit -m"fetch"
+  634  git push origin master
+  635  git pull origin master
+  636  clear
+  637  git push origin master
+  638  clwar
+  639  clear
+  640  git pull origin master
+  641  git checkout -b fea3
+  642  touch fea3.txt;git add .;git commit -m"adidng fea3"
+  643  touch fea33.txt;git add .;git commit -m"adidng fea33"
+  644  clear
+  645  touch fea333.txt;git add .;git commit -m"adidng fea333"
+  646  git diff master
+  647  git merge master
+  648  git checkout master
+  649  clear
+  650  git checkout fea1
+  651  git checkout fea3
+  652  git checkout master
+  653  git merge fea3
+  654  touch master1.txt;git add .;git commit -m"ading master1"
+  655  clear
+  656  git checkout fea3
+  657  touch feaeeeeeee.txt;git add .;git commit -m"ading feae33333"
+  658  touch feaeeedsada.txt;git add .;git commit -m"ading feae3333fdfd3"
+  659  git checkout master
+  660  touch masterdsdsd.txt;git add .;git commit -m"ading masterdsde"
+  661  clear
+  662  ls
+  663  history
+  664  clear
+  665  git merge fea3
+  666  git log --oneline
+  667  1
+  668  clear
+  669  git checkout fea3
+  670  touch cherry1.txt;git add .;git commit -m"cheery1"
+  671  touch cherry2.txt;git add .;git commit -m"cheery2"
+  672  touch cherry3.txt;git add .;git commit -m"cheery3"
+  673  clear
+  674  touch cherry4.txt;git add .;git commit -m"cheery4"
+  675  clear
+  676  git log --oneline
+  677  clear
+  678  git checkout master
+  679  ls ch*
+  680  git cherry-pick 2f6e3fe
+  681  ls
+  682  git merge fea3
+  683  clear
+  684  ls
+  685  vi 123.txt
+  686  git add .;git commit -m"adding"
+  687  git checkout fea3
+  688  clear
+  689  ls
+  690  vi 123.txt
+  691  git add .
+  692  git commit -m"sdfsdf"
+  693  clear
+  694  git checkout master
+  695  clear
+  696  git merge fea3
+  697  git status
+  698  vi 123.txt
+  699  git add .
+  700  git commit -m"add"
+  701  clear
+  702  git merge fea3
+  703  history
 
 
 
