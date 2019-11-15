@@ -43,14 +43,43 @@ How to install git?
 How to get startted working with Git? - BASIC WORKFLOW?
 
 Step 1- Create a repo.
+$ git init
 
 Step 2- Create a file using editor
 
 Step 3- Add a file to git
 
+ONE time
+-------------------------------
+git config user.name "Rajesh Kumar"
+git config user.email "rajesh@scmgalaxy.com"
+git config --list
+
 Step 4- Commit a file to git
 
 Step 5- See a commited file
+
+ 382  mkdir gitrepo1
+  383  cd gitrepo1/
+  384  clear
+  385  git init
+  386  start .
+  387  touch file1.txt
+  388  touch file3.txt file4.txt
+  389  clear
+  390  ls
+  391  git add file1.txt
+  392  git commit -m"adding first"
+  393  git config user.name "Rajesh Kumar"
+  394  git config user.email "rajesh@scmgalaxy.com"
+  395  git config list
+  396  clear
+  397  git config --list
+  398  git commit -m"adding first"
+  399  clear
+  400  git log
+  401  git show 12efefa5383d5872c148f0841baab8c2dd73a4a6
+  402  history
 
 
 
