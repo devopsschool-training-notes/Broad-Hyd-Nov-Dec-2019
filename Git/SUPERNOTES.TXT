@@ -47,7 +47,7 @@ $ git init
 
 Step 2- Create a file using editor
 
-Step 3- Add a file to git
+Step 3- Add a file to git[Add a file to staging]
 
 ONE time
 -------------------------------
@@ -55,7 +55,7 @@ git config user.name "Rajesh Kumar"
 git config user.email "rajesh@scmgalaxy.com"
 git config --list
 
-Step 4- Commit a file to git
+Step 4- Commit a file to git [[ From Staging to Repo]]
 
 Step 5- See a commited file
 
@@ -81,9 +81,122 @@ Step 5- See a commited file
   401  git show 12efefa5383d5872c148f0841baab8c2dd73a4a6
   402  history
 
+====================================
+$ git log
+commit db5ee476c3dc7241778079e5017049dd1fbe8280 (HEAD -> master)
+Author: Rajesh Kumar <rajesh@scmgalaxy.com>
+Date:   Fri Nov 15 11:11:28 2019 +0530
+
+    adding file2
+
+commit 12efefa5383d5872c148f0841baab8c2dd73a4a6
+Author: Rajesh Kumar <rajesh@scmgalaxy.com>
+Date:   Fri Nov 15 10:44:58 2019 +0530
+
+    adding first
+========================================
+- How to add multiple files?
+- How to commit dir?
+- How to commit only selective file?
+- How to rename a file?
+- How to move a file?
+- How to modify a file?
+===========================================
+ 403  clear
+  404  git statys
+  405  git status
+  406  ls
+  407  git add file2.txt
+  408  git status
+  409  git commit -m"adding file2
+"
+  410  git status
+  411  git log
+  412  clear
+  413  ls
+  414  git status
+  415  touch file5.txt
+  416  touch file6.txt
+  417  clear
+  418  git status
+  419  git add .
+  420  git status
+  421  git commit -m"selecttive commit"
+  422  git status
+  423  touch file7.txt file8.txt
+  424  git add .
+  425  git status
+  426  clear
+  427  git commit -m"selecttive commit dsd" file7.txt
+  428  git status
+  429  mkdir src
+  430  ls
+  431  git status
+  432  clear
+  433  touch src/rajesh1.txt
+  434  git status
+  435  git add .
+  436  git status
+  437  git commit -m"ading dir"
+  438  git status
+  439  clear
+  440  clear
+  441  ls
+  442  git mv file1.txt file11.txt
+  443  git status
+  444  mv file2.txt file22.txt
+  445  git status
+  446  git add .
+  447  git status
+  448  clear
+  449  git commit -m"rename"
+  450  git status
+  451  ls
+  452  git mv file3.txt src/
+  453  git status
+  454  git commit -m"mov"
+  455  git status
+  456  ls
+  457  clear
+  458  ls
+  459  ls
+  460  vi file11.txt
+  461  git status
+  462  git add .
+  463  git status
+  464  git commit -m"modify"
+  465  clear
+  466  ls
+  467  git commit -m"modify"
+  468  git log
+  469  ls
+  470  git log file22.txt
+  471  history
 
 
 
+- how to delete a file?
+        How to go back before delete???
+
+
+Rollback 
+Diff
+Spcific version of codee to workspace
+Merging 
+Conflict resolution
+Branching
+Diff
+git vs gitlab
+delete a Branching
+lavbel a branch
+history of file
+git lab issues
+HEAD
+FORKING
+STASH
+REBASE
+REFERE
+GITLAB ROLES
 
 
 
