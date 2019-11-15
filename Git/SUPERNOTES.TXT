@@ -242,7 +242,93 @@ How to do unDOING?
   528  git diff 01da8e5 3e661c3
   529  clear
   530  history
+====================================================
+Rajesh --->
+            Shyam --> 
+                    PUSH and PULL EXISING REPo.....
+                    ---> Simran
+                    CLONE --> PUSH - PULL
+------------------------------------
+SHYAM - rajesh@ip://e/workspace/gitrepo1.git
+            PASSOWORD
+            AUTH-FILE
 
+RAJESH 
+
+WHAT WE NEED 
+        GUI
+        ISSUUES
+        WIKI
+        Code Review
+    RENUKA ---->
+        REPOS(S)
+        REPO BASED ACCESS
+            ROLES
+            GROUP
+            USERS
+            PERMISSION
+        ORGANIZATION
+    CI INTEG
+==============================================
+GITHUB
+GITLAB
+        - Community - FREE
+                - CLOUD
+                - BEHIND FIRE
+        - ENTER - PAID
+                 - CLOUD
+                - BEHIND FIRE
+BITBUEKCT
+GERRIT
+50+
+
+
+RAJESH ---> GIT lab
+git push https://gitlab.com/rajeshkumarin/broadx.git master
+
+
+
+ 540  git push https://gitlab.com/rajeshkumarin/broadx.git master
+  541  ls
+  542  cd ..
+  543  ls
+  544  clear
+  545  ls
+  546  mkdir simran
+  547  cd simran/
+  548  clear
+  549  ls
+  550  git clone
+  551  git clone https://gitlab.com/rajeshkumarin/broadx.git
+  552  clear
+  553  ls
+  554  cd broadx/
+  555  ls
+  556  git log --oneline
+  557  clear
+  558  ls
+  559  touch simaran.txt
+  560  git add .
+  561  git commit -m"add"
+  562  git config user.email "simran@simaran.com"
+  563  git config user.name "Simran"
+  564  clear
+  565  git commit -m"add"
+  566  ls
+  567  git push https://gitlab.com/rajeshkumarin/broadx.git master
+  568  cd ..
+  569  ls
+  570  cd ..
+  571  ls
+  572  cd gitrepo1
+  573  clear
+  574  ls
+  575  git remote add origin https://gitlab.com/rajeshkumarin/broadx.git
+  576  git push origin master
+  577  git pull origin master
+  578  ls
+  579  clear
+  580  history
 
 
 
