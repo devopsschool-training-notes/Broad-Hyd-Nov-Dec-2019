@@ -173,10 +173,86 @@ Date:   Fri Nov 15 10:44:58 2019 +0530
   470  git log file22.txt
   471  history
 
-
+===================================================
 
 - how to delete a file?
         How to go back before delete???
+
+ 472  clear
+  473  git log
+  474  git log --oneline
+  475  clear
+  476  git log --oneline
+  477  ls
+  478  git checkout bc65f35
+  479  clear
+  480  git log --oneline
+  481  git checkout master
+  482  git log --oneline
+  483  ls
+  484  git rm file11.txt
+  485  clear
+  486  git status
+  487  ls
+  488  git commit -m"deleting"
+  489  git status
+  490  ls
+  491  clear
+  492  git log --oneline
+  493  git checkout 3836862
+  494  ls
+  495  clear
+  496  git checkout master
+  497  history
+
+===================================================
+How to do unDOING?
+    - How to get rid of file from worksapce?
+    - How to move a file from STAGING To worksapce?
+    - How to rollback in GIT?
+
+  500  git status
+  501  ls
+  502  touch rajesh2.txt
+  503  git status
+  504  git clean -f -d
+  505  ls
+  506  git status
+  507  clear
+  508  touch reset.txt
+  509  git status
+  510  git add .
+  511  git status
+  512  git reset reset.txt
+  513  git status
+  514  git clean -f -d
+  515  clear
+  516  ls
+  517  clear
+  518  git log --oneline
+  519  touch good.txt;git add .;git commit -m"adding good code"
+  520  git log --oneline
+  521  ls
+  522  clear
+  523  touch bad.txt;git add .;git commit -m"adding bad code"
+  524  git log --oneline
+  525  git revert 3e661c3
+  526  git log --oneline
+  527  git diff 01da8e5 26a25d2
+  528  git diff 01da8e5 3e661c3
+  529  clear
+  530  history
+
+
+
+
+
+
+
+
+
+
+
 
 
 Rollback 
