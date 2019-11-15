@@ -1,0 +1,68 @@
+Webex - https://broadridgefinancial.webex.com/join/anand.mohan
+
+What is Git?
+    Code repo  
+    Version control tool
+    ------------
+    Distributed
+    ------------
+    FREE
+    OPEN SOURCE
+    Dev by Linus Tovarld
+    For - those who wants to version Source Code.
+
+Why do we need it?
+    WHO 
+    What
+    WHY?
+    When
+    ------
+    About Code over the period of time.
+
+Other tools we have?
+RCS -> CVS -> SVN -> Git
+VSS -> Mercury -> ClearCase -> Perforce -> TFS
+
+===================================
+What is Distributed?
+What is Diff between ALL VS git?
+
+Server & Clinet -
+RCS -> CVS -> SVN 
+VSS -> Mercury -> ClearCase -> Perforce -> TFS
+
+===================================
+How to install git?
+    RHEL+CEntoS --> sudo yum install git
+    Ub ---> sudo apt-get install git
+    MAC - www.git-scm.com -> DMG -> Install it
+    WIn - wwww.git-scm.com -> EXE -> Install it.
+            git for cmd
+            git bash
+
+How to get startted working with Git? - BASIC WORKFLOW?
+
+Step 1- Create a repo.
+
+Step 2- Create a file using editor
+
+Step 3- Add a file to git
+
+Step 4- Commit a file to git
+
+Step 5- See a commited file
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
