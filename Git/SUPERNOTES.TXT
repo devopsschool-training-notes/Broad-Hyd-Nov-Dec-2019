@@ -450,8 +450,23 @@ TYPES OF MERGES
   701  clear
   702  git merge fea3
   703  history
+=================================
+DEMO 
 
+====================
 
+ 699  git add .
+  700  git commit -m"add"
+  701  clear
+  702  git merge fea3
+  703  history
+  704  clear
+  705  git help tag
+  706  git tag --list
+  707  git tag release1.0
+  708  git tag --list
+  709  git push origin release1.0
+  710  history
 
 
 
@@ -473,10 +488,43 @@ history of file
 git lab issues
 HEAD
 FORKING
-STASH
+
 REBASE
 REFERE
 GITLAB ROLES
+
+
+STASH
+
+62  git pull origin master
+  363  git push origin master
+  364  cd /e
+  365  cd workspace/
+  366  mkdir raju
+  367  cd raju/
+  368  cleaer
+  369  clear
+  370  https://gitlab.com/rajeshkumarin/broadx.git
+  371  git clone https://gitlab.com/rajeshkumarin/broadx.git
+  372  clear
+  373  ls
+  374  cd broadx/
+  375  clear
+  376  ls
+  377  clear
+  378  ls
+  379  clear
+  380  git fetch origin master
+  381  clear
+  382  ls
+  383  git branch -a
+  384  git checkout remotes/origin/master
+  385  ls
+  386  git checkout master
+  387  git merge remotes/origin/master
+  388  ls
+  389  history
+
 
 
 
