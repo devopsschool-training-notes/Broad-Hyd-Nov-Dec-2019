@@ -216,6 +216,20 @@ C:\tools\maven\conf
     </server>
 
 Step 8 - mvn deploy
+==================================
+
+How to download?
+================setting.xml============
+	<mirror>
+      <id>broad</id>
+      <name>Maven Repository Manager running on repo.mycompany.com</name>
+      <url>http://13.232.135.156:8081/repository/broadride-group-maven/</url>
+      <mirrorOf>*</mirrorOf>
+    </mirror>
 
 
+Rerference
+Nexus with Npm
+https://medium.com/react-redux-best-practice/establishing-private-npm-repository-over-nexus-7a45d9f1cf0d
+https://blog.sonatype.com/using-nexus-3-as-your-repository-part-2-npm-packages
 
