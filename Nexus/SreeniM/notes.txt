@@ -1,0 +1,37 @@
+settings.xml
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                      https://maven.apache.org/xsd/settings-1.0.0.xsd">
+	<servers>
+    <server>
+      <id>SreeniMRepo</id>
+      <username>common</username>
+      <password>common123</password>
+     <!-- <privateKey>${user.home}/.ssh/id_dsa</privateKey>
+      <passphrase>some_passphrase</passphrase> 
+      <filePermissions>664</filePermissions>
+      <directoryPermissions>775</directoryPermissions>
+      <configuration></configuration-->
+    </server>
+  </servers>
+  
+</settings>
+
+pom:
+<dependency>
+    <groupId>com.brcc.software</groupId>
+    <artifactId>digitalwebapp</artifactId>
+    <version>1.0-SNAPSHOT</version>
+</dependency>
+
+<repositories>
+<repository>
+                  <uniqueVersion>false</uniqueVersion>
+                         <id>SreeniMRepo</id>
+              <name>Digital web application</name>
+             <url>http://13.232.135.156:8081/repository/SreeniM_hosted_snapshot_repo</url>
+                    <layout>default</layout>
+              
+</repository>
+</repositories>
