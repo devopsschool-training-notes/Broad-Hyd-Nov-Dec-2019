@@ -205,8 +205,15 @@ Step 4 - DO A CODING...
 Step 5 - mvn install
 
 Step 6 - Configure POM.XML with NEXUS REPO
+https://github.com/devops-school/helloworld-java-maven
 
 Step 7 - Configure Setting.xml with NEXUS Permission
+C:\tools\maven\conf
+    <server>
+      <id>broad</id>
+      <username>common</username>
+      <password>common123</password>
+    </server>
 
 Step 8 - mvn deploy
 
