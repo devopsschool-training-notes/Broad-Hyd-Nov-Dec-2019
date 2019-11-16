@@ -233,3 +233,4 @@ Nexus with Npm
 https://medium.com/react-redux-best-practice/establishing-private-npm-repository-over-nexus-7a45d9f1cf0d
 https://blog.sonatype.com/using-nexus-3-as-your-repository-part-2-npm-packages
 
+https://marketplace.visualstudio.com/items?itemName=NuGetTeam.NuGetPackageManager
