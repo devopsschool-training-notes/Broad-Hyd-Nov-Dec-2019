@@ -35,3 +35,17 @@ pom:
               
 </repository>
 </repositories>
+
+
+  <distributionManagement>
+            <repository>
+                  <uniqueVersion>false</uniqueVersion>
+                         <id>SreeniMRepo</id>
+              <name>Digital web application</name>
+             <!--  <url>http://13.232.135.156:8081/repository/SreeniM_group_repo/</url> -->
+             <!-- <url>http://13.232.135.156:8081/repository/SreeniM_hosted_release_repo/</url> -->
+             <url>http://13.232.135.156:8081/repository/SreeniM_hosted_snapshot_repo</url>
+                    <layout>default</layout>
+              
+        </repository>
+    </distributionManagement>
