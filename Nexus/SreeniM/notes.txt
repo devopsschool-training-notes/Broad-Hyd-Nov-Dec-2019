@@ -49,3 +49,17 @@ pom:
               
         </repository>
     </distributionManagement>
+    
+    
+    
+proxy release :
+http://13.232.135.156:8081/repository/SreeniM_proxy_release_repo/
+
+hosted release:
+http://13.232.135.156:8081/repository/SreeniM_hosted_release_repo/
+
+hosted snap:
+http://13.232.135.156:8081/repository/SreeniM_hosted_snapshot_repo/
+
+group :
+http://13.232.135.156:8081/repository/SreeniM_group_repo
