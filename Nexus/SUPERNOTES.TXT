@@ -1,1 +1,214 @@
+http://13.232.135.156:8081/
+admin
+admin123
+
+NEXUS?
+================================
+What is NEXUS?
+    Artifact Repository Management tool
+    From SonaType
+    Developed in JAVA
+    Release 
+        Community - FREE - OS
+        Professional - PAID - ENTERPRISE
+    Latest
+        2.X --> 3.X
+    
+
+What is Artifact?
+    BINARIES
+    Package
+    Docs
+    Images
+    pfd
+    source code
+-------------------------
+    Repository-----> Manage by NEXUS
+
+----------------------
+KIND OF Repository
+----------------------
+    yum 
+    apt
+    docker
+    maven
+    nuget
+    pypi
+
+Why Do we need it?
+======================
+We are in a world of DEPENDENT lib and we need now.
+------------------------------------------
+ORG - Control..
+
+24 X 7 - AVAILABILITY
+
+SECURITY 
+
+Ease of Maintaince...
+
+Enterprise FEATURE - 
+    ROLE BASED ACCCESS
+
+Integration with your builders?
+
+Enconding - Durability of the OBJECT
+========================================
+Other tools - 
+- Jfrog Artifactory
+- Apache Archiva
+
+-------------------------------------------
+How to install SonaTypes Nexus?
+-------------------------------------------
+13.232.135.156
+ec2-13-232-135-156.ap-south-1.compute.amazonaws.com
+
+Pre - 
+JRE + JDK 
+Nexus3.0 - Professional - Trial
+===================================
+   3   yum install wget -y
+    4  wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+    5  $ rpm -ivh jdk-8u131-linux-x64.rpm
+    6  rpm -ivh jdk-8u131-linux-x64.rpm
+    7  java -version
+
+=======================================
+ 29  wget http://download.sonatype.com/nexus/3/latest-unix.tar.gz
+
+ [root@ip-172-31-11-83 etc]# more /opt/sonatype-work/nexus3/admin.password
+7781ff71-f4ea-4f7f-97f7-e4c322160659
+[root@ip-172-31-11-83 etc]# history
+    1  clear
+    2  ls
+    3  yum install wget -y
+    4  wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+    5  clear
+    6  ls
+    7  rpm -ivh jdk-8u131-linux-x64.rpm]
+    8  rpm -ivh jdk-8u131-linux-x64.rpm
+    9  java -version
+   10  clear
+   11  cd /opt/
+   12  ls
+   13  clear
+   14  ls
+   15  wget http://download.sonatype.com/nexus/3/latest-unix.tar.gz
+   16  ls
+   17  tar -zxvf latest-unix.tar.gz
+   18  clear
+   19  ls
+   20  cd nexus-3.19.1-01
+   21  clear
+   22  ls
+   23  cd bin/
+   24  ls
+   25  clear
+   26  ls
+   27  ./nexus start
+   28  ps -eaf | grep nexus
+   29  clear
+   30  ls
+   31  cd ..
+   32  ls
+   33  cd etc
+   34  ls
+   35  more nexus-default.properties
+   36  more /opt/sonatype-work/nexus3/admin.password
+   37  history
+
+=====================Repository Formats=======================
+Apt Repositories
+Bower Repositories
+CocoaPods Repositories
+Conda Repositories
+Docker Registry
+Git LFS Repositories
+Go Repositories
+Maven Repositories
+Npm Registry
+NuGet Repositories
+PyPI Repositories
+Raw Repositories
+RubyGems Repositories
+Yum Repositories
+        TYPES OF Repositories   
+                ---> HOSTED
+                ---> PROXY
+                ---> GROUP
+=================================
+Maven Co-ordinates
+Maven Group ID
+Maven Artifact ID
+Maven version   
+    SNAPSHOT 
+    RELEASE
+MAVEN PLUGINS
+MAVEN GOALS
+    compile - compile
+    package - package
+    install - install
+    deploy - 
+Package Type - JAR - WAR - POM - EAR
+==============================================
+HUMEN LIFECYCLE - 
+-----------------PHASE---------------------
+KID -> TEEN --> YOUNG -> MID -> OLD - > DIE
+----------------------------------------------
+Maven LIFECYCLE
+----------------------------
+PHASE              GOAL
+----------- 
+Compile             compile          
+Test                test
+Package             package
+Install             install
+Deploy              deploy
+========================================
+Maven Repository
+        LOCAL Repository ~/.m2
+        CENtrAOL REPo - repo.maven.apache.org
+========================================================
+Step 1 - Get a ACCCESS
+        - ROLES
+            ---> GROUP 
+                  --> USER
+                    RW
+USER
+    common
+    common123
+
+Step 2 -  Create a repo
+        - HOSTED
+        broadride-hosted-maven-release
+        http://13.232.135.156:8081/repository/broadride-hosted-maven-release/
+        broadride-hosted-maven-snapshot
+        http://13.232.135.156:8081/repository/broadride-hosted-maven-snapshot/
+        - PROXY
+        broadride-proxy-maven using https://repo1.maven.org/maven2/
+        http://13.232.135.156:8081/repository/broadride-proxy-maven/
+
+        - Group
+        broadride-group-maven
+        http://13.232.135.156:8081/repository/broadride-group-maven/
+
+Step 3 - Create a SAMPLE MAVEN PROJECT
+    1. JAVA
+    2. MAVEN
+    3. Project Creation
+    ----
+mvn archetype:generate -DgroupId=com.broadridge.software -DartifactId=broadx -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+Step 4 - DO A CODING...
+
+Step 5 - mvn install
+
+Step 6 - Configure POM.XML with NEXUS REPO
+
+Step 7 - Configure Setting.xml with NEXUS Permission
+
+Step 8 - mvn deploy
+
+
 
