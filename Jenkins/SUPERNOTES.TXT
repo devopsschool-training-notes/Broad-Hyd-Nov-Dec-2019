@@ -1,1 +1,113 @@
-d
+What is Jenkins?
+---------------------
+    	CI TOOL.
+	Open Source 
+	Dev in JAVA
+		ANY PLATFORM
+		JRE
+	Jenkins is ONE of the DUMBEST TOOL ever developed
+		Install Plugins - extremly
+	Release
+		Community Release - FREE - OS
+		Enterrpise - By CloudBees
+		
+========================
+ What is CI?
+-- Continous Intgration
+
+Auto Build + Auto Test + Imm Feedback.
+---------------------------------------------
+
+Code->CReview->Build->UT->Pack->Archive->Dep2QA->AT->CC->Release
+-----------------------------------------------------------------
+GIT->SonarQube->Maven->jUnit->Jar->Nexus->Chef->Sel->Jacoco-> 
+
+		IF ALL PASSES -> CD - Cont Delivery
+		IF FAILED - REPEAT -> C I
+-----------------------------FEEDBACK-------------------------------------
+		EMAIL
+		SMS|WhatApp
+		Chat
+		Dashboard
+
+->
+IS IMPORTANT.
+======================================================
+		I need a tool which can intergrate with ALL TOOLS.
+		 		Which can provide feedback.
+				Which can schedule
+				Which can chained.
+=============================================================================
+			JENKINS
+
+
+Other tools - 
+Cruise Control -> Continum -> Hudson/Jenkins
+Teamcity - Bamboo - Travis CI - UBuild - TFS
+----------------------------------------------
+
+Jenkins Architecuture?
+------------------------------------------
+https://www.devopsschool.com/blog/jenkins-architecture-explained/
+WEB + Build Engine
+
+8080 + Master Node/Slave
+
+WEB - 1 
+Build Engine- Master Node
+		MANY (Nodes)
+---------------------------------------
+Server - Client
+8080 - Build Engine
+
+How to install Jenkins?
+==============================
+            JRE --> JDK
+=================================
+RHEL 7.5
+3.6.36.199
+https://www.devopsschool.com/tutorial/jenkins/jenkins-installation-and-configuration.html
+
+
+http://3.6.36.199:8080/
+devops
+devops123
+====================================================
+SECRET FORMULA TO WORK WITH JENKINS
+====================================================
+What is TECHNOLOGY?
+		JAVA 		DOTNET
+		----		------
+		JDK		DOT NET
+
+Where is yoru source code?
+		GITHUB
+		https://github.com/scmgalaxy/helloworld-java-maven
+
+What is your BUILDER?
+		MAVEN
+		$ mvn compile
+
+When you want this job to be triggered?
+		daily
+
+Whom you want this feedback to sent out?
+		rajesh@scmgalaxy.com		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
