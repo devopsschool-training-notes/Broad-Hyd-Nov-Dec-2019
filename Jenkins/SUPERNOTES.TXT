@@ -103,11 +103,20 @@ http://15.206.166.202:9000/
 https://github.com/scmgalaxy/java-sonar-runner-simple
 
 NEXUS
+http://15.206.166.202:8081/
+admin
+admin123
+http://15.206.166.202:8081/repository/all/
 
 
 
 
 
+    <server>
+      <id>sym</id>
+      <username>admin</username>
+      <password>admin123</password>
+    </server>
 
 
 
