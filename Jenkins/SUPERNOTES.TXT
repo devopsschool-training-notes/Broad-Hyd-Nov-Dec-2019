@@ -93,7 +93,16 @@ When you want this job to be triggered?
 
 Whom you want this feedback to sent out?
 		rajesh@scmgalaxy.com		
+=======================================================
 
+EXTRA
+15.206.166.202
+
+SONARQUBE
+http://15.206.166.202:9000/
+https://github.com/scmgalaxy/java-sonar-runner-simple
+
+NEXUS
 
 
 
