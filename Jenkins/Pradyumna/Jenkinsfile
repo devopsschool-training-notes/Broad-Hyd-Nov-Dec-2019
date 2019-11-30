@@ -2,7 +2,11 @@ pipeline {
 
    agent {label 'BR-Pradyumna'}
 
+environment {
 
+    PATH = "C:\\WINDOWS\\SYSTEM32"
+
+}
 
    tools {
 
@@ -30,7 +34,7 @@ pipeline {
 
             //sh "mvn clean package"
 
-			cd "C:\Windows\System32"
+			
 
             // To run Maven on a Windows agent, use
 
@@ -77,7 +81,7 @@ pipeline {
             //sh "mvn deploy"
 
 
-			cd "C:\Windows\System32"
+			
             // To run Maven on a Windows agent, use
 
              bat "mvn -Dmaven.test.failure.ignore=true clean package"
