@@ -1,4 +1,3 @@
-
 pipeline {
 
    agent {label 'BR-Pradyumna'}
@@ -29,13 +28,13 @@ pipeline {
 
             // Run Maven on a Unix agent.
 
-            sh "mvn clean package"
+            //sh "mvn clean package"
 
 
 
             // To run Maven on a Windows agent, use
 
-            // bat "mvn -Dmaven.test.failure.ignore=true clean package"
+             bat "C:\Windows\System32\cmd.exe mvn -Dmaven.test.failure.ignore=true clean package"
 
          }
 
@@ -75,13 +74,13 @@ pipeline {
 
             // Run Maven on a Unix agent.
 
-            sh "mvn deploy"
+            //sh "mvn deploy"
 
 
 
             // To run Maven on a Windows agent, use
 
-            // bat "mvn -Dmaven.test.failure.ignore=true clean package"
+             bat "C:\Windows\System32\cmd.exe mvn -Dmaven.test.failure.ignore=true clean package"
 
          }
 
