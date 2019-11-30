@@ -117,6 +117,285 @@ http://15.206.166.202:8081/repository/all/
       <username>admin</username>
       <password>admin123</password>
     </server>
+============================================
+How to setup DASHBOARD FOR CI- AKA PIPELINE.
+	- Lazy way - using a plugin called "Build Pipeline"
+	- Script way - Using a plugins called "Pipeline"
+
+How to improve a Build Time consumtions and Efficiency?
+----------------
+	Executors
+	Concurrence
+	Adding a Nodes.
+=====================================
+	LINUX
+		Pre - JAVA for remoting.jar
+			PROTOCOL - SSH
+			hostname or IP
+			user name
+			password or Key.
+		13.233.26.99
+		ec2-user
+
+	WINDOWS
+		Pre - JAVA for remoting.jar
+
+=======================================================================
+
+=======================================================================
+=======================================================================
+
+Lets understand Continuous Integration (30 mins)
+
+·        What is Continuous Integration		DONE
+·        Benefits of Continuous Integration	DONE	
+·        What is Continuous Delivery		DONE
+·        What is Continuous Deployment		DONE
+·        Continuous Integration Tools		DONE
+·        Jenkins Vs TeamCity Vs Bamboo		DONE
+
+ 
+
+What is Jenkins (30 mins)
+·        History of Jenkins			DONE
+·        Release of Jenkins			DONE
+·        Jenkins Vs Jenkins Enterprise (Introduce Cloudbees Jenkins)	DONE
+
+ 
+
+Talk about Jenkins Agents and various ways to setup Jenkins agents to Jenkins Masters connect.	DONE
+
+Jenkins Linux agents and Windows agents.  		DONE
+ 
+Jenkins Dashboard Tour					DONE			
+
+·        Understand Freestyle Project
+·        Freestyle General Tab
+·        Freestyle Source Code Management Tab
+·        Freestyle Build Triggers Tab
+·        Freestyle Build Environment
+·        Freestyle Build
+·        Freestyle Post-build Actions
+
+·        Manage Jenkins
+·        My Views
+·        Credentials
+·        People
+·        Build History
+·        Introduction to Jenkins Pipeline Job
+ 
+Creating a Simple Job (Freestyle)			COND DONE
+
+·        Simple Java and Maven Based Application
+
+·        Simple Java and Ant Based Application
+·        Simple DOTNET and MSBuild Based Application
+·        Simple C++ using Batch Application
+
+·        Simple Java and Grovy Based Application
+
+
+
+ 
+Creating a Jenkins Pipeline job
+
+ 
+·        What is Jenkins Pipeline?
+
+·        Steps / Nodes / Stages
+
+·        What is a JenkinsFile?
+
+·        Declarative versus Scripted pipeline syntax:
+
+·        Advantage of Jenkins Pipeline Over Free Style Project.
+
+·        Sample  Jenkins Build  Pipeline script to create a package
+
+·        Sample  Jenkins deploy   Pipeline script to deploy a artifact.
+
+ 
+
+ 
+Jobs Scheduling in Jenkins
+
+·        Manually Building
+·        Build Trigger based on fixed schedule
+·        Build Trigger by script
+·        Build Trigger Based on pushed to git
+ 
+Jenkins Folder and folder level variables
+ 
+Useful Jobs Configuration
+
+·        Jenkins Jobs parameterised
+
+·        Execute concurrent builds
+
+·        Jobs Executors
+
+·        Build Other Projects
+
+·        Build after other projects are built
+
+·        Throttle Builds
+ 
+Notification & Feedback in Jenkins
+
+·        CI Build Pipeline & Dashboard
+
+·        Email Notification
+
+·        Intermediate Email Notification
+
+·        Slack Notification
+ 
+Jenkins Node Management
+
+·        Adding a Linux Node
+
+·        Adding a Windows Nodes
+
+·        Nodes Management using Jenkins
+
+·        Jenkins Nodes High Availability
+ 
+Jenkins Templates
+What is Jenkins Pipeline Templates.
+Using Templates in Jenkins Job Builder?
+What is Jenkins shared librararies/global shared libraries.
+ 
+Jenkins Plugins
+
+·        Plugin Configuration
+
+·        Top 20 Useful Jenkins Plugins
+
+·        Using Jenkins Pluginss Best Practices
+ 
+ 
+Jenkins Integration with other tools
+
+·        Jira
+
+·        Git			DONE			
+
+·        SonarQube		DONE
+
+·        Maven			DONE
+	
+·        Junit			DONE	
+
+·        Chef
+
+·        Puppet
+
+·        Ansible
+	
+
+·        Docker
+
+·        AWS
+
+·        Jacoco			DONE
+
+·        Coverity
+
+·        Selenium
+
+·        Gradle
+
+·        Terraform
+
+·        Packer
+
+ 
+Reports in Jenkins
+
+·        Junit Report			DONE
+
+·        SonarQube Reports		DONE
+
+·        Jacoco Reports			DONE
+
+·        Coverity Reports
+
+·        Selenium Reports
+
+·        Test Results			DONE
+
+·        Cucumber Reports
+
+===========================DAY 2===========================================
+http://3.6.40.38:8080/
+devops
+devops123
+------------------------------------------
+
+Jobs Scheduling in Jenkins
+·        Manually Building
+·        Build Trigger based on fixed schedule
+·        Build Trigger by script
+·        Build Trigger Based on pushed to git
+=======================================
+Job 1  Can Trigger Job 2 ------>
+Manually Triggered
+Trigger a JOB at Fixed time.
+----------------------------------
+Build after other projects are built
+Job1 Must get trigger when 
+	== Build after other projects are built ==
+	Job1 
+	Job2
+	Job3
+	Common
+=============================================
+Poll SCM
+
+Trigger builds remotely (e.g., from scripts)
+=========================================
+http://www.scmgalaxy.com/tutorials/ways-to-login-jenkins-using-command-line
+http://www.scmgalaxy.com/tutorials/how-to-trigger-builds-remotely-in-jenkins/
+User Token - 11b9db63915809817f752e98493ca56234
+Job - iFBDOBhNhaxL4T9ass93HRXun2JF161Z
+JENKINS_URL/view/RK/job/Job1/build?token=TOKEN_NAME
+
+curl –user userid:API-Token http://IP OR HOST:PORT/job/JOB_NAME/build?token=Authentication_Token
+
+eg.
+
+curl -X POST http://devops:11b9db63915809817f752e98493ca56234@3.6.40.38:8080/job/Job1/build?
+
+token=iFBDOBhNhaxL4T9ass93HRXun2JF161Z
+
+
+GitHub hook trigger for GITScm polling
+===============================================
+
+
+·        Simple Java and Ant Based Application
+https://github.com/scmgalaxy/helloworld-java-ant
+
+·        Simple DOTNET and MSBuild Based Application
+https://github.com/scmgalaxy/msbuild-helloworld
+
+·        Simple C++ using Batch Application
+https://github.com/scmgalaxy/teamcity-batch-helloworld
+
+
+
+* * * * *
+
+
+
+
+
+
+
+
+
+
+
 
 
 
