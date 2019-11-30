@@ -1,5 +1,5 @@
 pipeline {
-   agent any
+   agent {label 'Naga-WIN'}
 
    tools {
       // Install the Maven version configured as "M3" and add it to the path.
@@ -10,11 +10,11 @@ pipeline {
       stage('Build') {
          steps {
             // Get some code from a GitHub repository
-            git 'https://github.com/scmgalaxy/helloworld-java-maven'
+            git 'https://github.com/Nagabushanam/helloworld-java-maven'
 
             // Run Maven on a Unix agent.
             sh "mvn clean package"
-
+          
             // To run Maven on a Windows agent, use
             // bat "mvn -Dmaven.test.failure.ignore=true clean package"
          }
@@ -28,10 +28,10 @@ pipeline {
             }
          }
       }
-      stage('Deploy') {
+      stage('deploy') {
          steps {
             // Get some code from a GitHub repository
-            git 'https://github.com/scmgalaxy/helloworld-java-maven'
+            git 'https://github.com/Nagabushanam/helloworld-java-maven'
 
             // Run Maven on a Unix agent.
             sh "mvn deploy"
@@ -40,26 +40,6 @@ pipeline {
             // bat "mvn -Dmaven.test.failure.ignore=true clean package"
          }
 
-         post {
-            // If Maven was able to run the tests, even if some of the test
-            // failed, record the test results and archive the jar file.
-            success {
-				// send to email
-				emailext (
-				subject: "STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
-				body: """
-
-				STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':
-
-
-
-				Check console output at "${env.JOB_NAME} [${env.BUILD_NUMBER}]"
-
-				""",
-				recipientProviders: [[$class: 'DevelopersRecipientProvider']]
-				)
-            }
-         }
       }
    }
 }
