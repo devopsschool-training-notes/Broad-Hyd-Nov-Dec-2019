@@ -30,11 +30,11 @@ pipeline {
 
             //sh "mvn clean package"
 
-
+			cd "C:\Windows\System32"
 
             // To run Maven on a Windows agent, use
 
-             bat "C:\Windows\System32\cmd.exe mvn -Dmaven.test.failure.ignore=true clean package"
+             bat "mvn -Dmaven.test.failure.ignore=true clean package"
 
          }
 
@@ -77,10 +77,10 @@ pipeline {
             //sh "mvn deploy"
 
 
-
+			cd "C:\Windows\System32"
             // To run Maven on a Windows agent, use
 
-             bat "C:\Windows\System32\cmd.exe mvn -Dmaven.test.failure.ignore=true clean package"
+             bat "mvn -Dmaven.test.failure.ignore=true clean package"
 
          }
 
