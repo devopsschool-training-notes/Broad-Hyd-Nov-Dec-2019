@@ -16,7 +16,7 @@ pipeline {
             //sh "mvn -Dmaven.test.failure.ignore=true clean package"
 
             // To run Maven on a Windows agent, use
-             bat "mvn compile"
+             bat "mvn clean compile"
          }
 
        }
@@ -41,7 +41,19 @@ pipeline {
             }
 		}
 	  }
-               
+                stage('Deploy') {
+         steps {
+            // Get some code from a GitHub repository
+            git 'https://github.com/scmgalaxy/helloworld-java-maven'
+
+            // Run Maven on a Unix agent.
+            //sh "mvn -Dmaven.test.failure.ignore=true clean package"
+
+            // To run Maven on a Windows agent, use
+             bat "mvn clean deploy"
+         }
+
+      }
          stage('CC') {
          steps {
             // Get some code from a GitHub repository
@@ -52,7 +64,16 @@ pipeline {
 
             // To run Maven on a Windows agent, use
              bat "mvn clean test"
-         }
+		}
+		   post {
+		   success{
+		 jacoco(
+		    execPattern: '**/path_to_file/jacoco.exec',
+		    classPattern: '**/coverage/**',
+		    sourcePattern: '**/coverage/**',
+		    inclusionPattern: '**/*.class')	
+	}
+	}
       }
    }
 }
