@@ -1,0 +1,58 @@
+pipeline {
+   agent {label 'windows'}
+
+   tools {
+      // Install the Maven version configured as "M3" and add it to the path.
+      maven "AY_maven3.0.4"
+   }
+
+   stages {
+      stage('Build') {
+         steps {
+            // Get some code from a GitHub repository
+            git 'https://github.com/scmgalaxy/helloworld-java-maven'
+
+            // Run Maven on a Unix agent.
+            //sh "mvn -Dmaven.test.failure.ignore=true clean package"
+
+            // To run Maven on a Windows agent, use
+             bat "mvn compile"
+         }
+
+       }
+         
+          stage('Test') {
+         steps {
+            // Get some code from a GitHub repository
+            git 'https://github.com/scmgalaxy/helloworld-java-maven'
+
+            // Run Maven on a Unix agent.
+            //sh "mvn -Dmaven.test.failure.ignore=true clean package"
+
+            // To run Maven on a Windows agent, use
+             bat "mvn clean test"
+         }
+          post {
+            // If Maven was able to run the tests, even if some of the test
+            // failed, record the test results and archive the jar file.
+            success {
+               junit '**/target/surefire-reports/TEST-*.xml'
+               
+            }
+		}
+	  }
+               
+         stage('CC') {
+         steps {
+            // Get some code from a GitHub repository
+            git 'https://github.com/scmgalaxy/jacoco-maven-unittestv2'
+
+            // Run Maven on a Unix agent.
+            //sh "mvn -Dmaven.test.failure.ignore=true clean package"
+
+            // To run Maven on a Windows agent, use
+             bat "mvn clean test"
+         }
+      }
+   }
+}
