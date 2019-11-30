@@ -414,7 +414,10 @@ Authorization>
 
 
 
+java -jar jenkins-cli.jar -s http://3.6.40.38:8080/ -auth devops:11b9db63915809817f752e98493ca56234 who-am-i
+java -jar jenkins-cli.jar -s http://3.6.40.38:8080/ -auth devops:11b9db63915809817f752e98493ca56234 delete-job 
 
+Job1
 
 
 	
