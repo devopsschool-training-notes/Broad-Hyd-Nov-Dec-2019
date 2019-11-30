@@ -1,3 +1,5 @@
+devops@rajeshkumar.xyz
+
 What is Jenkins?
 ---------------------
     	CI TOOL.
@@ -395,14 +397,20 @@ http://www.scmgalaxy.com/tutorials/how-to-build-when-a-change-is-pushed-to-githu
 d03a316ea8fbd71b279f95efe966454721ff5a98 
 
 
-
-
 http://3.6.40.38:8080/github-webhook/
+=============================================
+Authetication
+		How to get inside a jenkins?
+			Jenkins’ own user database
+			LDAP
+			Unix user/group database
+Authorization>
+		What you can do?
 
-
-
-
-
+			Anyone can do anything
+			Logged-in users can do anything
+			Matrix-based security
+			Project-based Matrix Authorization Strategy
 
 
 
