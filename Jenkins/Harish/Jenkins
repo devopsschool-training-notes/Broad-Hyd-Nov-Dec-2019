@@ -1,10 +1,12 @@
 
 pipeline {
-   agent any
+   agent {
+       label 'HARISH_NODETEST'
+   }
 
    tools {
       // Install the Maven version configured as "M3" and add it to the path.
-      maven "RKU_Maven3.6.3"
+      msbuild "RKU_Maven3.6.3"
    }
 
    stages {
