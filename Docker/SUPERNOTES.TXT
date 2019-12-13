@@ -162,6 +162,26 @@ How to get inside a container?
 
 How to browse container apps?
 
+   52  history
+   53  clear
+   54  docker ps -a
+   55  docker inspect bdd6020df335 | grep -i ip
+   56  docker ps
+   57  clear
+   58  docker ps
+   59  docker inspect f98a5bfb7275 | grep -i ip
+   60  curl http://172.17.0.2:8080
+   61  clear
+   62  docker ps -a
+   63  docker help run
+   64  clear
+   65  docker run -d -p 8080:8080 0jenkins
+   66  docker run -d -p 8080:8080 jenkins
+   67  docker ps -a
+   68  docker run -d -p 8090:8080 jenkins
+   69  docker ps
+
+
 How to come out of container saftly?
 	CRL + p + Q
 
