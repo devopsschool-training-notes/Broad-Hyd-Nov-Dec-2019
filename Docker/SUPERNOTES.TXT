@@ -213,10 +213,69 @@ How to come out of container saftly?
    51  docker ps -a
    52  history
 
+============================================
+https://www.devopsschool.com/tutorial/docker/commands
 
+   84  docker cp devopsschool.txt 5854d009327c:/var/jenkins_home
+   85  docker exec 5854d009327c ls /var/jenkins_home
+   86  clear
+   87  ls
+   88  rm -rf devopsschool.txt
+   89  docker cp 5854d009327c:/var/jenkins_home/devopsschool.txt .
+   90  ls
+   91  history
+----------------------
+  95  docker diff 5854d009327c
+   96  docker diff 38e5401c5c52
+   97  docker diff f98a5bfb7275
+   98  clear
+   99  docker diff f98a5bfb7275
+  100  docker run -it ubuntu /bin/bash
+  101  clear
+  102  ls
+  103  docker ps
+  104  dcoker diff c7e86dc64c58
+  105  docker diff c7e86dc64c58
 
+ 100  docker run -it ubuntu /bin/bash
+  101  clear
+  102  ls
+  103  docker ps
+  104  dcoker diff c7e86dc64c58
+  105  docker diff c7e86dc64c58
+  106  history
+  107  clear
+  108  docker ps
+  109  docker port 5854d009327c
+  110  clear
+  111  docker ps -a
+  112  clear
+  113  docker ps
+  114  dcoker rename c7e86dc64c58 rrrr
+  115  docker rename c7e86dc64c58 rrrr
+  116  docker ps
+  117  clear
+  118  docker run -itd --name ff ubuntu
+  119  docker ps
+  120  clear
+  121  docker ps
+  122  docker logs 5854d009327c
+  123  docker logs 5854d009327c
+  124  clear
+  125  docker ps
+  126  docker stats
+  127  docker stats 82c3d7a4cce0
+  128  clear
+  129  docker top
+  130  docker ps
+  131  docker top 82c3d7a4cce0
+  132  ps -eaf | grep 24358
+  133  ps -eaf | grep 24342
+  134  clear
 
-
+TASK 
+update	Update configuration of one or more containers
+wait	Block until one or more containers stop, then print their exit codes
 
 
 
