@@ -138,37 +138,70 @@ create->start->stop->start->restart->pause->unpuase->stop->rm
 
 RHEL-7.5_HVM_GA-20180322-x86_64-1-Hourly2-GP2 (ami-5b673c34)
 13.233.246.170
+====================================================
+How to access containers?
+=======================================
+WHAT IS PID 1..
 
-1 52.66.50.230
-2 35.154.123.162
-3 13.127.226.138
-4 13.233.3.135
-5 13.126.142.207
-6 13.127.223.78
-7 35.154.159.140
-8 13.126.235.241
-9 13.232.3.46
-10 15.206.165.203
-11 13.235.90.179
-12 13.126.153.64
-13 13.235.70.247
-14 13.126.1.130
-15 15.206.128.134
-16 15.206.151.81
-17 15.206.189.177
-18 35.154.235.195
-19 13.235.73.124
-20 13.233.44.35
-21 52.66.242.59
-22 13.233.57.60
-23 13.126.109.239
-24 13.126.86.35
-25 13.232.149.215
-26 15.206.90.147
-27 35.154.71.20
 
-user - ec2-user
-KEY 0- 
-https://www.devopsschool.com/notes/docker/2019/
- 	rajesh-mumbai.pem	 
- 	rajesh-mumbai.ppk
+  1  docker ps
+    2  docker exec 3e01edf244d3 ps -eaf
+    3  kill -9 1
+    4  docker ps
+    5  docker ps -a
+    6  docker run -d jenkins
+    7  docker run -d jenkins
+    8  docker run -d jenkins
+    9  history
+
+How to get inside a container?
+	EXEC  - it execute an executables inside a container.
+		BUT you can use -it with /bin/bash to get inside a container.
+	ATTACH 
+		- IT GET ATTACHED TO PID 1.
+
+How to browse container apps?
+
+How to come out of container saftly?
+	CRL + p + Q
+
+ 26  docker rm 1150f37cb198 f405a609921d 938e15721216 3e01edf244d3
+   27  clear
+   28  docker ps -a
+   29  docker images
+   30  docker pull ubuntu
+   31  clear
+   32  ls
+   33  clear
+   34  ls
+   35  docker images
+   36  docker run jenkins
+   37  docker run -d jenkins
+   38  docker ps -a
+   39  cler
+   40  clear
+   41  docker ps -a
+   42  docker run -d ubuntu
+   43  docker ps -a
+   44  history
+   45  docker ps -a
+   46  clear
+   47  docker run -it ubuntu /bin/bash
+   48  docker ps
+   49  docker attach bdd6020df335
+   50  docker ps
+   51  docker ps -a
+   52  history
+
+
+
+
+
+
+
+
+
+
+
+
+
