@@ -375,5 +375,129 @@ https://www.devopsschool.com/blog/understand-docker-volume-from-beginner-to-deep
    93  docker volume ls
    94  docker volume
    95  history
+================================================================
+================================================================
+Docker Networking
+============================================
+“there is no such thing as container networking"
+=============================================
+Docker has Default support for NETWORKING DRIVER
+		- BRIDGE	
+		- HOST 
+		- NONE
+
+apt-get update && apt-get install -y iputils-ping traceroute net-tools iproute2
+	
+CONT 1 - DEFAULT		
+				172.17.0.1
+				172.17.0.2
+
+CONT 2 - DEV -- 38ff9a60e3c9
+				172.18.0.1
+				172.18.0.2
+
+
+docker network connect bridge 38ff9a60e3c9
+docker network disconnect bridge 38ff9a60e3c9
+
+
+
+ 229  docker ps
+  230  docker atatch 9410ea3ea78e
+  231  docker attach 9410ea3ea78e
+  232  clear
+  233  docker ps
+  234  docker attach 38ff9a60e3c9
+  235  clear
+  236  docker ps
+  237  docker attach 38ff9a60e3c9
+  238  clear
+  239  docker ps
+  240  docker network
+  241  docker network connect
+  242  clear
+  243  docker ps
+  244  docker network ls
+  245  docker network connect bridge 38ff9a60e3c9
+  246  clear
+  247  docker inspect 38ff9a60e3c9
+  248  docker network
+  249  docker network disconnect
+  250  docker network disconnect bridge 38ff9a60e3c9
+  251  docker inspect 38ff9a60e3c9
+
+
+
+
+  247  docker inspect 38ff9a60e3c9
+  248  docker network
+  249  docker network disconnect
+  250  docker network disconnect bridge 38ff9a60e3c9
+  251  docker inspect 38ff9a60e3c9
+  252  history
+  253  clear
+  254  docker network
+  255  clear
+  256  docker prune
+  257  docker network prune
+  258  docker network ls
+  259  docker network rm dev
+  260  docker ps
+  261  docker stop 38ff9a60e3c9
+  262  docker network rm dev
+  263  history
+
+
+  263  history
+  264  clear
+  265  docker ps -a
+  266  docker stop 38ff9a60e3c9 9410ea3ea78e
+  267  docker rm 38ff9a60e3c9 9410ea3ea78e
+  268  clear
+  269  docker ps
+  270  docker ps -a
+  271  ifconfig
+  272  clear
+  273  ls
+  274  docker network ls
+  275  docker run -itd --net=host ubuntu
+  276  docker ps
+  277  clear
+  278  docker ps
+  279  docker inspect 1d94d2ecd67f
+  280  docker ps
+  281  clear
+  282  docker ps
+  283  docker attach 1d94d2ecd67f
+  284  docker ps
+  285  clear
+  286  docker ps -a
+  287  docker stop 1d94d2ecd67f
+  288  docker rm 1d94d2ecd67f
+  289  clear
+  290  docker network ls
+  291  docker run -itd --net=none ubuntu
+  292  docker os
+  293  docker ps
+  294  docker inspect c3820f7da1d8
+  295  docker atach c3820f7da1d8
+  296  docker attach c3820f7da1d8
+  297  history
+
+
+PROJECT - 
+https://www.devopsschool.com/tutorial/docker/labs/docker/docker-lab-6-link.html
+
+
+
+
+
+
+
+
+
+
+
+
 
 
