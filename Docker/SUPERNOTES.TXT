@@ -1,0 +1,174 @@
+What is Docker?
+	Container mgmt tool.
+	Release
+		CE - Community ED
+		EE - Enterprise ED
+		https://www.docker.com/products/docker-enterprise
+
+What is Container?
+	Container is a user ns with their
+			OWN 
+				MNT NS
+				NET NS
+				PID NS
+  20  clear
+   21  clear
+   22  ps -eaf | grep docker
+   23  ps -eaf | grep docker | wc -l
+   24  docker run -d jenkins
+   25  docker ps
+   26  ps -eaf | grep docker | wc -l
+   27  docker run -d jenkins
+   28  ps -eaf | grep docker | wc -l
+   29  docker run -d jenkins
+   30  ps -eaf | grep docker | wc -l
+   31  docker ps
+   32  clear
+   33  dockr ps
+   34  docker ps
+   35  docker exec edb813a7eb72 df -kh
+   36  docker exec 137b25e7423c df -kh
+   37  docker exec edb813a7eb72 ls //var/jenkins_home
+   38  docker exec 137b25e7423c ls /var/jenkins_home
+   39  docker exec 137b25e7423c touch /var/jenkins_home/rajesh.txt
+   40  docker exec 137b25e7423c ls /var/jenkins_home
+   41  docker exec edb813a7eb72 ls //var/jenkins_home
+   42  clear
+   43  dockr ps
+   44  docker ps
+   45  docker inspect edb813a7eb72 | grep -i ip
+   46  docker inspect 137b25e7423c | grep -i ip
+   47  clear
+   48  ls
+   49  ps -eaf
+   50  c
+   51  clear
+   52  docker ps
+   53  docker exec edb813a7eb72 ps -eaf
+   54  docker exec 137b25e7423c ps -eaf
+
+What is docker Engine?
+	DOcker Engine
+Humen -> Docker Client  --> Docker Deamon --> Kernal
+[root@ip-172-31-3-97 ec2-user]# which docker
+/bin/docker
+[root@ip-172-31-3-97 ec2-user]# ps -eaf | grep docker
+root     10728     1  0 05:51 ?        00:00:00 /usr/bin/dockerd -H fd:// --
+
+containerd=/run/containerd/containerd.sock
+root     10929  9667  0 05:54 pts/0    00:00:00 grep --color=auto docker
+[root@ip-172-31-3-97 ec2-user]#
+
+
+How to install Docker?
+https://www.devopsschool.com/tutorial/docker/install-config/docker-install-commuityedition-centos-rhel.html
+
+[root@ip-172-31-3-97 ec2-user]# history
+    1  sudo yum install -y yum-utils device-mapper-persistent-data lvm2'
+    2  sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+    3  sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+    4  sudo yum install –y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+    5  sudo yum-config-manager --enable rhui-REGION-rhel-server-extras
+    6  sudo yum install -y docker-ce
+    7  sudo yum install docker-ce
+    8  docker -v
+    9  sudo systemctl enable docker
+   10  sudo systemctl start docker'
+   11  sudo systemctl start docker
+   12  docker info
+   13  history
+
+Docker components?
+	Docker Engine
+		Docker Clinet --> Docker Deamon
+	Docker Images
+		From Registry 
+		Complete run time packged env for APP
+	Docker Containers
+		DONE
+	Docker Registry and repos
+		Private Registry
+			Nexus
+			Artifactory
+			ECR on AWS
+		Pub 
+			hub.docker.com
+	
+Which image you wants??
+	JENKINS?
+	OS fS
+	   --> JRE 
+		 --> JENKINS
+			--- WEB SERVER - 8080
+			--- SLAVE - 50000
+
+
+
+
+
+
+
+
+Working with docker container workflow?
+==================================================
+create->start->stop->start->restart->pause->unpuase->stop->rm
+
+  64  docker ps
+   65  docker craete jenkins
+   66  docker create jenkins
+   67  docker ps
+   68  docker ps -a
+   69  docker start 02bc532cc7b7
+   70  docker ps -a
+   71  docker stop 02bc532cc7b7
+   72  docker ps -a
+   73  docker start 02bc532cc7b7
+   74  docker ps -a
+   75  docker restart 02bc532cc7b7
+   76  docker ps -a
+   77  docker pause 02bc532cc7b7
+   78  docker ps -a
+   79  docker unpause 02bc532cc7b7
+   80  docker ps -a
+   81  docker stop 02bc532cc7b7
+   82  docker ps -a
+   83  docker rm 02bc532cc7b7
+   84  docker ps -a
+
+
+RHEL-7.5_HVM_GA-20180322-x86_64-1-Hourly2-GP2 (ami-5b673c34)
+13.233.246.170
+
+1 52.66.50.230
+2 35.154.123.162
+3 13.127.226.138
+4 13.233.3.135
+5 13.126.142.207
+6 13.127.223.78
+7 35.154.159.140
+8 13.126.235.241
+9 13.232.3.46
+10 15.206.165.203
+11 13.235.90.179
+12 13.126.153.64
+13 13.235.70.247
+14 13.126.1.130
+15 15.206.128.134
+16 15.206.151.81
+17 15.206.189.177
+18 35.154.235.195
+19 13.235.73.124
+20 13.233.44.35
+21 52.66.242.59
+22 13.233.57.60
+23 13.126.109.239
+24 13.126.86.35
+25 13.232.149.215
+26 15.206.90.147
+27 35.154.71.20
+
+user - ec2-user
+KEY 0- 
+https://www.devopsschool.com/notes/docker/2019/
+ 	rajesh-mumbai.pem	 
+ 	rajesh-mumbai.ppk
