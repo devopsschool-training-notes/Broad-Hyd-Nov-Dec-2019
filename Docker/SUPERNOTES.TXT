@@ -278,9 +278,102 @@ update	Update configuration of one or more containers
 wait	Block until one or more containers stop, then print their exit codes
 
 
+==========================================================================
+===========================================================================
+Docker volume
+https://www.devopsschool.com/blog/understand-docker-volume-from-beginner-to-deep-dive-level/
+
+-------------------------------------
+	- Volume - /var/lib/docker/volumes
+	- mount
+	- tmpfs
 
 
-
-
+ 10  clear
+   11  docker run -it ubuntu
+   12  docker info
+   13  clear
+   14  cd /var/lib/docker
+   15  ls
+   16  find . -name /var/lib/docker
+   17  find . -name devopsschool.com
+   18  docker ps -a
+   19  docker stop 1fd32e3e9501
+   20  docker rm 1fd32e3e9501
+   21  clear
+   22  find . -name devopsschool.com
+   23  clear
+   24  docker volume
+   25  clear
+   26  pwd
+   27  ls
+   28  cd volumes
+   29  ls
+   30  clear
+   31  pwd
+   32  ls
+   33  docker  volume
+   34  clear
+   35  docker prune
+   36  docker volume prune
+   37  ls
+   38  clear
+   39  docker volume create raj
+   40  ls
+   41  cd raj/
+   42  ls
+   43  cd _data/
+   44  ls
+   45  cd ..
+   46  ls
+   47  cd ..
+   48  ls
+   49  clear
+   50  ls
+   51  docker run -itd -v raj:/opt/raju ubuntu
+   52  docker exec 23f991f77b25eb84a4cc9a7ea7becf8fd5b3c72e950361be5188bee58df6c145 df -kh
+   53  clear
+   54  ls
+   55  docker ps
+   56  docker attach 23f991f77b25
+   57  clear
+   58  docker ps -a
+   59  docker stop 23f991f77b25
+   60  docker rm 23f991f77b25
+   61  cler
+   62  clear
+   63  cd raj/
+   64  ls
+   65  cd _data/
+   66  ls
+   67  docker run -itd -v raj:/opt/raju ubuntu
+   68  docker ps
+   69  docker exec 6e1b9f4f71f6 ls /opt/raju
+   70  clear
+   71  ls
+   72  cd
+   73  cd /opt/
+   74  ls
+   75  mkdir bkp
+   76  ls
+   77  docker run -itd -v /opt/bkp:/opt/ramu ubuntu
+   78  docker ps
+   79  docker attach 54dccce65e63
+   80  clear
+   81  ls
+   82  cd bkp/
+   83  ls
+   84  docker ps -a
+   85  docker stop 54dccce65e63 6e1b9f4f71f6
+   86  docker rm 54dccce65e63 6e1b9f4f71f6
+   87  clear
+   88  ls
+   89  history
+   90  clear
+   91  docker volume ls
+   92  docker volume rm raj
+   93  docker volume ls
+   94  docker volume
+   95  history
 
 
