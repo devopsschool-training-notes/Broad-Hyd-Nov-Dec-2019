@@ -255,5 +255,33 @@ Password
 O*JeBbiyvETf-23AqupV7gF*oR%&g3mn
 
 
+Why Containers: 
+		a. Scalability
+		Monitoring tool-->Network-->OS-->Kernal-->Namespace-->NETNS (Network Namespace)
+		b. Availability 
+		Load Balancer --> Network-->OS-->Kernel-->Namespace
+		c. Security 
+		Firewall-->Network-->OS-->Kernel-->Namespace
+		
+Namespace:
+		a. Users Namespace
+		b. Process Map PMAP
+		c. Mount MNT
+		d. Network NET
+
+How Docker works with Kernel:
+	LXC --> LIBCONTAINER
+
+We call it Docker Engine: (Client talks to Daemon using rest apis)
+	Docker Client
+	Docker Daemon
+	
+Docker Components:
+	Docker Engine
+	Images --> Complete package of our application runtime (Example : OS, JRE, JENKINS)
+	Containers
+	Registries and Repositories --> Registries and Repositories will have images
+	
+
 
 
