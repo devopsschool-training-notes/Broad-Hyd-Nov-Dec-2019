@@ -484,9 +484,113 @@ docker network disconnect bridge 38ff9a60e3c9
   296  docker attach c3820f7da1d8
   297  history
 
-
 PROJECT - 
 https://www.devopsschool.com/tutorial/docker/labs/docker/docker-lab-6-link.html
+
+================
+What is Docker images?
+	Image has multiple Layers
+	Each layer is nothing but filesystem
+	Base layer is ROOTFS
+	
+When we create a container?
+	IT CREATE EMPTY RW LAYER
+	ALL LAYERS MERGED INTO ONE - RO
+	EMPTY LAYER IS MOUNTED WITH MERGED LAYER USIGN UNION MOUNTS.
+
+
+  17  docker pull ubuntu
+   18  docker inpsect ubuntu
+   19  docker inspect ubuntu
+   20  docker info
+   21  cd /var/lib/docker
+   22  ls
+   23  cd overlay2
+   24  ls
+   25  du -h --max-depth=1
+   26  cd ./f57262b740fd90f6e38223f2a6bf4e0f49407d35bedbf3b0904d153de88d70b7
+   27  ls
+   28  cd diff/
+   29  ls
+   30  clear
+   31  ls
+   32  cd ..ls
+   33  cd ..
+   34  ls
+   35  cd ..
+   36  ls
+   37  cd ..
+   38  ls
+   39  clear
+   40  ls
+   41  docker history ubuntu
+   42  clear
+   43  ls
+   44  history
+   45  cd overlay2/f57262b740fd90f6e38223f2a6bf4e0f49407d35bedbf3b0904d153de88d70b7
+   46  clear
+   47  tree
+   48  yum install tree -y
+   49  cler
+   50  tree
+   51  clear
+   52  ls
+===============================================
+How to create images?
+-------------------------
+ubunut
+git
+	
+Lazy way? ----> USING EXISTING CONTAINER
+  227  docker commit -m"ub+git+up" -a "RajeshKumar" ef78e2828acf ub-git-up
+
+
+Automated Way  -----> dockerfile
+
+======================================
+How to share docker images?
+	1. Using Tar ball
+  254  docker images
+  255  docker save -o ub-git-up.tar ub-git-up
+  256  ls
+  257  tar -xvf ub-git-up.tar
+  258  clear
+  259  ls
+  260  docker images
+  261  docker rmi ub-git-up
+  262  docker ps -a
+  263  docker stop e0d9b3e38050 7fe6ed259379
+  264  clear
+  265  docker rm e0d9b3e38050 7fe6ed259379
+  266  clear
+  267  ls
+  268  docker rmi ub-git-up
+  269  clear
+  270  docker images
+  271  ls
+  272  docker load -i ub-git-up.tar
+  273  docker images
+
+	2. Using Public registry
+	3. Using Private registry
+
+Step 1 - Create a Images using existing contaner
+Step 2 - Craete a tar ball
+Step 3 - Register at hub.docker.com
+Step 4 - Login/push images to hub.docker.com
+
+ 285  docker login
+  286  clear
+  287  ls
+  288  docker images
+  289  docker push ub-git-up
+  290  docker tag ub-git-up scmgalaxy/ub-git-up4444
+  291  clear
+  292  docker images
+  293  docker push scmgalaxy/ub-git-up4444
+  294  ls
+
+
 
 
 
