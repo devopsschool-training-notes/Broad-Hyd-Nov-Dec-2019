@@ -590,15 +590,35 @@ Step 4 - Login/push images to hub.docker.com
   293  docker push scmgalaxy/ub-git-up4444
   294  ls
 
+=====================================================
+Jenkins
+	openjdk:8-jdk
+		buildpack-deps:stretch-scm	
+				buildpack-deps:stretch-curl
+						debian:stretch
+							scratch
+FROM ubuntu
+MAINTAINER RajeshKumar<Devops@rajeshkumar.xyz>
+RUN apt-get update 
+RUN apt-get install git -y
+
+FROM ubuntu
+MAINTAINER RajeshKumar<Devops@rajeshkumar.xyz>
+RUN apt-get update && apt-get install git -y
+
+FROM ubuntu
+MAINTAINER RajeshKumar<Devops@rajeshkumar.xyz>
+RUN touch /opt/rajesh1.txt
+RUN touch /opt/rajesh2.txt
+RUN touch /opt/rajesh3.txt
+ENV JAVA_HOME /opt/rajj
+
+ 46  docker build -t rajesh1 .
+   52  docker build -f rajesh2 -t rajesh .
+   64  docker build -f rajesh3 -t rajesh .
 
 
-
-
-
-
-
-
-
+IP - 52.66.195.255
 
 
 
