@@ -619,6 +619,26 @@ ENV JAVA_HOME /opt/rajj
 
 
 IP - 52.66.195.255
+============================
+TOOL FLOW
+
+ECS
+ECS
+NOTARY - aquascan
+WHY CONTAINERS?
+=================================================
+CMD -  WOULD MAKE PID 1.
+			CMD CAN BE CHANGED ANYTIME.
+
+ENTRYPOINT
+	WOULD MAKE PID 1.
+			ENTRYPOINT CAN NOT BE CHANGED ANYTIME.
+			CMD passed to a container with ENTRYPOINT would be added a PARAMETER
+echo rajesh rahesh2	
+
+
+LAB FOR FINAL DOCKEFILE 
+https://www.devopsschool.com/tutorial/docker/dockerfile/dockerfile-example-sample-lab.html
 
 
 
