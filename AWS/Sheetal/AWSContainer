@@ -1,0 +1,86 @@
+# OS => Kernel => NETNS ( NET NameSpace) - (Kernel contains many namespaces...)
+# Scalability, Availability, Security..
+? when OS is boot which process ID is created?
+
+
+#PC
+ =>NetNamespace (for network...Scalability, Availability, Security..) => Only one allowed
+ =>User Namespaces  => Many can be created
+ =>Pid namespace (Process map) => Only one allowed
+ =>Mnt Namespace  (Mount for file system) => Only one allowed
+
+# Container is the userSpace =>(LibContainer) =>Talks with kernal
+? Docker managers containers
+
+#There are two kernels int he world..
+	1. Linux Kernel
+	2. Windows Kernel
+
+
+Major Docker Component
+
+	1. Docker Engine (has two Docker Client and Docker Deamon, it communicates on REST APIs)
+	2. Images ( is a complete package of application runtime..)
+	3. Containers ( 
+	4. Registries and Repository ( Managers Images)
+
+ 
+Ctrl + P + Q => To exit container
+
+
+========================================================
+Docker Images
+========================================================
+
+
+?Why git is not source code mgmt and file system mgmt tool...
+#UUID => SHA266
+?Union Mounts?
+
+#All the Layers stays in Overlay2 Directory
+
+#How to create Image
+#Share Docker Image
+?Multi Staging - docker import/ docker 
+?CMD vs Entrypoint
+
+15.206.195.72
+
+
+13.235.133.16
+=========================================================================================
+#docker exec ?
+
+?cncf?
+
+?Orchastration tool (Containers...)
+	- ECS
+ 	- Kubernets
+	- Swarm
+
+
+
+
+
+
+
+
+
+=========================================================================================
+d55de5b3b483
+
+
+docidshtl1/shtldockerrepo
+
+
+docidshtl1
+Welcome123
+
+
+shtldockerrepo
+
+
+
+
+c67d3ff77fc9438e8322455c9c8144016bafd73f690ee98f59a6d8238c1c5115
+
