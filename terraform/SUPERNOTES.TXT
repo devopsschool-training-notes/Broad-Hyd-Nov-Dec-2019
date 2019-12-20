@@ -44,19 +44,21 @@ CREATE  + UPDATE + Destroy
 Problem Creation
 ===============================
 Write a full automation using following spec.
-------------DEV------------
-- Install git in Local
-- Install maven in local
-- Checkout code and Build it.
-------------QA------------
-- Create a instance in aws
-            - security group
-            - Key
-            - ec2 instance           
-- Install git in ec2 instance  
-- Install maven in ec2 instance  
-- Install httpd 
-- copy index.html from github into web server. /var/www/html
+- Create a EC2 Instane Manually and Install Terrform into it.
+- Generate a key pair using "ssh-keygen"
+- Create a file called "deploy.sh"
+------------------TERRAFORM PART--------------------------
+- Using Resource: aws_key_pair - you would upload public key
+- Using Resource: aws_security_group - create a security group with inbound 80/22 and outbound all.
+- Create a ec2 instance using aws_key_pair and aws_security_group.
+- using file provisioner - Copy deploy.sh into /tmp
+- using local provisioner - touch /tmp/devops.txt
+- using remote provisioner - run /tmp/deploy.sh
+
+
+
+
+
 =====================================================================
 How to install terraform?
     - Get your WORKSTAION.
