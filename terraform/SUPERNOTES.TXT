@@ -1,1 +1,83 @@
-https://broadridgefinancial.webex.com/join/Anjaneyulu.Korukonda
+
+
+What is Terraform?
+    Terraform is tool to code for INFRA.
+    From Hashicorp https://www.hashicorp.com/
+                Vagrant
+                Terraform - MUST BE
+                Packer - MUST BE
+                Consul
+                Vault - MUST BE
+                nomad
+    Powered with Providers
+    Release
+        Community - Free and Open Source
+        Enterprise - Community + GUI + Mul Fea + Paid
+    Written in Go.
+
+Why Terraform?
+
+Architecture of Terraform?
+--------------------------------
+Humen --> HCL       --> Providers --> API --> TOOLS
+        --------
+        Special Lang 4
+        - Easy to learn
+        - Easy to write
+        - Easy to debug
+        - Easy to extend
+        - Easy to share
+        - Easy to test
+
+Providers
+--------------------------
+It a interface between HCL and API of the tools. It convert HCL into JSON and communicate with API with approrpiate reqest. There are many Providers written by Hashicorp and many from Community. List of providers are...
+https://www.terraform.io/docs/providers/index.html
+
+
+WORKFLOW
+================================
+CREATE  + UPDATE + Destroy
+--------------------------
+        ONE COMMAND FOR ALL
+    
+Problem Creation
+===============================
+Write a full automation using following spec.
+------------DEV------------
+- Install git in Local
+- Install maven in local
+- Checkout code and Build it.
+------------QA------------
+- Create a instance in aws
+            - security group
+            - Key
+            - ec2 instance           
+- Install git in ec2 instance  
+- Install maven in ec2 instance  
+- Install httpd 
+- copy index.html from github into web server. /var/www/html
+=====================================================================
+How to install terraform?
+    - Get your WORKSTAION.
+    - Download Trraform https://www.terraform.io/downloads.html
+    - Set Trraform in path
+    - Verify it
+=============================================================
+wget https://releases.hashicorp.com/terraform/0.12.18/terraform_0.12.18_linux_amd64.zip
+sudo yum install zip -y
+sudo yum install unzip -y
+unzip terraform_0.12.18_linux_amd64.zip
+echo $PATH
+mv terraform /usr/local/bin
+sudo mv terraform /usr/local/bin
+chmod 755 /usr/local/bin/terraform
+terraform version
+terraform -help
+ terraform help
+terraform version
+
+
+13.233.172.155
+AMI - RHEL-7.5_HVM_GA-20180322-x86_64-1-Hourly2-GP2 (ami-5b673c34)
+
