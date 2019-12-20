@@ -1,0 +1,77 @@
+
+
+resource "aws_key_pair" "vinay-key" {
+  key_name   = "vinay-key"
+  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDOOFAkEBpIJsKXEDUdZ/GjEJ3G/G3huZeXEoR8/7I3ttHYZSj7jDOyHCqp4HaGMyM8UHUKq6Y4cspwSESm+WCaa/krECAyiRcxl4XVTa6hTetOevLYog7OR1eHPJh74TIuVWXWRgCXCcxdT1TQWJMbYRiAwZNgTPYxQIkvb+m67iYN+Z/2hBeUAJyvidZwZZD04QkKEpSs/4oSVXkWaW9XE6qWPIa8UjYo7aLQswb/YM4Punk2Dz1tOlavFgntXA6ZEHgbCNdFkuyqBgpdnt1rTjXL8EKeP8X9Pmvv06zf8aTMJwwXSXCCJ2/ERXvMZUb+6S9tKtzYkUAffPryYkl/ ec2-user@ip-172-31-29-119.ap-south-1.compute.internal"
+}
+
+
+resource "aws_security_group" "vinay_sc" {
+  name        = "Vinay-SG"
+  description = "Allow TLS inbound traffic"
+
+  ingress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    from_port       = 0
+    to_port         = 0
+    protocol        = "-1"
+    cidr_blocks     = ["0.0.0.0/0"]
+  }
+}
+
+resource "null_resource" "local-exec" {
+  provisioner "local-exec" {
+    command = "touch /tmp/devops.txt"
+  }
+}
+
+resource "aws_instance" "ec2_1" {
+  ami           = "ami-5b673c34"
+  instance_type = "t2.micro"
+  security_groups = ["Vinay-SG"]
+  key_name = "vinay-key"
+  tags = {
+    Name = "VinayAgarwal"
+  }
+provisioner "file" {
+  source      = "deploy.sh"
+  destination = "/tmp/deploy.sh"
+
+  connection {
+    type     = "ssh"
+    user     = "ec2-user"
+    private_key = "${file("test.pem")}"
+    host = "${self.public_ip}"
+            }
+  }
+  
+provisioner "remote-exec" {
+    inline = [
+      "/tmp/deploy.sh"
+    ]
+    connection {
+    type     = "ssh"
+    user     = "ec2-user"
+    private_key = "${file("test.pem")}"
+    host = "${self.public_ip}"
+  }
+  }
+}
+
+
+
+
+
