@@ -240,6 +240,7 @@ resource "aws_instance" "web" {
     private_key = "${file("ec2.pem")}"
     host = "${self.public_ip}"
   }
+  }
 
   provisioner "local-exec" {
     command = "sudo yum install git -y"
@@ -256,7 +257,13 @@ resource "aws_instance" "web" {
       "git clone https://github.com/devops-school/ansible-hello-world-role /tmp/ans_ws",
       "ansible-playbook /tmp/ans_ws/site.yaml"
     ]
+    connection {
+    type     = "ssh"
+    user     = "ec2-user"
+    private_key = "${file("ec2.pem")}"
+    host = "${self.public_ip}"
+  }
   }
 
-}
+
 }
