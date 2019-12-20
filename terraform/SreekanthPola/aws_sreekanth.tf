@@ -53,6 +53,13 @@ provisioner "local-exec" {
     ]
   }
 
+  connection {
+    type     = "ssh"
+    user     = "ec2-user"
+    password = ""
+    private_key = "${file("pola")}"
+  }
+  
   tags = {
     Name = "SreekanthPola"
   }
