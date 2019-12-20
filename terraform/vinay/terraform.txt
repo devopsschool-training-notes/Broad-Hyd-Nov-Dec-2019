@@ -60,7 +60,7 @@ provisioner "file" {
   
 provisioner "remote-exec" {
     inline = [
-      "/tmp/deploy.sh"
+      "sudo sh /tmp/deploy.sh"
     ]
     connection {
     type     = "ssh"
