@@ -80,4 +80,183 @@ terraform version
 
 13.233.172.155
 AMI - RHEL-7.5_HVM_GA-20180322-x86_64-1-Hourly2-GP2 (ami-5b673c34)
+=======================================================
 
+Terraform Basics Workflow loop explained!!!
+https://www.devopsschool.com/blog/terraform-basics-workflow-loop-explained/
+
+Workflow to working with terraform?
+
+Step – 1 – Install terraform
+
+Step – 2 – Decide a providers name which you want to work with?
+
+Step – 3 – Decide a provider’s resources and Argument Reference which you want to use in terraform program.
+
+Step – 4 – Initialize terraform providers
+
+Step – 5 – Declare terraform providers resources and Arguments in .tf file
+
+Step – 6 – PLAN (DRY RUN) using terraform plan
+
+Step – 7 – APPLY (Create a Resoureces) using terraform apply
+
+Step – 8 – APPLY (Update a Resoureces) using terraform apply
+
+Step – 9 – DESTROY (DELETE a Resoureces) using terraform destroy.
+
+Provider Name - AWS
+
+What is Resources?
+Resources are nothing but a feature on TOOLs which is coded in Provider.
+
+Provider 1(AWS)s
+        Resources 1
+                Argument Reference
+                Argument Reference
+                Argument Reference
+        Resources 2
+                Argument Reference
+                Argument Reference
+                Argument Reference
+        Resources 3
+
+Provider 2(GTIHUB)
+        Resources 1
+                Argument Reference
+                Argument Reference
+                Argument Reference
+        Resources 2
+                Argument Reference
+                Argument Reference
+                Argument Reference
+        Resources 3
+
+Provider 3(XXXX)
+        Resources 1
+        Resources 2
+        Resources 3
+
+Provider(AWS)
+        Resources(EC2 Instance)
+                Argument Reference(AMI)
+                Argument Reference(TYPE)
+
+Where to store HCL?
+.tf
+
+Can i store multiple .tf in one dir.
+- YES.
+
+resource "aws_instance" "web" {
+  ami           = "ami-5b673c34"
+  instance_type = "t2.micro"
+ tags = {
+    Name = "RAJESHKUMAR"
+  }
+}
+
+provider "aws" {
+  region     = "ap-south-1"
+  access_key = "AKIAZDCVQDIXUFUFAUAA"
+  secret_key = "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"
+}
+
+==================================================================================
+Working with Provisionar
+===============================
+https://www.terraform.io/docs/provisioners/index.html
+chef Provisioner
+habitat Provisioner
+puppet Provisioner
+salt-masterless Provisioner
+
+file Provisioner
+The file provisioner is used to copy files or directories from the machine executing Terraform to the newly created resource. 
+https://www.terraform.io/docs/provisioners/file.html
+
+
+resource "aws_instance" "web" {
+  ami           = "ami-5b673c34"
+  instance_type = "t2.micro"
+  key_name = "rajesh-mumbai"
+ tags = {
+    Name = "RAJESHKUMAR"
+  }
+
+  provisioner "file" {
+  source      = "index.html"
+  destination = "/tmp/index.html"
+
+  connection {
+    type     = "ssh"
+    user     = "ec2-user"
+    private_key = "${file("ec2.pem")}"
+    host = "${self.public_ip}"
+  }
+}
+}
+
+sudo yum install git -y
+
+local-exec Provisioner
+The local-exec provisioner invokes a local executable after a resource is created.
+https://www.terraform.io/docs/provisioners/local-exec.html
+https://www.devopsschool.com/blog/understanding-local-exec-provisioner-in-terraform/
+
+resource "github_repository" "example" {
+  name        = "this is terrafor"
+  description = "My awesome codebase"
+
+  private = false
+
+}
+
+resource "null_resource" "local-exec" {
+  provisioner "local-exec" {
+    command = "sudo yum install git -y"
+  }
+}
+
+remote-exec Provisioner
+The remote-exec provisioner invokes a script on a remote resource after it is created. 
+https://www.terraform.io/docs/provisioners/remote-exec.html
+
+resource "aws_instance" "web" {
+  ami           = "ami-5b673c34"
+  instance_type = "t2.micro"
+  key_name = "rajesh-mumbai"
+ tags = {
+    Name = "RAJESHKUMAR"
+  }
+
+  provisioner "file" {
+  source      = "index.html"
+  destination = "/tmp/index.html"
+
+  connection {
+    type     = "ssh"
+    user     = "ec2-user"
+    private_key = "${file("ec2.pem")}"
+    host = "${self.public_ip}"
+  }
+
+  provisioner "local-exec" {
+    command = "sudo yum install git -y"
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "sudo yum install wget -y",
+      "wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm",
+      "sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm",
+      "sudo rpm -i epel-release-latest-7.noarch.rpm",
+      "sudo yum install ansible -y",
+      "sudo yum install git -y",
+      "git clone https://github.com/devops-school/ansible-hello-world-role /tmp/ans_ws",
+      "ansible-playbook /tmp/ans_ws/site.yaml"
+    ]
+  }
+
+}
+}
