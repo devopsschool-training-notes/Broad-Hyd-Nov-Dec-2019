@@ -390,9 +390,135 @@ resource "aws_instance" "example" {
 }
 
 
+EXAMPLE OF FOR EACh
+===========================
+# Use Case of for_each
+
+variable "account_name" {
+   type = "map"
+  default = {
+      "account1" = "devops1"
+      "account2" = "devops2"
+      "account3" = "devops3"
+}
+}
+
+resource "aws_iam_user" "iamuser" {
+  for_each = var.account_name
+  name = "${each.value}-iam"
+}
+
 
 Terraform Advance Workflow loop explained!!!
 https://www.devopsschool.com/blog/terraform-advance-workflow-loop-explained/
+
+
+
+
+
+
+Reference
+==========================================
+Terraform 
+==========================================================================
+Terraform Basics Workflow loop explained!!!
+https://www.devopsschool.com/blog/terraform-basics-workflow-loop-explained/
+
+Terraform Advance Workflow loop explained!!!
+https://www.devopsschool.com/blog/terraform-advance-workflow-loop-explained/
+
+What is terraform.tfstate.backup file in terraform?
+https://www.devopsschool.com/blog/what-is-terraform-tfstate-backup-file-in-terraform/
+
+Terraform state explained!!!
+https://www.devopsschool.com/blog/terraform-state-explained/
+
+Terraform Web References & Cheatsheet
+https://www.devopsschool.com/blog/terraform-web-references/
+
+Terraform Looping and Conditioning
+==========================================================================
+How to do Looping/Iterations in Terraform?
+https://www.devopsschool.com/blog/how-to-do-looping-iterations-in-terraform/
+
+Terraform Variables
+==========================================================================
+Terraform Variables and Configuration explained – 5 mins reading!
+https://www.devopsschool.com/blog/terraform-variables-and-configuration-explained-5-mins-reading/
+
+Using http and https proxy in terraform
+https://www.devopsschool.com/blog/using-http-and-https-proxy-in-terraform/
+
+Terraform variable Number Type Explained!!!
+https://www.devopsschool.com/blog/terraform-variable-number-type-explained/
+
+Terraform variable List Type Explained!!!
+https://www.devopsschool.com/blog/terraform-variable-list-type-explained/
+
+Terraform Environment Variables Exaplained!
+https://www.devopsschool.com/blog/terraform-environment-variables-exaplained/
+
+Local Values is defined in Terraform!!!
+https://www.devopsschool.com/blog/local-values-is-defined-in-terraform/
+
+Terraform provisioners  
+==========================================================================
+How to run provisioners code after resources is created in terraform?
+https://www.devopsschool.com/blog/how-to-run-provisioners-code-after-resources-is-created-in-terraform/
+
+Understanding local-exec provisioner in terraform
+https://www.devopsschool.com/blog/understanding-local-exec-provisioner-in-terraform/
+
+Terraform Modules and Advance Topics
+==========================================================================
+Decide factor to write Terraform Module or not?
+https://www.devopsschool.com/blog/decide-factor-to-write-terraform-module-or-not/
+
+Terraform workspace explained!!!
+https://www.devopsschool.com/blog/terraform-workspace-explained/
+
+How to use one module’s variable in another module in terraform?
+https://www.devopsschool.com/blog/how-to-use-one-modules-variable-in-another-module-in-terraform/
+
+
+Terraform FAQ
+==========================================================================
+How to destroy one specific resource from TF file in Terraform?
+https://www.devopsschool.com/blog/how-to-destroy-one-specific-resource-from-tf-file-in-terraform/
+
+Terraform Labs and Excercise
+==========================================================================
+Terrform Project – Assignment – Exercise – Part 1
+https://www.devopsschool.com/blog/terrform-project-assignment-exercise-part-1/
+
+Terrform Project – Assignment – Exercise – Part 2
+https://www.devopsschool.com/blog/terrform-project-assignment-exercise-part-2/
+
+Terraform Interview Questions and Answer – Set 1
+https://www.devopsschool.com/blog/terraform-interview-questions-and-answer-set-1/
+
+=================================================================================
+How to use one module's variable in another module in terraform.txt
+https://gist.github.com/devops-school/b3c5ed4cacd1fe78b7b7ff8095a1ecf5
+
+
+Terraform workspace explained.txt
+https://gist.github.com/devops-school/7d3dccba627cfaddba3f5feed63d2a62
+
+Terraform Environment Variables Exaplained.txt
+https://gist.github.com/devops-school/750bde4969b52ea44c55ab6925de744d
+https://gist.github.com/devops-school/f03fb1f2b63a1aa350db32806ee5c238
+
+terraform-variable-type-list.tf
+https://gist.github.com/devops-school/55a8145a9bfe7f4a4b27047eb9348329
+
+
+terraform-variable-number-with-count.tf
+https://gist.github.com/devops-school/a796679861c274eee5e8ea5651d69b9f
+
+
+
+
 
 
 
