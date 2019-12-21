@@ -1,5 +1,5 @@
 provider "github" {
-  token        = "9b14eb73a5f5ce3a9f0b92dc05ea226f7e3310d2"
+  token        = ""
   organization = "devopsschool-lab-exercise"
 }
 
