@@ -1,3 +1,5 @@
+Zero  -command line
+
 First   -  terraform.tfvars
 
 Second  -  -var-file="anyfile.vars"
