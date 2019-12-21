@@ -4,11 +4,7 @@
   default = "HarishBR"
 }
 
-# Configure the GitHub Provider
-provider "github" {
-  token        = "933cd8213a9d3251cc6a7cc7076206a99273de37"
-  organization = "devopsschool-lab-exercise"
-}
+
 
 resource "github_repository" "example" {
   name        = "${var.reponame}"
