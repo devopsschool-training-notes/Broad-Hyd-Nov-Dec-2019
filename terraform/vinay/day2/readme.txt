@@ -1,5 +1,7 @@
 Below command to create Graph
 
+setup-x86_64.exe -q -P graphviz
+
 terraform graph | dot -Tpng > graph.png
 
 Variables:
