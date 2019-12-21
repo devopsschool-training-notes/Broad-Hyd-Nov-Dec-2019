@@ -239,7 +239,7 @@ resource "aws_instance" "web" {
   connection {
     type     = "ssh"
     user     = "ec2-user"
-    private_key = "${file("ec2.pem")}"
+    private_key = "file("ec2.pem")"
     host = "${self.public_ip}"
   }
   }
@@ -262,10 +262,154 @@ resource "aws_instance" "web" {
     connection {
     type     = "ssh"
     user     = "ec2-user"
-    private_key = "${file("ec2.pem")}"
-    host = "${self.public_ip}"
+    private_key = "file("ec2.pem")"
+    host = "self.public_ip"
   }
   }
 
 
 }
+
+
+What is terraform.tfstate and terraform.tfstate.backup
+==================================================================
+What is terraform.tfstate?
+https://www.devopsschool.com/blog/terraform-state-explained/
+
+What is terraform.tfstate.backup?
+https://www.devopsschool.com/blog/what-is-terraform-tfstate-backup-file-in-terraform/
+====================================================================================
+
+Variables in Terraform?
+=====================================
+INPUT
+  - Can be used within a program
+1. string
+2. number
+3. bool
+
+4. list #
+5. set
+6. map  #
+7. object
+8. Touple
+
+How and where can you declare a INPUT variables.
+Where to declare a variable in Terraform?
+1. .tf
+2 .tfvars
+3. Command LINE using -var
+    - CALL a varible file
+    - key:value
+4. ENV variable.
+    TF_VAR_
+
+52.66.243.85
+
+OUTPUT
+  - Can be to show results of the executions.
+  ====================================
+  STRING VARIRABLES
+  ---------------
+  variable "reponame" {
+  type = string
+  description = "This is for demo of string variable"
+  default = "day3-broad"
+}
+
+resource "github_repository" "example" {
+  name        = "${var.reponame}"
+  description = "My awesome codebase"
+  private = false
+}
+
+variable "numofusers" {
+  type = number
+  description = "This is for demo of number variable"
+  default = 3
+}
+
+resource "aws_iam_user" "example" {
+  count = "${var.numofusers}"
+  name  = "broad.${count.index}"
+}
+
+variable "validate" {
+  type = bool
+  description = "This is for demo of bool variable"
+  default = true
+}
+
+
+resource "github_repository" "web" {
+  name        = "${var.validate}"
+  description = "My awesome codebase"
+  private = false
+}
+
+
+variable "users" {
+    type    = "list"
+    default = ["user1", "user2", "user3"]
+}
+
+username = "${var.users[0]}"
+
+resource "aws_iam_user" "iamuser" {
+  name = "${var.users[0]}"
+}
+
+resource "aws_iam_user" "iamuser" {
+  name = "${var.users[1]}"
+}
+
+resource "aws_iam_user" "iamuser" {
+  name = "${var.users[3]}"
+}
+
+resource "aws_iam_user" "iamuser" {
+  count = length(var.users)
+  name = "${var.users[count.index]}"
+}
+
+variable "amis" {
+  type = "map"
+  default = {
+    "us-east-1" = "ami-b374d5a5"
+    "us-west-2" = "ami-4b32be2b"
+    "ap-south-1" = "ami-5b673c34"
+    
+  }
+}
+
+
+
+resource "aws_instance" "example" {
+  ami = "${lookup(var.amis, ap-south-1)}"
+  instance_type = "t2.micro"
+}
+
+
+
+Terraform Advance Workflow loop explained!!!
+https://www.devopsschool.com/blog/terraform-advance-workflow-loop-explained/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
