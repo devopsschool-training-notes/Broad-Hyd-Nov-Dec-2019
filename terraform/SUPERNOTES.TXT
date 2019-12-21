@@ -605,7 +605,44 @@ https://www.devopsschool.com/blog/terrform-project-assignment-exercise-part-1/
 
 
 
+=======================
+MODULE
+    DOWNLOAD from where?
+    https://registry.terraform.io/
 
+Module is nothing but a colleciton terraform config file keeping it one dir.
+---- ROOT Module
+            VPC
+            s3
+            EBS
+            web
+            app
+
+
+module "vpc" {
+  source  = "./terraform-aws-vpc"
+  version = "0.5.0"
+  # insert the 1 required variable here
+}
+
+module "mymodule" {
+  source  = "./mymodule"
+}
+
+https://registry.terraform.io/modules/JamesWoolfenden/vpc/aws/0.1.32
+
+Ansible
+    playbook
+    playbooks
+    ROLE
+        ------> Ansible Galaxy
+
+How to create your own module?
+==============================
+
+module "allz" {
+  source  = "./allianz"
+}
 
 
 
