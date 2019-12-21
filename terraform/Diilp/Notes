@@ -1,1 +1,37 @@
-SD
+
+provider "aws" {
+  region     = "ap-south-1"
+  access_key = ""
+  secret_key = ""
+}
+
+resource "aws_iam_user" "example" {
+  count = "${var.numofusers}"
+  name  = "dilip.${count.index}"
+}
+
+variable "numofusers" {
+  type = number
+  description = "This is for demo of number variable"
+  default = 3
+}
+
+
+provider "github" {
+  token        = ""
+  organization = "devopsschool-lab-exercise"
+}
+
+resource "github_repository" "DilipRepo" {
+  name        = "${var.reponame}"
+  description = "Terraform awesome codebase"
+
+  private = false
+}   
+
+
+  variable "reponame" {
+  type = string
+  description = "This is for demo of string variable"
+  default = "Dilip-broad1"
+}
