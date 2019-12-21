@@ -413,16 +413,98 @@ Terraform Advance Workflow loop explained!!!
 https://www.devopsschool.com/blog/terraform-advance-workflow-loop-explained/
 
 
-
-
-
-
-Reference
+==========================================================
+Which are the options for declaring variable
 ==========================================
+- Command-line flags
+$ terraform apply -var 'region=us-east-2'
+-------------------------------------------
+provider "github" {
+  token        = ""
+  organization = "devopsschool-sample-projects"
+}
+
+variable reponame {}
+
+resource "github_repository" "example" {
+  name        = "${var.reponame}"
+  description = "My awesome codebase"
+  private = false
+}
+
+
+- From a file
+------------- terraform.tfvars
+==============================================
+Content of terraform.tfvars
+-------------------------------
+reponame = "ffffffff"
+
+provider "github" {
+  token        = ""
+  organization = "devopsschool-sample-projects"
+}
+
+variable reponame {}
+
+resource "github_repository" "example" {
+  name        = "${var.reponame}"
+  description = "My awesome codebase"
+  private = false
+}
+
+- From a file--- anyfilename.tfvars
+===================================================
+Content of anyfilename.tfvars
+-------------------------------
+reponame = "ffffffff"
+terraform apply -var-file="anyfilename.tfvars"
+
+provider "github" {
+  token        = ""
+  organization = "devopsschool-sample-projects"
+}
+
+variable reponame {}
+
+resource "github_repository" "example" {
+  name        = "${var.reponame}"
+  description = "My awesome codebase"
+  private = false
+}
+
+
+Create a file named terraform.tfvars with the following contents:
+region = "us-east-2"
+
+- If the file is named something else
+If the file is named something else, you can use the -var-file flag directly to specify a file. 
+You can use multiple -var-file arguments in a single command, with some checked in to version control and others not checked in. For example:
+$ terraform apply -var-file="secret.tfvars" -var-file="production.tfvars"
+
+- From environment variables
+Terraform will read environment variables in the form of TF_VAR_name to find the value for a variable. For example, the TF_VAR_region variable can be set to set the region variable.
+- UI Input
+If you execute terraform apply with certain variables unspecified, Terraform will ask you to input their values interactively. These values are not saved, but this provides a convenient workflow when getting started with Terraform. 
+
+- Variable Defaults
+If no value is assigned to a variable via any of these methods and the variable has a default key in its declaration, that value will be used for the variable.
+
+- Using variables in resources
+
+
+
+
 Terraform 
 ==========================================================================
 Terraform Basics Workflow loop explained!!!
 https://www.devopsschool.com/blog/terraform-basics-workflow-loop-explained/
+
+Terraform Hello world Program
+https://www.devopsschool.com/blog/terraform-hello-world-program/
+
+Terraform example program for aws_security_group, aws_instance and provisioner
+https://www.devopsschool.com/blog/terraform-example-program-for-aws_security_group-aws_instance-and-provisioner/
 
 Terraform Advance Workflow loop explained!!!
 https://www.devopsschool.com/blog/terraform-advance-workflow-loop-explained/
@@ -441,25 +523,10 @@ Terraform Looping and Conditioning
 How to do Looping/Iterations in Terraform?
 https://www.devopsschool.com/blog/how-to-do-looping-iterations-in-terraform/
 
-Terraform Variables
+Terraform Variables Complete reference Guide
 ==========================================================================
-Terraform Variables and Configuration explained – 5 mins reading!
-https://www.devopsschool.com/blog/terraform-variables-and-configuration-explained-5-mins-reading/
+https://www.devopsschool.com/blog/terraform-variables-complete-reference-guide/
 
-Using http and https proxy in terraform
-https://www.devopsschool.com/blog/using-http-and-https-proxy-in-terraform/
-
-Terraform variable Number Type Explained!!!
-https://www.devopsschool.com/blog/terraform-variable-number-type-explained/
-
-Terraform variable List Type Explained!!!
-https://www.devopsschool.com/blog/terraform-variable-list-type-explained/
-
-Terraform Environment Variables Exaplained!
-https://www.devopsschool.com/blog/terraform-environment-variables-exaplained/
-
-Local Values is defined in Terraform!!!
-https://www.devopsschool.com/blog/local-values-is-defined-in-terraform/
 
 Terraform provisioners  
 ==========================================================================
@@ -498,28 +565,41 @@ Terraform Interview Questions and Answer – Set 1
 https://www.devopsschool.com/blog/terraform-interview-questions-and-answer-set-1/
 
 =================================================================================
-How to use one module's variable in another module in terraform.txt
-https://gist.github.com/devops-school/b3c5ed4cacd1fe78b7b7ff8095a1ecf5
 
+Terraform Environment Variables Exaplained!
+https://www.devopsschool.com/blog/terraform-environment-variables-exaplained/
 
-Terraform workspace explained.txt
-https://gist.github.com/devops-school/7d3dccba627cfaddba3f5feed63d2a62
-
-Terraform Environment Variables Exaplained.txt
-https://gist.github.com/devops-school/750bde4969b52ea44c55ab6925de744d
-https://gist.github.com/devops-school/f03fb1f2b63a1aa350db32806ee5c238
-
-terraform-variable-type-list.tf
-https://gist.github.com/devops-school/55a8145a9bfe7f4a4b27047eb9348329
-
-
-terraform-variable-number-with-count.tf
-https://gist.github.com/devops-school/a796679861c274eee5e8ea5651d69b9f
+Using http and https proxy in terraform
+https://www.devopsschool.com/blog/using-http-and-https-proxy-in-terraform/
 
 
 
 
 
+
+
+======================Terraform Modules====================================
+- Community 
+  https://registry.terraform.io/
+
+- Paid
+  https://gruntwork.io/
+
+- Own 
+
+Arch of Module
+===================
+Module is nothing but a colleciton terraform config file keeping it one dir.
+---- ROOT Module
+            VPC
+            s3
+            EBS
+            web
+            app
+
+
+Excercise
+https://www.devopsschool.com/blog/terrform-project-assignment-exercise-part-1/
 
 
 
