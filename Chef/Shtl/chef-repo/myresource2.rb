@@ -27,3 +27,11 @@ git "ChefDir1" do
   repository "https://github.com/scmgalaxy/chef-repo"
   action :sync
 end
+
+group 'ChefGrp'
+
+user 'ChefUser' do
+  comment 'A random user'
+  uid 1234
+  password 'test123'
+end
