@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 file 'index.html' do
   content '<html>This is a placeholder for Shtl home page.</html>'
   mode '777'
@@ -21,11 +13,6 @@ directory 'ChefDir' do
   action :create
 end
 
-  owner 'ec2-user'
-  group 'root'
-  action :touch
-end
-
 directory 'ChefDir' do
   owner 'root'
   group 'root'
@@ -36,8 +23,15 @@ end
 package 'git'
 
 
-git "/ChefDir/Checkout" do
+git "ChefDir1" do
   repository "https://github.com/scmgalaxy/chef-repo"
-  action :checkout
+  action :sync
 end
 
+group 'ChefGrp'
+
+user 'ChefUser' do
+  comment 'A random user'
+  uid 1234
+  password 'test123'
+end
