@@ -23,7 +23,26 @@ end
 package 'git'
 
 
-git "/ChefDir/Checkout" do
+git "ChefDir1" do
   repository "https://github.com/scmgalaxy/chef-repo"
-  action :checkout
+  action :sync
+end
+
+group 'ChefGrp'
+
+user 'ChefUser' do
+  comment 'A random user'
+  uid 1234
+  password 'test123'
+end
+
+log 'logFile' do
+  message 'Error Occured!!'
+  level :info
+end
+
+bash 'copy index' do
+  code <<-EOH
+    cp index.html /var/www/html
+    EOH
 end
