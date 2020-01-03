@@ -3,4 +3,14 @@ file 'index.html' do
   mode '777'
   owner 'ec2-user'
   group 'root'
+  action :touch
 end
+
+directory 'ChefDir' do
+  owner 'root'
+  group 'root'
+  mode '0755'
+  action :create
+end
+
+package 'git'
