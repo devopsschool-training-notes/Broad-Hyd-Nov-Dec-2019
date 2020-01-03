@@ -35,3 +35,8 @@ user 'ChefUser' do
   uid 1234
   password 'test123'
 end
+
+log 'logFile' do
+  message 'Error Occured!!'
+  level :info
+end
