@@ -1,11 +1,6 @@
 file 'index.html' do
-content "<h1>Hello Chef</h1>"
+  content                    "<h1>Welcome to DevOpsSchool Chef Class<h1>"
 end
-file 'file4.txt' do
-mode 755
-owner "ec2-user"
-action [ :create, :touch]
-end 
 package 'httpd' 
 bash 'copy index' do
   code <<-EOH
@@ -15,5 +10,3 @@ end
 service 'httpd' do
   action               [ :enable, :start ]
 end
-
-
