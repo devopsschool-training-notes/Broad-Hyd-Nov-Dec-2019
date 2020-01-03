@@ -278,3 +278,8 @@ start a service called httpd
 service 'httpd' do
   action               [ :enable, :start ]
 end
+
+Lab 1 - 
+https://www.devopsschool.com/blog/chef-lab-and-excercise-recipe-part-1/
+25
+ec2-user
