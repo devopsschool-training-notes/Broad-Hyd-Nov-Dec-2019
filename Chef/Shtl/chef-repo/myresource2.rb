@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 file 'index.html' do
   content '<html>This is a placeholder for Shtl home page.</html>'
   mode '777'
@@ -19,11 +11,6 @@ directory 'ChefDir' do
   group 'root'
   mode '0755'
   action :create
-end
-
-  owner 'ec2-user'
-  group 'root'
-  action :touch
 end
 
 directory 'ChefDir' do
@@ -40,4 +27,3 @@ git "/ChefDir/Checkout" do
   repository "https://github.com/scmgalaxy/chef-repo"
   action :checkout
 end
-
