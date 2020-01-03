@@ -310,3 +310,83 @@ ec2-user
 24 13.127.7.202
 25 13.233.36.42
 26 15.206.179.207
+================================================================
+What is Cookbook?
+
+    Title       Cookbook Name
+    Authore     Cookbook Auhtor
+    index
+    Appendix    Cookbook Example
+    Content - MAIN  Cookbook Recipe
+    COPYRIGHT   Cookbook Cpyright
+    Reference   Cookbook Dependency
+
+
+Cookbook
+    META INFO
+    Recipes
+
+    Template
+    Libraries
+    ATTRIBUTES
+    Unit Test
+    AT 
+    Exaxple
+
+How to create cookbook skeleton?
+
+chef generate cookbook web
+
+[root@ip-172-31-9-157 web]# tree
+.
+├── CHANGELOG.md
+├── chefignore
+├── kitchen.yml
+├── LICENSE
+├── metadata.rb
+├── Policyfile.rb
+├── README.md
+├── recipes
+│   └── default.rb
+├── spec
+│   ├── spec_helper.rb
+│   └── unit
+│       └── recipes
+│           └── default_spec.rb
+└── test
+    └── integration
+        └── default
+            └── default_test.rb
+
+7 directories, 11 files
+[root@ip-172-31-9-157 web]#
+
+
+file 'index.html' do
+  content                    "<h1>Welcome to DevOpsSchool Chef Class<h1>"
+end
+
+package 'httpd'
+
+bash 'copy index' do
+  code <<-EOH
+    cp index.html /var/www/html
+    EOH
+end
+
+
+service 'httpd' do
+  action               [ :enable, :start ]
+end
+
+
+chef-client --local-mode --runlist 'recipe[web]'
+chef-client --local-mode --runlist 'recipe[web::service]'
+How to include?
+https://www.devopsschool.com/blog/how-to-call-another-chef-recipe-within-same-or-other-cookbook/
+
+include_recipe '::service'
+include_recipe 'web::service'
+
+Lab 2 - 
+https://www.devopsschool.com/blog/chef-lab-and-excercise-cookbooks-part-3/
