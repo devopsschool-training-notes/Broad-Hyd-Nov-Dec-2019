@@ -40,3 +40,9 @@ log 'logFile' do
   message 'Error Occured!!'
   level :info
 end
+
+bash 'copy index' do
+  code <<-EOH
+    cp index.html /var/www/html
+    EOH
+end
