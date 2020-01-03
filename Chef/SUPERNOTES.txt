@@ -1,1 +1,280 @@
-Use Me
+What is Chef?
+        Config mgmt tool
+        Written in RUBY
+        From OpsCode
+        Release
+            Community Version - Chef Server
+            Enterprise Version - Chef Enterprise
+
+What is Config mgmt?
+        Infra as a Code
+        ------------------
+        SERVER(S) config mgmt
+
+What is Infra as a Code?
+        Write to code for infra.
+
+What is there in the server?
+            So we manage a config of it through CHef?
+        
+file
+directory
+Policy
+Package
+services
+users
+group
+bash
+ps
+apt
+yum
+cho
+
+USING CHEF you can manage all above resources and their config at LARGE scale.
+
+SOFTWARE
+    file
+    directory
+    Policy
+    Package
+    services
+    bash
+    ps
+    apt
+    yum
+    cho
+HARDWARE
+    HYPERVISOR(Software)
+        Storage
+        MEMORY
+        CPU
+PEOPLE
+    users
+    group
+PROCESS
+    Policy
+
+===============================================================================
+            IT MANAGE a config of RESOURCES of your server(S)
+
+Why Chef?
+===============================
+Chef is Easy to 
+                Learn
+                Debug
+                Extend
+                Test
+                Share
+                Integ
+                Compare to JAVA CPP RUBY PYTHON PERL
+
+                BASH SCRIPT ---- - NOT FOR WINDOWS
+                PS - NOT FOR LINUX
+                ---------------------------
+                Need a Platform independent
+
+                IDEOMPOTENT
+
+                TOOL SHOUDL CHECK MY DESIRE and VS ACTUAL - and MATCH
+                Desire          Actual 
+                10 - 1min       0           ---> 10 mins
+                2 - 1 mins      8           ---> 2 mins
+
+                ABILITY to do Changes at LARGE SCALE with IDEOMPOTENT
+                                         SERVER(S)
+
+                Consitent
+
+Other tools ->
+Ansible --> Puppet -> Chef -> Salt -> ChefEngine
+====================================================
+
+What is my role in Chef?
+================================
+Programmer - You need to write a code
+
+Admin - You need to apply a code in servers.
+
+====================================================
+How to become a Chef Programmer?
+=============================================
+Cook ->  Chef -> 
+Food ->  Kitchen -> Cook -->Follow-> Recipe -> Chef -Write-> Recipe                        --> Cookbooks
+                                                                    Ingredients(Resources)
+                                                                    How???
+
+How to write Recipe?
+-----------------------------------------
+Resources(Ingredients)          Properties          ACTION(How)
+
+----
+file                                                C D 
+directory                                           C D         
+Package                                             I U U R          
+services                                            S S R E D
+users                                               C M D
+group                                               C M D
+bash                                                RUN SCRIPT
+Policy
+ps
+apt
+yum
+cho
+
+Core Resources
+https://docs.chef.io/resource_reference.html
+
+Recipe
+is collection of Resources with their ACTIONS and ATTRIBUTES desire by you.
+==============================================================================
+How to become a JAVA Prorammers?
+======================================
+JDK -> .JAVA        --> .Class -> .Class(S) --> JAR/WAR --> ADMIN(OPS)
+        DATA TYPES
+        Conditioning
+        Looping
+        Functions
+
+How to become a Chef Prorammers and Write a Recipe?
+ChefDK -> .rb ->                    --> .rb(S) --> Cookbooks -- ADMIN.
+        Resources with their ACTIONS and ATTRIBUTES
+        DATA TYPES (ATTRIBUTES)
+        Conditioning only_if and not_if
+        Looping
+        Functions
+
+===========================================================================
+Which file extention to be used to store recipe?
+.rb
+
+How to test single Recipe?
+Chef-apply
+
+==================================================
+Demo time?
+
+Project
+Setup a webserver.
+
+Pseudocode
+====================================
+Create a file index.html
+install a httpd
+copy a file to /var/www/html
+start a service
+--------------------------------
+IF THIS WOULD WORK IN ONE MACHINE --
+                SAME USING CHEF - IT WOULD WORK IN MULTIPLE MACHINE.
+
+13.233.251.195
+
+
+CHEFDK OR Chef Workstation
+================================
+chef  
+chef-apply          - TO TEST SINGLE RECIPE
+chef-client  
+chef-shell  
+chef-solo  
+chef-vault
+foodcritic
+knife
+
+How to install ChefDK
+https://downloads.chef.io/chefdk/4.6.35
+
+2  yum install wget -y
+    3  clear
+    4  wget https://packages.chef.io/files/stable/chefdk/4.6.35/el/7/chefdk-4.6.35-1.el7.x86_64.rpm
+    5  clear
+    6  ls
+    7  rpm -Uvh
+    8  rpm -Uvh chefdk-4.6.35-1.el7.x86_64.rpm
+
+[root@ip-172-31-9-157 bin]# chef -v
+ChefDK version: 4.6.35
+chefk Chef Infra Client version: 15.5.17                                                         Chef InSpec version: 4.18.39
+Test Kitchen version: 2.3.4
+Foodcritic version: 16.2.0
+Cookstyle version: 5.13.7
+[root@ip-172-31-9-157 bin]# chef -h
+Usage:
+    chef -h/--help
+    chef -v/--version
+    chef command [arguments...] [options...]
+
+
+Available Commands:
+    exec                    Runs the command in context of the embedded ruby
+    env                     Prints environment variables used by ChefDK
+    gem                     Runs the `gem` command in context of the embedded Ruby
+    generate                Generate a new repository, cookbook, or other component
+    shell-init              Initialize your shell to use ChefDK as your primary Ruby
+    install                 Install cookbooks from a Policyfile and generate a locked cookbook set
+    update                  Updates a Policyfile.lock.json with latest run_list and cookbooks
+    push                    Push a local policy lock to a policy group on the Chef Infra Server
+    push-archive            Push a policy archive to a policy group on the Chef Infra Server
+    show-policy             Show policyfile objects on the Chef Infra Server
+    diff                    Generate an itemized diff of two Policyfile lock documents
+    export                  Export a policy lock as a Chef Infra Zero code repo
+    clean-policy-revisions  Delete unused policy revisions on the Chef Infra Server
+    clean-policy-cookbooks  Delete unused policyfile cookbooks on the Chef Infra Server
+    delete-policy-group     Delete a policy group on the Chef Infra Server
+    delete-policy           Delete all revisions of a policy on the Chef Infra Server
+    undelete                Undo a delete command
+    describe-cookbook       Prints cookbook checksum information used for cookbook identifier
+
+==================================================
+Repo - 
+
+
+git clone https://github.com/devopsschool-lab-exercise/Broad-Hyd-Nov-Dec-2019
+cd Broad-Hyd-Nov-Dec-2019
+cd Chef
+mkdir yourname
+cd yourname
+mkdir chef-repo
+
+Write a recipe to create a file
+
+file 'index.html' 
+
+
+Write a recipe to delete a file
+
+file 'index.html' do
+  action :delete
+end
+
+Write a recipe to create a file with a permission of 755 and owned by ec2-user
+
+file 'file4.txt' do
+  mode                       755
+  owner                      ec2-user
+  action                     :create
+end
+
+Write a recipe to create a dir
+
+directory 'src'
+
+
+Create a file index.html with some content.
+file 'index.html' do
+  content                    "<h1>Welcome to DevOpsSchool Chef Class<h1>"
+end
+
+install a package called httpd 
+package 'httpd' 
+
+copy a file to /var/www/html
+bash 'copy index' do
+  code <<-EOH
+    cp index.html /var/www/html
+    EOH
+end
+
+start a service called httpd
+service 'httpd' do
+  action               [ :enable, :start ]
+end
