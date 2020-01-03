@@ -1,0 +1,647 @@
+What is Docker?
+	Container mgmt tool.
+	Release
+		CE - Community ED
+		EE - Enterprise ED
+		https://www.docker.com/products/docker-enterprise
+
+What is Container?
+	Container is a user ns with their
+			OWN 
+				MNT NS
+				NET NS
+				PID NS
+  20  clear
+   21  clear
+   22  ps -eaf | grep docker
+   23  ps -eaf | grep docker | wc -l
+   24  docker run -d jenkins
+   25  docker ps
+   26  ps -eaf | grep docker | wc -l
+   27  docker run -d jenkins
+   28  ps -eaf | grep docker | wc -l
+   29  docker run -d jenkins
+   30  ps -eaf | grep docker | wc -l
+   31  docker ps
+   32  clear
+   33  dockr ps
+   34  docker ps
+   35  docker exec edb813a7eb72 df -kh
+   36  docker exec 137b25e7423c df -kh
+   37  docker exec edb813a7eb72 ls //var/jenkins_home
+   38  docker exec 137b25e7423c ls /var/jenkins_home
+   39  docker exec 137b25e7423c touch /var/jenkins_home/rajesh.txt
+   40  docker exec 137b25e7423c ls /var/jenkins_home
+   41  docker exec edb813a7eb72 ls //var/jenkins_home
+   42  clear
+   43  dockr ps
+   44  docker ps
+   45  docker inspect edb813a7eb72 | grep -i ip
+   46  docker inspect 137b25e7423c | grep -i ip
+   47  clear
+   48  ls
+   49  ps -eaf
+   50  c
+   51  clear
+   52  docker ps
+   53  docker exec edb813a7eb72 ps -eaf
+   54  docker exec 137b25e7423c ps -eaf
+
+What is docker Engine?
+	DOcker Engine
+Humen -> Docker Client  --> Docker Deamon --> Kernal
+[root@ip-172-31-3-97 ec2-user]# which docker
+/bin/docker
+[root@ip-172-31-3-97 ec2-user]# ps -eaf | grep docker
+root     10728     1  0 05:51 ?        00:00:00 /usr/bin/dockerd -H fd:// --
+
+containerd=/run/containerd/containerd.sock
+root     10929  9667  0 05:54 pts/0    00:00:00 grep --color=auto docker
+[root@ip-172-31-3-97 ec2-user]#
+
+
+How to install Docker?
+https://www.devopsschool.com/tutorial/docker/install-config/docker-install-commuityedition-centos-rhel.html
+
+[root@ip-172-31-3-97 ec2-user]# history
+    1  sudo yum install -y yum-utils device-mapper-persistent-data lvm2'
+    2  sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+    3  sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+    4  sudo yum install –y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+    5  sudo yum-config-manager --enable rhui-REGION-rhel-server-extras
+    6  sudo yum install -y docker-ce
+    7  sudo yum install docker-ce
+    8  docker -v
+    9  sudo systemctl enable docker
+   10  sudo systemctl start docker'
+   11  sudo systemctl start docker
+   12  docker info
+   13  history
+
+Docker components?
+	Docker Engine
+		Docker Clinet --> Docker Deamon
+	Docker Images
+		From Registry 
+		Complete run time packged env for APP
+	Docker Containers
+		DONE
+	Docker Registry and repos
+		Private Registry
+			Nexus
+			Artifactory
+			ECR on AWS
+		Pub 
+			hub.docker.com
+	
+Which image you wants??
+	JENKINS?
+	OS fS
+	   --> JRE 
+		 --> JENKINS
+			--- WEB SERVER - 8080
+			--- SLAVE - 50000
+
+
+
+
+
+
+
+
+Working with docker container workflow?
+==================================================
+create->start->stop->start->restart->pause->unpuase->stop->rm
+
+  64  docker ps
+   65  docker craete jenkins
+   66  docker create jenkins
+   67  docker ps
+   68  docker ps -a
+   69  docker start 02bc532cc7b7
+   70  docker ps -a
+   71  docker stop 02bc532cc7b7
+   72  docker ps -a
+   73  docker start 02bc532cc7b7
+   74  docker ps -a
+   75  docker restart 02bc532cc7b7
+   76  docker ps -a
+   77  docker pause 02bc532cc7b7
+   78  docker ps -a
+   79  docker unpause 02bc532cc7b7
+   80  docker ps -a
+   81  docker stop 02bc532cc7b7
+   82  docker ps -a
+   83  docker rm 02bc532cc7b7
+   84  docker ps -a
+
+
+RHEL-7.5_HVM_GA-20180322-x86_64-1-Hourly2-GP2 (ami-5b673c34)
+13.233.246.170
+====================================================
+How to access containers?
+=======================================
+WHAT IS PID 1..
+
+
+  1  docker ps
+    2  docker exec 3e01edf244d3 ps -eaf
+    3  kill -9 1
+    4  docker ps
+    5  docker ps -a
+    6  docker run -d jenkins
+    7  docker run -d jenkins
+    8  docker run -d jenkins
+    9  history
+
+How to get inside a container?
+	EXEC  - it execute an executables inside a container.
+		BUT you can use -it with /bin/bash to get inside a container.
+	ATTACH 
+		- IT GET ATTACHED TO PID 1.
+
+How to browse container apps?
+
+   52  history
+   53  clear
+   54  docker ps -a
+   55  docker inspect bdd6020df335 | grep -i ip
+   56  docker ps
+   57  clear
+   58  docker ps
+   59  docker inspect f98a5bfb7275 | grep -i ip
+   60  curl http://172.17.0.2:8080
+   61  clear
+   62  docker ps -a
+   63  docker help run
+   64  clear
+   65  docker run -d -p 8080:8080 0jenkins
+   66  docker run -d -p 8080:8080 jenkins
+   67  docker ps -a
+   68  docker run -d -p 8090:8080 jenkins
+   69  docker ps
+
+
+How to come out of container saftly?
+	CRL + p + Q
+
+ 26  docker rm 1150f37cb198 f405a609921d 938e15721216 3e01edf244d3
+   27  clear
+   28  docker ps -a
+   29  docker images
+   30  docker pull ubuntu
+   31  clear
+   32  ls
+   33  clear
+   34  ls
+   35  docker images
+   36  docker run jenkins
+   37  docker run -d jenkins
+   38  docker ps -a
+   39  cler
+   40  clear
+   41  docker ps -a
+   42  docker run -d ubuntu
+   43  docker ps -a
+   44  history
+   45  docker ps -a
+   46  clear
+   47  docker run -it ubuntu /bin/bash
+   48  docker ps
+   49  docker attach bdd6020df335
+   50  docker ps
+   51  docker ps -a
+   52  history
+
+============================================
+https://www.devopsschool.com/tutorial/docker/commands
+
+   84  docker cp devopsschool.txt 5854d009327c:/var/jenkins_home
+   85  docker exec 5854d009327c ls /var/jenkins_home
+   86  clear
+   87  ls
+   88  rm -rf devopsschool.txt
+   89  docker cp 5854d009327c:/var/jenkins_home/devopsschool.txt .
+   90  ls
+   91  history
+----------------------
+  95  docker diff 5854d009327c
+   96  docker diff 38e5401c5c52
+   97  docker diff f98a5bfb7275
+   98  clear
+   99  docker diff f98a5bfb7275
+  100  docker run -it ubuntu /bin/bash
+  101  clear
+  102  ls
+  103  docker ps
+  104  dcoker diff c7e86dc64c58
+  105  docker diff c7e86dc64c58
+
+ 100  docker run -it ubuntu /bin/bash
+  101  clear
+  102  ls
+  103  docker ps
+  104  dcoker diff c7e86dc64c58
+  105  docker diff c7e86dc64c58
+  106  history
+  107  clear
+  108  docker ps
+  109  docker port 5854d009327c
+  110  clear
+  111  docker ps -a
+  112  clear
+  113  docker ps
+  114  dcoker rename c7e86dc64c58 rrrr
+  115  docker rename c7e86dc64c58 rrrr
+  116  docker ps
+  117  clear
+  118  docker run -itd --name ff ubuntu
+  119  docker ps
+  120  clear
+  121  docker ps
+  122  docker logs 5854d009327c
+  123  docker logs 5854d009327c
+  124  clear
+  125  docker ps
+  126  docker stats
+  127  docker stats 82c3d7a4cce0
+  128  clear
+  129  docker top
+  130  docker ps
+  131  docker top 82c3d7a4cce0
+  132  ps -eaf | grep 24358
+  133  ps -eaf | grep 24342
+  134  clear
+
+TASK 
+update	Update configuration of one or more containers
+wait	Block until one or more containers stop, then print their exit codes
+
+
+==========================================================================
+===========================================================================
+Docker volume
+https://www.devopsschool.com/blog/understand-docker-volume-from-beginner-to-deep-dive-level/
+
+-------------------------------------
+	- Volume - /var/lib/docker/volumes
+	- mount
+	- tmpfs
+
+
+ 10  clear
+   11  docker run -it ubuntu
+   12  docker info
+   13  clear
+   14  cd /var/lib/docker
+   15  ls
+   16  find . -name /var/lib/docker
+   17  find . -name devopsschool.com
+   18  docker ps -a
+   19  docker stop 1fd32e3e9501
+   20  docker rm 1fd32e3e9501
+   21  clear
+   22  find . -name devopsschool.com
+   23  clear
+   24  docker volume
+   25  clear
+   26  pwd
+   27  ls
+   28  cd volumes
+   29  ls
+   30  clear
+   31  pwd
+   32  ls
+   33  docker  volume
+   34  clear
+   35  docker prune
+   36  docker volume prune
+   37  ls
+   38  clear
+   39  docker volume create raj
+   40  ls
+   41  cd raj/
+   42  ls
+   43  cd _data/
+   44  ls
+   45  cd ..
+   46  ls
+   47  cd ..
+   48  ls
+   49  clear
+   50  ls
+   51  docker run -itd -v raj:/opt/raju ubuntu
+   52  docker exec 23f991f77b25eb84a4cc9a7ea7becf8fd5b3c72e950361be5188bee58df6c145 df -kh
+   53  clear
+   54  ls
+   55  docker ps
+   56  docker attach 23f991f77b25
+   57  clear
+   58  docker ps -a
+   59  docker stop 23f991f77b25
+   60  docker rm 23f991f77b25
+   61  cler
+   62  clear
+   63  cd raj/
+   64  ls
+   65  cd _data/
+   66  ls
+   67  docker run -itd -v raj:/opt/raju ubuntu
+   68  docker ps
+   69  docker exec 6e1b9f4f71f6 ls /opt/raju
+   70  clear
+   71  ls
+   72  cd
+   73  cd /opt/
+   74  ls
+   75  mkdir bkp
+   76  ls
+   77  docker run -itd -v /opt/bkp:/opt/ramu ubuntu
+   78  docker ps
+   79  docker attach 54dccce65e63
+   80  clear
+   81  ls
+   82  cd bkp/
+   83  ls
+   84  docker ps -a
+   85  docker stop 54dccce65e63 6e1b9f4f71f6
+   86  docker rm 54dccce65e63 6e1b9f4f71f6
+   87  clear
+   88  ls
+   89  history
+   90  clear
+   91  docker volume ls
+   92  docker volume rm raj
+   93  docker volume ls
+   94  docker volume
+   95  history
+================================================================
+================================================================
+Docker Networking
+============================================
+“there is no such thing as container networking"
+=============================================
+Docker has Default support for NETWORKING DRIVER
+		- BRIDGE	
+		- HOST 
+		- NONE
+
+apt-get update && apt-get install -y iputils-ping traceroute net-tools iproute2
+	
+CONT 1 - DEFAULT		
+				172.17.0.1
+				172.17.0.2
+
+CONT 2 - DEV -- 38ff9a60e3c9
+				172.18.0.1
+				172.18.0.2
+
+
+docker network connect bridge 38ff9a60e3c9
+docker network disconnect bridge 38ff9a60e3c9
+
+
+
+ 229  docker ps
+  230  docker atatch 9410ea3ea78e
+  231  docker attach 9410ea3ea78e
+  232  clear
+  233  docker ps
+  234  docker attach 38ff9a60e3c9
+  235  clear
+  236  docker ps
+  237  docker attach 38ff9a60e3c9
+  238  clear
+  239  docker ps
+  240  docker network
+  241  docker network connect
+  242  clear
+  243  docker ps
+  244  docker network ls
+  245  docker network connect bridge 38ff9a60e3c9
+  246  clear
+  247  docker inspect 38ff9a60e3c9
+  248  docker network
+  249  docker network disconnect
+  250  docker network disconnect bridge 38ff9a60e3c9
+  251  docker inspect 38ff9a60e3c9
+
+
+
+
+  247  docker inspect 38ff9a60e3c9
+  248  docker network
+  249  docker network disconnect
+  250  docker network disconnect bridge 38ff9a60e3c9
+  251  docker inspect 38ff9a60e3c9
+  252  history
+  253  clear
+  254  docker network
+  255  clear
+  256  docker prune
+  257  docker network prune
+  258  docker network ls
+  259  docker network rm dev
+  260  docker ps
+  261  docker stop 38ff9a60e3c9
+  262  docker network rm dev
+  263  history
+
+
+  263  history
+  264  clear
+  265  docker ps -a
+  266  docker stop 38ff9a60e3c9 9410ea3ea78e
+  267  docker rm 38ff9a60e3c9 9410ea3ea78e
+  268  clear
+  269  docker ps
+  270  docker ps -a
+  271  ifconfig
+  272  clear
+  273  ls
+  274  docker network ls
+  275  docker run -itd --net=host ubuntu
+  276  docker ps
+  277  clear
+  278  docker ps
+  279  docker inspect 1d94d2ecd67f
+  280  docker ps
+  281  clear
+  282  docker ps
+  283  docker attach 1d94d2ecd67f
+  284  docker ps
+  285  clear
+  286  docker ps -a
+  287  docker stop 1d94d2ecd67f
+  288  docker rm 1d94d2ecd67f
+  289  clear
+  290  docker network ls
+  291  docker run -itd --net=none ubuntu
+  292  docker os
+  293  docker ps
+  294  docker inspect c3820f7da1d8
+  295  docker atach c3820f7da1d8
+  296  docker attach c3820f7da1d8
+  297  history
+
+PROJECT - 
+https://www.devopsschool.com/tutorial/docker/labs/docker/docker-lab-6-link.html
+
+================
+What is Docker images?
+	Image has multiple Layers
+	Each layer is nothing but filesystem
+	Base layer is ROOTFS
+	
+When we create a container?
+	IT CREATE EMPTY RW LAYER
+	ALL LAYERS MERGED INTO ONE - RO
+	EMPTY LAYER IS MOUNTED WITH MERGED LAYER USIGN UNION MOUNTS.
+
+
+  17  docker pull ubuntu
+   18  docker inpsect ubuntu
+   19  docker inspect ubuntu
+   20  docker info
+   21  cd /var/lib/docker
+   22  ls
+   23  cd overlay2
+   24  ls
+   25  du -h --max-depth=1
+   26  cd ./f57262b740fd90f6e38223f2a6bf4e0f49407d35bedbf3b0904d153de88d70b7
+   27  ls
+   28  cd diff/
+   29  ls
+   30  clear
+   31  ls
+   32  cd ..ls
+   33  cd ..
+   34  ls
+   35  cd ..
+   36  ls
+   37  cd ..
+   38  ls
+   39  clear
+   40  ls
+   41  docker history ubuntu
+   42  clear
+   43  ls
+   44  history
+   45  cd overlay2/f57262b740fd90f6e38223f2a6bf4e0f49407d35bedbf3b0904d153de88d70b7
+   46  clear
+   47  tree
+   48  yum install tree -y
+   49  cler
+   50  tree
+   51  clear
+   52  ls
+===============================================
+How to create images?
+-------------------------
+ubunut
+git
+	
+Lazy way? ----> USING EXISTING CONTAINER
+  227  docker commit -m"ub+git+up" -a "RajeshKumar" ef78e2828acf ub-git-up
+
+
+Automated Way  -----> dockerfile
+
+======================================
+How to share docker images?
+	1. Using Tar ball
+  254  docker images
+  255  docker save -o ub-git-up.tar ub-git-up
+  256  ls
+  257  tar -xvf ub-git-up.tar
+  258  clear
+  259  ls
+  260  docker images
+  261  docker rmi ub-git-up
+  262  docker ps -a
+  263  docker stop e0d9b3e38050 7fe6ed259379
+  264  clear
+  265  docker rm e0d9b3e38050 7fe6ed259379
+  266  clear
+  267  ls
+  268  docker rmi ub-git-up
+  269  clear
+  270  docker images
+  271  ls
+  272  docker load -i ub-git-up.tar
+  273  docker images
+
+	2. Using Public registry
+	3. Using Private registry
+
+Step 1 - Create a Images using existing contaner
+Step 2 - Craete a tar ball
+Step 3 - Register at hub.docker.com
+Step 4 - Login/push images to hub.docker.com
+
+ 285  docker login
+  286  clear
+  287  ls
+  288  docker images
+  289  docker push ub-git-up
+  290  docker tag ub-git-up scmgalaxy/ub-git-up4444
+  291  clear
+  292  docker images
+  293  docker push scmgalaxy/ub-git-up4444
+  294  ls
+
+=====================================================
+Jenkins
+	openjdk:8-jdk
+		buildpack-deps:stretch-scm	
+				buildpack-deps:stretch-curl
+						debian:stretch
+							scratch
+FROM ubuntu
+MAINTAINER RajeshKumar<Devops@rajeshkumar.xyz>
+RUN apt-get update 
+RUN apt-get install git -y
+
+FROM ubuntu
+MAINTAINER RajeshKumar<Devops@rajeshkumar.xyz>
+RUN apt-get update && apt-get install git -y
+
+FROM ubuntu
+MAINTAINER RajeshKumar<Devops@rajeshkumar.xyz>
+RUN touch /opt/rajesh1.txt
+RUN touch /opt/rajesh2.txt
+RUN touch /opt/rajesh3.txt
+ENV JAVA_HOME /opt/rajj
+
+ 46  docker build -t rajesh1 .
+   52  docker build -f rajesh2 -t rajesh .
+   64  docker build -f rajesh3 -t rajesh .
+
+
+IP - 52.66.195.255
+============================
+TOOL FLOW
+
+ECS
+ECS
+NOTARY - aquascan
+WHY CONTAINERS?
+=================================================
+CMD -  WOULD MAKE PID 1.
+			CMD CAN BE CHANGED ANYTIME.
+
+ENTRYPOINT
+	WOULD MAKE PID 1.
+			ENTRYPOINT CAN NOT BE CHANGED ANYTIME.
+			CMD passed to a container with ENTRYPOINT would be added a PARAMETER
+echo rajesh rahesh2	
+
+
+LAB FOR FINAL DOCKEFILE 
+https://www.devopsschool.com/tutorial/docker/dockerfile/dockerfile-example-sample-lab.html
+
+
+
+
+
+

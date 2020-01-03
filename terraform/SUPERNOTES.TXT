@@ -1,0 +1,658 @@
+
+
+What is Terraform?
+    Terraform is tool to code for INFRA.
+    From Hashicorp https://www.hashicorp.com/
+                Vagrant
+                Terraform - MUST BE
+                Packer - MUST BE
+                Consul
+                Vault - MUST BE
+                nomad
+    Powered with Providers
+    Release
+        Community - Free and Open Source
+        Enterprise - Community + GUI + Mul Fea + Paid
+    Written in Go.
+
+Why Terraform?
+
+Architecture of Terraform?
+--------------------------------
+Humen --> HCL       --> Providers --> API --> TOOLS
+        --------
+        Special Lang 4
+        - Easy to learn
+        - Easy to write
+        - Easy to debug
+        - Easy to extend
+        - Easy to share
+        - Easy to test
+
+Providers
+--------------------------
+It a interface between HCL and API of the tools. It convert HCL into JSON and communicate with API with approrpiate reqest. There are many Providers written by Hashicorp and many from Community. List of providers are...
+https://www.terraform.io/docs/providers/index.html
+
+
+WORKFLOW
+================================
+CREATE  + UPDATE + Destroy
+--------------------------
+        ONE COMMAND FOR ALL
+    
+Problem Creation
+===============================
+Write a full automation using following spec.
+- Create a EC2 Instane Manually and Install Terrform into it.
+- Generate a key pair using "ssh-keygen"
+- Create a file called "deploy.sh"
+------------------TERRAFORM PART--------------------------
+- Using Resource: aws_key_pair - you would upload public key
+- Using Resource: aws_security_group - create a security group with inbound 80/22 and outbound all.
+- Create a ec2 instance using aws_key_pair and aws_security_group.
+- using file provisioner - Copy deploy.sh into /tmp
+- using local provisioner - touch /tmp/devops.txt
+- using remote provisioner - run /tmp/deploy.sh
+
+
+
+
+
+=====================================================================
+How to install terraform?
+    - Get your WORKSTAION.
+    - Download Trraform https://www.terraform.io/downloads.html
+    - Set Trraform in path
+    - Verify it
+=============================================================
+wget https://releases.hashicorp.com/terraform/0.12.18/terraform_0.12.18_linux_amd64.zip
+sudo yum install zip -y
+sudo yum install unzip -y
+unzip terraform_0.12.18_linux_amd64.zip
+echo $PATH
+mv terraform /usr/local/bin
+sudo mv terraform /usr/local/bin
+chmod 755 /usr/local/bin/terraform
+terraform version
+terraform -help
+ terraform help
+terraform version
+
+
+13.233.172.155
+AMI - RHEL-7.5_HVM_GA-20180322-x86_64-1-Hourly2-GP2 (ami-5b673c34)
+=======================================================
+
+Terraform Basics Workflow loop explained!!!
+https://www.devopsschool.com/blog/terraform-basics-workflow-loop-explained/
+
+Workflow to working with terraform?
+
+Step – 1 – Install terraform
+
+Step – 2 – Decide a providers name which you want to work with?
+
+Step – 3 – Decide a provider’s resources and Argument Reference which you want to use in terraform program.
+
+Step – 4 – Initialize terraform providers
+
+Step – 5 – Declare terraform providers resources and Arguments in .tf file
+
+Step – 6 – PLAN (DRY RUN) using terraform plan
+
+Step – 7 – APPLY (Create a Resoureces) using terraform apply
+
+Step – 8 – APPLY (Update a Resoureces) using terraform apply
+
+Step – 9 – DESTROY (DELETE a Resoureces) using terraform destroy.
+
+Provider Name - AWS
+
+What is Resources?
+Resources are nothing but a feature on TOOLs which is coded in Provider.
+
+Provider 1(AWS)s
+        Resources 1
+                Argument Reference
+                Argument Reference
+                Argument Reference
+        Resources 2
+                Argument Reference
+                Argument Reference
+                Argument Reference
+        Resources 3
+
+Provider 2(GTIHUB)
+        Resources 1
+                Argument Reference
+                Argument Reference
+                Argument Reference
+        Resources 2
+                Argument Reference
+                Argument Reference
+                Argument Reference
+        Resources 3
+
+Provider 3(XXXX)
+        Resources 1
+        Resources 2
+        Resources 3
+
+Provider(AWS)
+        Resources(EC2 Instance)
+                Argument Reference(AMI)
+                Argument Reference(TYPE)
+
+Where to store HCL?
+.tf
+
+Can i store multiple .tf in one dir.
+- YES.
+
+resource "aws_instance" "web" {
+  ami           = "ami-5b673c34"
+  instance_type = "t2.micro"
+ tags = {
+    Name = "RAJESHKUMAR"
+  }
+}
+
+provider "aws" {
+  region     = "ap-south-1"
+  access_key = ""
+  secret_key = ""
+}
+
+==================================================================================
+Working with Provisionar
+===============================
+https://www.terraform.io/docs/provisioners/index.html
+chef Provisioner
+habitat Provisioner
+puppet Provisioner
+salt-masterless Provisioner
+
+file Provisioner
+The file provisioner is used to copy files or directories from the machine executing Terraform to the newly created resource. 
+https://www.terraform.io/docs/provisioners/file.html
+
+
+resource "aws_instance" "web" {
+  ami           = "ami-5b673c34"
+  instance_type = "t2.micro"
+  key_name = "rajesh-mumbai"
+ tags = {
+    Name = "RAJESHKUMAR"
+  }
+
+  provisioner "file" {
+  source      = "index.html"
+  destination = "/tmp/index.html"
+
+  connection {
+    type     = "ssh"
+    user     = "ec2-user"
+    private_key = "${file("ec2.pem")}"
+    host = "${self.public_ip}"
+  }
+}
+}
+
+sudo yum install git -y
+
+local-exec Provisioner
+The local-exec provisioner invokes a local executable after a resource is created.
+https://www.terraform.io/docs/provisioners/local-exec.html
+https://www.devopsschool.com/blog/understanding-local-exec-provisioner-in-terraform/
+
+resource "github_repository" "example" {
+  name        = "this is terrafor"
+  description = "My awesome codebase"
+
+  private = false
+
+}
+
+resource "null_resource" "local-exec" {
+  provisioner "local-exec" {
+    command = "sudo yum install git -y"
+  }
+}
+
+remote-exec Provisioner
+The remote-exec provisioner invokes a script on a remote resource after it is created. 
+https://www.terraform.io/docs/provisioners/remote-exec.html
+
+resource "aws_instance" "web" {
+  ami           = "ami-5b673c34"
+  instance_type = "t2.micro"
+  key_name = "rajesh-mumbai"
+ tags = {
+    Name = "RAJESHKUMAR"
+  }
+
+  provisioner "file" {
+  source      = "index.html"
+  destination = "/tmp/index.html"
+
+  connection {
+    type     = "ssh"
+    user     = "ec2-user"
+    private_key = "file("ec2.pem")"
+    host = "${self.public_ip}"
+  }
+  }
+
+  provisioner "local-exec" {
+    command = "sudo yum install git -y"
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "sudo yum install wget -y",
+      "wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm",
+      "sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm",
+      "sudo rpm -i epel-release-latest-7.noarch.rpm",
+      "sudo yum install ansible -y",
+      "sudo yum install git -y",
+      "git clone https://github.com/devops-school/ansible-hello-world-role /tmp/ans_ws",
+      "ansible-playbook /tmp/ans_ws/site.yaml"
+    ]
+    connection {
+    type     = "ssh"
+    user     = "ec2-user"
+    private_key = "file("ec2.pem")"
+    host = "self.public_ip"
+  }
+  }
+
+
+}
+
+
+What is terraform.tfstate and terraform.tfstate.backup
+==================================================================
+What is terraform.tfstate?
+https://www.devopsschool.com/blog/terraform-state-explained/
+
+What is terraform.tfstate.backup?
+https://www.devopsschool.com/blog/what-is-terraform-tfstate-backup-file-in-terraform/
+====================================================================================
+
+Variables in Terraform?
+=====================================
+INPUT
+  - Can be used within a program
+1. string
+2. number
+3. bool
+
+4. list #
+5. set
+6. map  #
+7. object
+8. Touple
+
+How and where can you declare a INPUT variables.
+Where to declare a variable in Terraform?
+1. .tf
+2 .tfvars
+3. Command LINE using -var
+    - CALL a varible file
+    - key:value
+4. ENV variable.
+    TF_VAR_
+
+52.66.243.85
+
+OUTPUT
+  - Can be to show results of the executions.
+  ====================================
+  STRING VARIRABLES
+  ---------------
+  variable "reponame" {
+  type = string
+  description = "This is for demo of string variable"
+  default = "day3-broad"
+}
+
+resource "github_repository" "example" {
+  name        = "${var.reponame}"
+  description = "My awesome codebase"
+  private = false
+}
+
+variable "numofusers" {
+  type = number
+  description = "This is for demo of number variable"
+  default = 3
+}
+
+resource "aws_iam_user" "example" {
+  count = "${var.numofusers}"
+  name  = "broad.${count.index}"
+}
+
+variable "validate" {
+  type = bool
+  description = "This is for demo of bool variable"
+  default = true
+}
+
+
+resource "github_repository" "web" {
+  name        = "${var.validate}"
+  description = "My awesome codebase"
+  private = false
+}
+
+
+variable "users" {
+    type    = "list"
+    default = ["user1", "user2", "user3"]
+}
+
+username = "${var.users[0]}"
+
+resource "aws_iam_user" "iamuser" {
+  name = "${var.users[0]}"
+}
+
+resource "aws_iam_user" "iamuser" {
+  name = "${var.users[1]}"
+}
+
+resource "aws_iam_user" "iamuser" {
+  name = "${var.users[3]}"
+}
+
+resource "aws_iam_user" "iamuser" {
+  count = length(var.users)
+  name = "${var.users[count.index]}"
+}
+
+variable "amis" {
+  type = "map"
+  default = {
+    "us-east-1" = "ami-b374d5a5"
+    "us-west-2" = "ami-4b32be2b"
+    "ap-south-1" = "ami-5b673c34"
+    
+  }
+}
+
+
+
+resource "aws_instance" "example" {
+  ami = "${lookup(var.amis, ap-south-1)}"
+  instance_type = "t2.micro"
+}
+
+
+EXAMPLE OF FOR EACh
+===========================
+# Use Case of for_each
+
+variable "account_name" {
+   type = "map"
+  default = {
+      "account1" = "devops1"
+      "account2" = "devops2"
+      "account3" = "devops3"
+}
+}
+
+resource "aws_iam_user" "iamuser" {
+  for_each = var.account_name
+  name = "${each.value}-iam"
+}
+
+
+Terraform Advance Workflow loop explained!!!
+https://www.devopsschool.com/blog/terraform-advance-workflow-loop-explained/
+
+
+==========================================================
+Which are the options for declaring variable
+==========================================
+- Command-line flags
+$ terraform apply -var 'region=us-east-2'
+-------------------------------------------
+provider "github" {
+  token        = ""
+  organization = "devopsschool-sample-projects"
+}
+
+variable reponame {}
+
+resource "github_repository" "example" {
+  name        = "${var.reponame}"
+  description = "My awesome codebase"
+  private = false
+}
+
+
+- From a file
+------------- terraform.tfvars
+==============================================
+Content of terraform.tfvars
+-------------------------------
+reponame = "ffffffff"
+
+provider "github" {
+  token        = ""
+  organization = "devopsschool-sample-projects"
+}
+
+variable reponame {}
+
+resource "github_repository" "example" {
+  name        = "${var.reponame}"
+  description = "My awesome codebase"
+  private = false
+}
+
+- From a file--- anyfilename.tfvars
+===================================================
+Content of anyfilename.tfvars
+-------------------------------
+reponame = "ffffffff"
+terraform apply -var-file="anyfilename.tfvars"
+
+provider "github" {
+  token        = ""
+  organization = "devopsschool-sample-projects"
+}
+
+variable reponame {}
+
+resource "github_repository" "example" {
+  name        = "${var.reponame}"
+  description = "My awesome codebase"
+  private = false
+}
+
+
+Create a file named terraform.tfvars with the following contents:
+region = "us-east-2"
+
+- If the file is named something else
+If the file is named something else, you can use the -var-file flag directly to specify a file. 
+You can use multiple -var-file arguments in a single command, with some checked in to version control and others not checked in. For example:
+$ terraform apply -var-file="secret.tfvars" -var-file="production.tfvars"
+
+- From environment variables
+Terraform will read environment variables in the form of TF_VAR_name to find the value for a variable. For example, the TF_VAR_region variable can be set to set the region variable.
+- UI Input
+If you execute terraform apply with certain variables unspecified, Terraform will ask you to input their values interactively. These values are not saved, but this provides a convenient workflow when getting started with Terraform. 
+
+- Variable Defaults
+If no value is assigned to a variable via any of these methods and the variable has a default key in its declaration, that value will be used for the variable.
+
+- Using variables in resources
+
+
+
+
+Terraform 
+==========================================================================
+Terraform Basics Workflow loop explained!!!
+https://www.devopsschool.com/blog/terraform-basics-workflow-loop-explained/
+
+Terraform Hello world Program
+https://www.devopsschool.com/blog/terraform-hello-world-program/
+
+Terraform example program for aws_security_group, aws_instance and provisioner
+https://www.devopsschool.com/blog/terraform-example-program-for-aws_security_group-aws_instance-and-provisioner/
+
+Terraform Advance Workflow loop explained!!!
+https://www.devopsschool.com/blog/terraform-advance-workflow-loop-explained/
+
+What is terraform.tfstate.backup file in terraform?
+https://www.devopsschool.com/blog/what-is-terraform-tfstate-backup-file-in-terraform/
+
+Terraform state explained!!!
+https://www.devopsschool.com/blog/terraform-state-explained/
+
+Terraform Web References & Cheatsheet
+https://www.devopsschool.com/blog/terraform-web-references/
+
+Terraform Looping and Conditioning
+==========================================================================
+How to do Looping/Iterations in Terraform?
+https://www.devopsschool.com/blog/how-to-do-looping-iterations-in-terraform/
+
+Terraform Variables Complete reference Guide
+==========================================================================
+https://www.devopsschool.com/blog/terraform-variables-complete-reference-guide/
+
+
+Terraform provisioners  
+==========================================================================
+How to run provisioners code after resources is created in terraform?
+https://www.devopsschool.com/blog/how-to-run-provisioners-code-after-resources-is-created-in-terraform/
+
+Understanding local-exec provisioner in terraform
+https://www.devopsschool.com/blog/understanding-local-exec-provisioner-in-terraform/
+
+Terraform Modules and Advance Topics
+==========================================================================
+Decide factor to write Terraform Module or not?
+https://www.devopsschool.com/blog/decide-factor-to-write-terraform-module-or-not/
+
+Terraform workspace explained!!!
+https://www.devopsschool.com/blog/terraform-workspace-explained/
+
+How to use one module’s variable in another module in terraform?
+https://www.devopsschool.com/blog/how-to-use-one-modules-variable-in-another-module-in-terraform/
+
+
+Terraform FAQ
+==========================================================================
+How to destroy one specific resource from TF file in Terraform?
+https://www.devopsschool.com/blog/how-to-destroy-one-specific-resource-from-tf-file-in-terraform/
+
+Terraform Labs and Excercise
+==========================================================================
+Terrform Project – Assignment – Exercise – Part 1
+https://www.devopsschool.com/blog/terrform-project-assignment-exercise-part-1/
+
+Terrform Project – Assignment – Exercise – Part 2
+https://www.devopsschool.com/blog/terrform-project-assignment-exercise-part-2/
+
+Terraform Interview Questions and Answer – Set 1
+https://www.devopsschool.com/blog/terraform-interview-questions-and-answer-set-1/
+
+=================================================================================
+
+Terraform Environment Variables Exaplained!
+https://www.devopsschool.com/blog/terraform-environment-variables-exaplained/
+
+Using http and https proxy in terraform
+https://www.devopsschool.com/blog/using-http-and-https-proxy-in-terraform/
+
+
+
+
+
+
+
+======================Terraform Modules====================================
+- Community 
+  https://registry.terraform.io/
+
+- Paid
+  https://gruntwork.io/
+
+- Own 
+
+Arch of Module
+===================
+Module is nothing but a colleciton terraform config file keeping it one dir.
+---- ROOT Module
+            VPC
+            s3
+            EBS
+            web
+            app
+
+
+Excercise
+https://www.devopsschool.com/blog/terrform-project-assignment-exercise-part-1/
+
+
+
+
+
+=======================
+MODULE
+    DOWNLOAD from where?
+    https://registry.terraform.io/
+
+Module is nothing but a colleciton terraform config file keeping it one dir.
+---- ROOT Module
+            VPC
+            s3
+            EBS
+            web
+            app
+
+
+module "vpc" {
+  source  = "./terraform-aws-vpc"
+  version = "0.5.0"
+  # insert the 1 required variable here
+}
+
+module "mymodule" {
+  source  = "./mymodule"
+}
+
+https://registry.terraform.io/modules/JamesWoolfenden/vpc/aws/0.1.32
+
+Ansible
+    playbook
+    playbooks
+    ROLE
+        ------> Ansible Galaxy
+
+How to create your own module?
+==============================
+
+module "allz" {
+  source  = "./allianz"
+}
+
+
+
+MY IP _ 52.66.243.85
+
+
+
+
+
+
+
+
+

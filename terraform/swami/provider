@@ -1,0 +1,56 @@
+provider "github" {
+  token        = ""
+  organization = "devopsschool-lab-exercise"
+}
+
+provider "aws" {
+  region     = "ap-south-1"
+  access_key = ""
+  secret_key = ""
+}
+
+variable "reponame" {
+  type = string
+  description = "This is for demo of string variable"
+  default = "day3-swami"
+}
+
+resource "github_repository" "example" {
+  name        = "${var.reponame}"
+  description = "My awesome codebase"
+  private = false
+}
+
+variable "numofusers" {
+  type = number
+  description = "This is for demo of number variable"
+  default = 3
+}
+
+resource "aws_iam_user" "example" {
+  count = "${var.numofusers}"
+  name  = "swami.${count.index}"
+}
+
+variable "validate" {
+  type = bool
+  description = "This is for demo of bool variable"
+  default = true
+}
+
+
+resource "github_repository" "web" {
+  name        = "${var.validate}"
+  description = "My awesome codebase"
+  private = false
+}
+
+variable "users" {
+    type    = "list"
+    default = ["swamitest1", "swamitest2", "swamitest3"]
+}
+
+resource "aws_iam_user" "iamuser" {
+  count = length(var.users)
+  name = "${var.users[count.index]}"
+}
