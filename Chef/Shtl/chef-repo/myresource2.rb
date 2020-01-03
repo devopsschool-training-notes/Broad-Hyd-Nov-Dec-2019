@@ -23,7 +23,7 @@ end
 package 'git'
 
 
-git "/ChefDir/Checkout" do
+git "ChefDir1" do
   repository "https://github.com/scmgalaxy/chef-repo"
-  action :checkout
+  action :sync
 end
