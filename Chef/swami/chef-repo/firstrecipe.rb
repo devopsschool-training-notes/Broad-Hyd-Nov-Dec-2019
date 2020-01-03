@@ -4,7 +4,7 @@ end
 file 'file4.txt' do
 mode 755
 owner "ec2-user"
-action :create
+action [ :create, :touch]
 end 
 package 'httpd' 
 bash 'copy index' do
@@ -15,4 +15,5 @@ end
 service 'httpd' do
   action               [ :enable, :start ]
 end
+
 
