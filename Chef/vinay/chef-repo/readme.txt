@@ -495,7 +495,7 @@ knife node edit vinay1
 }
 
 +++++++++++++++++++++++++++++++++++++++++++++
-knife ssh 'name:vinay1' 'sudo chef-client' 
+knife ssh 'name:vinay1' 'sudo chef-client' --ssh-user ec2-user -i rajesh-mumbai.pem 
 ####################################################
 
 
