@@ -1,0 +1,90 @@
+# https://Learn.chef.io
+
+# docs.chef.io/resource
+
+#In chef recipe order matters..
+
+# Package => is the generic resouce which will work in all platform.
+
+
+======================================================================
+
+https://github.com/scmgalaxy/chef-repo/tree/master/cookbooks
+
+================================================================================================================================================
+
+DAY#2
+
+
+
+============COOKBOOK===========================================================================
+TO GENERATE COOKBOOK
+
+chef generate cookbook web
+
+chef-client --local-mode --runlist 'recipe[web]'
+chef-client --local-mode --runlist 'recipe[web::service]'
+How to include?
+https://www.devopsschool.com/blog/how-to-call-another-chef-recipe-within-same-or-other-cookbook/
+
+include_recipe '::service'
+include_recipe 'web::service'
+=======================================================================================
+
+ps -eaf :grep client
+
+
+-=========================================================================================================================================================
+DEMO : GENERATE COOKBOOD, UPLOAD COOKBOOK TO THE SERVER VIA WORKSTATION AND DEPLOY COOKBOOK ON NODES
+
+
+STEP 1 : CONNECT TO WORKSTATION
+STEP2 : DOWNLOAD/ UNZIP CHEF-STARTER.ZIP
+
+STEP -3 -UPLOAD COOKBOOK TO CHEF SERVER
+# Command : knife cookbook upload Shtl_CB1
+
+STEP 4 - --CONNECT TO NODE
+#Command : knife bootstrap 13.233.119.254 --ssh-user ec2-user --sudo -i rajesh-mumbai.pem --node-name Shtl1
+select runList on Chef manage console
+
+OR
+#Command : knife bootstrap 13.233.119.254 --ssh-user ec2-user --sudo --identity-file rajesh-mumbai.pem --node-name rajesh1 --run-list recipe[Shtl-cb1]
+
+STEP 5 : DEPLOY COOKBOOK ON NODES
+#Command : knife ssh 'name:Shtl1' 'sudo chef-client' --ssh-user ec2-user -i rajesh-mumbai.pem
+==================================================================================================================================================================================
+
+# file directory : external dependancies can be kept here. no need to specify path in cookbook.its a default place..
+
+#Chef uses 'Ohai' tool to read system information.
+#Ancible or puppet uses tool named 'factor' to read system information..
+
+# supermarket.chef.io => existing community ookbooks
+ knife supermarket install cookbook_name(eg. Java, xyz..)
+ knife supermarket download cookbook_name(eg. Java..)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
