@@ -1,5 +1,6 @@
 # InSpec test for recipe Shtl-cb1::default
-l "world-1.0" do                                # A unique ID for this control
+
+control  "world-1.0" do                                # A unique ID for this control
   impact 1.0                                          # Just how critical is
   title "Index file Check"                                 # Readable by a human
   desc "Index file check'." # Optional description
