@@ -1,0 +1,97 @@
+I, [2020-01-05T06:30:05.331615 #9900]  INFO -- default-rhel75: -----> Converging <default-rhel75>...
+I, [2020-01-05T06:30:05.333174 #9900]  INFO -- default-rhel75: Preparing files for transfer
+I, [2020-01-05T06:30:05.333285 #9900]  INFO -- default-rhel75: Preparing dna.json
+I, [2020-01-05T06:30:05.333600 #9900]  INFO -- default-rhel75: Policyfile, Berksfile, cookbooks/, or metadata.rb not found so Chef Infra Client will run, but do nothing. Is this intended?
+I, [2020-01-05T06:30:05.333870 #9900]  INFO -- default-rhel75: Removing non-cookbook files before transfer
+I, [2020-01-05T06:30:05.334445 #9900]  INFO -- default-rhel75: Preparing validation.pem
+I, [2020-01-05T06:30:05.334702 #9900]  INFO -- default-rhel75: Preparing client.rb
+I, [2020-01-05T06:30:05.762935 #9900]  INFO -- default-rhel75: -----> Chef installation detected (install only if missing)
+I, [2020-01-05T06:30:05.835950 #9900]  INFO -- default-rhel75: Transferring files to <default-rhel75>
+I, [2020-01-05T06:30:07.878521 #9900]  INFO -- default-rhel75: Starting Chef Infra Client, version 15.6.10
+I, [2020-01-05T06:30:09.359498 #9900]  INFO -- default-rhel75: resolving cookbooks for run list: ["am_test::default"]
+I, [2020-01-05T06:30:09.370932 #9900]  INFO -- default-rhel75: 
+I, [2020-01-05T06:30:09.370999 #9900]  INFO -- default-rhel75: ================================================================================
+I, [2020-01-05T06:30:09.371043 #9900]  INFO -- default-rhel75: Error Resolving Cookbooks for Run List:
+I, [2020-01-05T06:30:09.371065 #9900]  INFO -- default-rhel75: ================================================================================
+I, [2020-01-05T06:30:09.371089 #9900]  INFO -- default-rhel75: 
+I, [2020-01-05T06:30:09.371116 #9900]  INFO -- default-rhel75: Missing Cookbooks:
+I, [2020-01-05T06:30:09.371133 #9900]  INFO -- default-rhel75: ------------------
+I, [2020-01-05T06:30:09.371148 #9900]  INFO -- default-rhel75: No such cookbook: am_test
+I, [2020-01-05T06:30:09.371161 #9900]  INFO -- default-rhel75: 
+I, [2020-01-05T06:30:09.371177 #9900]  INFO -- default-rhel75: Expanded Run List:
+I, [2020-01-05T06:30:09.371190 #9900]  INFO -- default-rhel75: ------------------
+I, [2020-01-05T06:30:09.371205 #9900]  INFO -- default-rhel75: * am_test::default
+I, [2020-01-05T06:30:09.371218 #9900]  INFO -- default-rhel75: 
+I, [2020-01-05T06:30:09.371231 #9900]  INFO -- default-rhel75: System Info:
+I, [2020-01-05T06:30:09.371251 #9900]  INFO -- default-rhel75: ------------
+I, [2020-01-05T06:30:09.371265 #9900]  INFO -- default-rhel75: chef_version=15.6.10
+I, [2020-01-05T06:30:09.371290 #9900]  INFO -- default-rhel75: platform=redhat
+I, [2020-01-05T06:30:09.371316 #9900]  INFO -- default-rhel75: platform_version=7.5
+I, [2020-01-05T06:30:09.371331 #9900]  INFO -- default-rhel75: ruby=ruby 2.6.5p114 (2019-10-01 revision 67812) [x86_64-linux]
+I, [2020-01-05T06:30:09.371355 #9900]  INFO -- default-rhel75: program_name=/opt/chef/bin/chef-client
+I, [2020-01-05T06:30:09.371375 #9900]  INFO -- default-rhel75: executable=/opt/chef/bin/chef-client
+I, [2020-01-05T06:30:09.371389 #9900]  INFO -- default-rhel75: 
+I, [2020-01-05T06:30:09.371401 #9900]  INFO -- default-rhel75: 
+I, [2020-01-05T06:30:09.371417 #9900]  INFO -- default-rhel75: Running handlers:
+I, [2020-01-05T06:30:09.371431 #9900]  INFO -- default-rhel75: [2020-01-05T06:30:09+00:00] ERROR: Running exception handlers
+I, [2020-01-05T06:30:09.371445 #9900]  INFO -- default-rhel75: Running handlers complete
+I, [2020-01-05T06:30:09.371462 #9900]  INFO -- default-rhel75: [2020-01-05T06:30:09+00:00] ERROR: Exception handlers complete
+I, [2020-01-05T06:30:09.371475 #9900]  INFO -- default-rhel75: Chef Infra Client failed. 0 resources updated in 01 seconds
+I, [2020-01-05T06:30:09.371489 #9900]  INFO -- default-rhel75: [2020-01-05T06:30:09+00:00] FATAL: Stacktrace dumped to /tmp/kitchen/cache/chef-stacktrace.out
+I, [2020-01-05T06:30:09.371507 #9900]  INFO -- default-rhel75: [2020-01-05T06:30:09+00:00] FATAL: Please provide the contents of the stacktrace.out file if you file a bug report
+I, [2020-01-05T06:30:09.371522 #9900]  INFO -- default-rhel75: [2020-01-05T06:30:09+00:00] FATAL: Net::HTTPServerException: 412 "Precondition Failed"
+E, [2020-01-05T06:30:09.374088 #9900] ERROR -- default-rhel75: Converge failed on instance <default-rhel75>.
+E, [2020-01-05T06:30:09.374177 #9900] ERROR -- default-rhel75: ------Exception-------
+E, [2020-01-05T06:30:09.374198 #9900] ERROR -- default-rhel75: Class: Kitchen::ActionFailed
+E, [2020-01-05T06:30:09.374210 #9900] ERROR -- default-rhel75: Message: SSH exited (1) for command: [sh -c '
+TEST_KITCHEN="1"; export TEST_KITCHEN
+sudo -E /opt/chef/bin/chef-client --local-mode --config /tmp/kitchen/client.rb --log_level auto --force-formatter --no-color --json-attributes /tmp/kitchen/dna.json --chef-zero-port 8889 
+']
+E, [2020-01-05T06:30:09.374223 #9900] ERROR -- default-rhel75: ----------------------
+E, [2020-01-05T06:30:09.374234 #9900] ERROR -- default-rhel75: ------Backtrace-------
+E, [2020-01-05T06:30:09.374244 #9900] ERROR -- default-rhel75: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/provisioner/base.rb:95:in `rescue in call'
+E, [2020-01-05T06:30:09.374253 #9900] ERROR -- default-rhel75: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/provisioner/base.rb:94:in `call'
+E, [2020-01-05T06:30:09.374263 #9900] ERROR -- default-rhel75: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/instance.rb:409:in `block in converge_action'
+E, [2020-01-05T06:30:09.374273 #9900] ERROR -- default-rhel75: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/instance.rb:552:in `synchronize_or_call'
+E, [2020-01-05T06:30:09.374285 #9900] ERROR -- default-rhel75: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/instance.rb:514:in `block in action'
+E, [2020-01-05T06:30:09.374296 #9900] ERROR -- default-rhel75: /opt/chefdk/embedded/lib/ruby/2.6.0/benchmark.rb:293:in `measure'
+E, [2020-01-05T06:30:09.374306 #9900] ERROR -- default-rhel75: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/instance.rb:513:in `action'
+E, [2020-01-05T06:30:09.374316 #9900] ERROR -- default-rhel75: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/instance.rb:404:in `converge_action'
+E, [2020-01-05T06:30:09.374326 #9900] ERROR -- default-rhel75: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/instance.rb:382:in `block (2 levels) in transition_to'
+E, [2020-01-05T06:30:09.374338 #9900] ERROR -- default-rhel75: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/lifecycle_hooks.rb:45:in `run_with_hooks'
+E, [2020-01-05T06:30:09.374361 #9900] ERROR -- default-rhel75: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/instance.rb:381:in `block in transition_to'
+E, [2020-01-05T06:30:09.374371 #9900] ERROR -- default-rhel75: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/instance.rb:380:in `each'
+E, [2020-01-05T06:30:09.374380 #9900] ERROR -- default-rhel75: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/instance.rb:380:in `transition_to'
+E, [2020-01-05T06:30:09.374401 #9900] ERROR -- default-rhel75: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/instance.rb:162:in `verify'
+E, [2020-01-05T06:30:09.374414 #9900] ERROR -- default-rhel75: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/command.rb:198:in `public_send'
+E, [2020-01-05T06:30:09.374424 #9900] ERROR -- default-rhel75: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/command.rb:198:in `run_action_in_thread'
+E, [2020-01-05T06:30:09.374434 #9900] ERROR -- default-rhel75: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/command.rb:169:in `block (2 levels) in run_action'
+E, [2020-01-05T06:30:09.374443 #9900] ERROR -- default-rhel75: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/logging-2.2.2/lib/logging/diagnostic_context.rb:474:in `block in create_with_logging_context'
+E, [2020-01-05T06:30:09.374481 #9900] ERROR -- default-rhel75: ----End Backtrace-----
+E, [2020-01-05T06:30:09.374505 #9900] ERROR -- default-rhel75: ---Nested Exception---
+E, [2020-01-05T06:30:09.374517 #9900] ERROR -- default-rhel75: Class: Kitchen::Transport::SshFailed
+E, [2020-01-05T06:30:09.374527 #9900] ERROR -- default-rhel75: Message: SSH exited (1) for command: [sh -c '
+TEST_KITCHEN="1"; export TEST_KITCHEN
+sudo -E /opt/chef/bin/chef-client --local-mode --config /tmp/kitchen/client.rb --log_level auto --force-formatter --no-color --json-attributes /tmp/kitchen/dna.json --chef-zero-port 8889 
+']
+E, [2020-01-05T06:30:09.374537 #9900] ERROR -- default-rhel75: ----------------------
+E, [2020-01-05T06:30:09.374546 #9900] ERROR -- default-rhel75: ------Backtrace-------
+E, [2020-01-05T06:30:09.374555 #9900] ERROR -- default-rhel75: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/provisioner/base.rb:95:in `rescue in call'
+E, [2020-01-05T06:30:09.374565 #9900] ERROR -- default-rhel75: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/provisioner/base.rb:94:in `call'
+E, [2020-01-05T06:30:09.374574 #9900] ERROR -- default-rhel75: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/instance.rb:409:in `block in converge_action'
+E, [2020-01-05T06:30:09.374584 #9900] ERROR -- default-rhel75: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/instance.rb:552:in `synchronize_or_call'
+E, [2020-01-05T06:30:09.374593 #9900] ERROR -- default-rhel75: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/instance.rb:514:in `block in action'
+E, [2020-01-05T06:30:09.374602 #9900] ERROR -- default-rhel75: /opt/chefdk/embedded/lib/ruby/2.6.0/benchmark.rb:293:in `measure'
+E, [2020-01-05T06:30:09.374612 #9900] ERROR -- default-rhel75: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/instance.rb:513:in `action'
+E, [2020-01-05T06:30:09.374622 #9900] ERROR -- default-rhel75: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/instance.rb:404:in `converge_action'
+E, [2020-01-05T06:30:09.374632 #9900] ERROR -- default-rhel75: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/instance.rb:382:in `block (2 levels) in transition_to'
+E, [2020-01-05T06:30:09.374642 #9900] ERROR -- default-rhel75: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/lifecycle_hooks.rb:45:in `run_with_hooks'
+E, [2020-01-05T06:30:09.374651 #9900] ERROR -- default-rhel75: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/instance.rb:381:in `block in transition_to'
+E, [2020-01-05T06:30:09.374666 #9900] ERROR -- default-rhel75: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/instance.rb:380:in `each'
+E, [2020-01-05T06:30:09.374677 #9900] ERROR -- default-rhel75: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/instance.rb:380:in `transition_to'
+E, [2020-01-05T06:30:09.374686 #9900] ERROR -- default-rhel75: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/instance.rb:162:in `verify'
+E, [2020-01-05T06:30:09.374696 #9900] ERROR -- default-rhel75: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/command.rb:198:in `public_send'
+E, [2020-01-05T06:30:09.374705 #9900] ERROR -- default-rhel75: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/command.rb:198:in `run_action_in_thread'
+E, [2020-01-05T06:30:09.374715 #9900] ERROR -- default-rhel75: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/command.rb:169:in `block (2 levels) in run_action'
+E, [2020-01-05T06:30:09.374728 #9900] ERROR -- default-rhel75: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/logging-2.2.2/lib/logging/diagnostic_context.rb:474:in `block in create_with_logging_context'
+E, [2020-01-05T06:30:09.374739 #9900] ERROR -- default-rhel75: ----End Backtrace-----

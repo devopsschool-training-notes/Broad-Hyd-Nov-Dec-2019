@@ -1,0 +1,93 @@
+me: ec2
+  aws_ssh_key_id: rajesh-mumbai
+  region: ap-south-1
+  availability_zone: a
+  subnet_id: subnet-8c19b3e5
+  instance_type: t2.micro
+  image_id: ami-5b673c34
+  security_group_ids: ["sg-fdb42694"]
+  retryable_tries: 120
+
+provisioner:
+  name: chef_zero
+
+verifier:
+  name: inspec
+
+transport:
+  ssh_key: /root/Broad-Hyd-Nov-Dec-2019/Chef/Shtl/rajesh-mumbai.pem
+
+platforms:
+  - name: rhel75
+
+suites:
+  - name: default
+    run_list:
+      - recipe[learn_chef_httpd::default]
+    verifier:
+      inspec_tests:
+        - test/integration/default
+    attributes:
+driver:
+  name: ec2
+  aws_ssh_key_id: rajesh-mumbai
+  region: ap-south-1
+  availability_zone: a
+  subnet_id: subnet-8c19b3e5
+  instance_type: t2.micro
+  image_id: ami-5b673c34
+  security_group_ids: ["sg-fdb42694"]
+  retryable_tries: 120
+
+provisioner:
+  name: chef_zero
+
+verifier:
+  name: inspec
+
+transport:
+  ssh_key: /root/Broad-Hyd-Nov-Dec-2019/Chef/Shtl/rajesh-mumbai.pem
+
+platforms:
+  - name: rhel75
+
+suites:
+  - name: default
+    run_list:
+      - recipe[learn_chef_httpd::default]
+    verifier:
+      inspec_tests:
+        - test/integration/default
+    attributes:
+driver:
+  name: ec2
+  aws_ssh_key_id: rajesh-mumbai
+  region: ap-south-1
+  availability_zone: a
+  subnet_id: subnet-8c19b3e5
+  instance_type: t2.micro
+  image_id: ami-5b673c34
+  security_group_ids: ["sg-fdb42694"]
+  retryable_tries: 120
+
+provisioner:
+  name: chef_zero
+
+verifier:
+  name: inspec
+
+transport:
+  ssh_key: /root/Broad-Hyd-Nov-Dec-2019/Chef/Shtl/rajesh-mumbai.pem
+
+platforms:
+  - name: rhel75
+
+suites:
+  - name: default
+    run_list:
+      - recipe[learn_chef_httpd::default]
+    verifier:
+      inspec_tests:
+        - test/integration/default
+    attributes:
+

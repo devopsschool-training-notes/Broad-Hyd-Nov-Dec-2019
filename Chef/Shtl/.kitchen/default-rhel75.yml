@@ -1,0 +1,7 @@
+---
+username: ec2-user
+server_id: i-073d3311a4d7c5fa4
+hostname: ec2-52-66-30-246.ap-south-1.compute.amazonaws.com
+last_action: create
+last_error: Kitchen::ActionFailed
+my_id: default-rhel75-1578205213
