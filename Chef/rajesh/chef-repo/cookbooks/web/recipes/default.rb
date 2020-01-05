@@ -7,6 +7,7 @@
 include_recipe '::service'
 #include_recipe 'service'
 
+
 file 'index.html' do
   content                    "<h1>Welcome to DevOpsSchool Chef Class<h1>"
 end
@@ -18,3 +19,9 @@ bash 'copy index' do
     cp index.html /var/www/html
     EOH
 end
+
+
+file "/opt/#{node['web']['name']}" do
+  content                    "<h1>Welcome to DevOpsSchool Chef Class<h1>"
+end
+

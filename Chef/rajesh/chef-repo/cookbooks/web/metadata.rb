@@ -4,7 +4,7 @@ maintainer_email 'devops@rajeshkumar.xyz'
 license 'All Rights Reserved'
 description 'Installs/Configures web'
 long_description 'Installs/Configures web'
-version '0.1.0'
+version '0.1.3'
 chef_version '>= 14.0'
 
 # The `issues_url` points to the location where issues for this cookbook are
