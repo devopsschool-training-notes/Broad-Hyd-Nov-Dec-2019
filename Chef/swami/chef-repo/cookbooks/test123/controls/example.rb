@@ -1,8 +1,4 @@
-cribe service('httpd') do
-  it { should be_installed }
-  it { should be_enabled }
-  it { should be_running }
-end 2018, The Authors
+# copyright: 2018, The Authors
 
 title "sample section"
 
@@ -19,18 +15,9 @@ control "tmp-1.0" do                        # A unique ID for this control
   describe file("/tmp") do                  # The actual test
     it { should be_directory }
   end
-end
-describe service('httpd') do
-  it { should be_installed }
+
+describe service 'httpd' do
   it { should be_enabled }
   it { should be_running }
 end
-
-describe package('git') do
-  it { should be_installed }
-end
-
-
-describe file('/var/www/html/index.html') do
-  it { should exist }
 end

@@ -1,4 +1,4 @@
-# InSpec test for recipe web-vinay::default
+# InSpec test for recipe myCookBooks::default
 
 # The InSpec reference, with examples and extensive documentation, can be
 # found at https://www.inspec.io/docs/reference/resources/
@@ -14,22 +14,3 @@ end
 describe port(80), :skip do
   it { should_not be_listening }
 end
-
-describe package('httpd') do
-  it { should be_installed }
-end
-
-describe file('/var/www/html/index.html') do
-  it { should exist }
-end
-
-describe service('httpd') do
-  it { should be_installed }
-  it { should be_enabled }
-  it { should be_running }
-end
-
-describe package('git') do
-  it { should be_installed }
-end
-

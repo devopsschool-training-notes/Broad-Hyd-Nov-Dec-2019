@@ -1,8 +1,4 @@
-cribe service('httpd') do
-  it { should be_installed }
-  it { should be_enabled }
-  it { should be_running }
-end 2018, The Authors
+# copyright: 2018, The Authors
 
 title "sample section"
 
@@ -20,17 +16,23 @@ control "tmp-1.0" do                        # A unique ID for this control
     it { should be_directory }
   end
 end
-describe service('httpd') do
+
+#Check if HTTPD is installed or not
+describe package('httpd') do
   it { should be_installed }
+end
+
+#Check if HTTPD service is up or not
+describe service 'httpd' do
   it { should be_enabled }
   it { should be_running }
 end
 
+#Check if GIT is installed
 describe package('git') do
-  it { should be_installed }
+  it { should_not be_installed }
 end
-
-
-describe file('/var/www/html/index.html') do
-  it { should exist }
+#Check if the file index.html exists
+describe file('/index.html') do
+ it { should exist}
 end

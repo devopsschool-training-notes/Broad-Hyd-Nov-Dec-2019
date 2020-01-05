@@ -14,3 +14,8 @@ end
 describe port(80), :skip do
   it { should_not be_listening }
 end
+
+
+describe package('httpd') do
+  it { should be_installed }
+end

@@ -1,4 +1,3 @@
----
 driver:
   name: ec2
   aws_ssh_key_id: rajesh-mumbai
@@ -17,7 +16,7 @@ verifier:
   name: inspec
 
 transport:
-  ssh_key: /root/Broad-Hyd-Nov-Dec-2019/Chef/vinay/chef-repo/rajesh-mumbai.pem
+  ssh_key: /root/Broad-Hyd-Nov-Dec-2019/Chef/rajesh/chef-repo/rajesh-mumbai.pem
 
 platforms:
   - name: rhel75
@@ -25,7 +24,7 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[web-vinay::default]
+      - recipe[learn_chef_httpd::default]
     verifier:
       inspec_tests:
         - test/integration/default

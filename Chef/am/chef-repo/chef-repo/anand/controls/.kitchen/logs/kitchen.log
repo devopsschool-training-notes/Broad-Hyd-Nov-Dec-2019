@@ -1,0 +1,29 @@
+I, [2020-01-05T09:46:33.615183 #14345]  INFO -- Kitchen: -----> Starting Test Kitchen (v2.3.4)
+E, [2020-01-05T09:46:33.615427 #14345] ERROR -- Kitchen: ------Exception-------
+E, [2020-01-05T09:46:33.615455 #14345] ERROR -- Kitchen: Class: Kitchen::UserError
+E, [2020-01-05T09:46:33.615469 #14345] ERROR -- Kitchen: Message: Kitchen YAML file /root/Broad-Hyd-Nov-Dec-2019/Chef/am/chef-repo/chef-repo/anand/controls/kitchen.yml does not exist.
+E, [2020-01-05T09:46:33.615493 #14345] ERROR -- Kitchen: ----------------------
+E, [2020-01-05T09:46:33.615503 #14345] ERROR -- Kitchen: ------Backtrace-------
+E, [2020-01-05T09:46:33.615513 #14345] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/loader/yaml.rb:65:in `read'
+E, [2020-01-05T09:46:33.615523 #14345] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/config.rb:154:in `data'
+E, [2020-01-05T09:46:33.615534 #14345] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/config.rb:132:in `suites'
+E, [2020-01-05T09:46:33.615549 #14345] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/config.rb:184:in `filter_instances'
+E, [2020-01-05T09:46:33.615560 #14345] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/config.rb:143:in `build_instances'
+E, [2020-01-05T09:46:33.615571 #14345] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/config.rb:117:in `instances'
+E, [2020-01-05T09:46:33.615581 #14345] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/command.rb:112:in `filtered_instances'
+E, [2020-01-05T09:46:33.615591 #14345] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/command.rb:142:in `parse_subcommand'
+E, [2020-01-05T09:46:33.615602 #14345] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/command/action.rb:35:in `block in call'
+E, [2020-01-05T09:46:33.615612 #14345] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/2.6.0/benchmark.rb:293:in `measure'
+E, [2020-01-05T09:46:33.615622 #14345] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/command/action.rb:34:in `call'
+E, [2020-01-05T09:46:33.615633 #14345] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/cli.rb:52:in `perform'
+E, [2020-01-05T09:46:33.615643 #14345] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/cli.rb:198:in `block (2 levels) in <class:CLI>'
+E, [2020-01-05T09:46:33.615653 #14345] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/thor-0.20.3/lib/thor/command.rb:27:in `run'
+E, [2020-01-05T09:46:33.615663 #14345] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/thor-0.20.3/lib/thor/invocation.rb:126:in `invoke_command'
+E, [2020-01-05T09:46:33.615685 #14345] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/thor-0.20.3/lib/thor.rb:387:in `dispatch'
+E, [2020-01-05T09:46:33.615696 #14345] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/thor-0.20.3/lib/thor/base.rb:466:in `start'
+E, [2020-01-05T09:46:33.615706 #14345] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/bin/kitchen:13:in `block in <top (required)>'
+E, [2020-01-05T09:46:33.615717 #14345] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/lib/kitchen/errors.rb:171:in `with_friendly_errors'
+E, [2020-01-05T09:46:33.615727 #14345] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.6.0/gems/test-kitchen-2.3.4/bin/kitchen:13:in `<top (required)>'
+E, [2020-01-05T09:46:33.615738 #14345] ERROR -- Kitchen: /bin/kitchen:353:in `load'
+E, [2020-01-05T09:46:33.615748 #14345] ERROR -- Kitchen: /bin/kitchen:353:in `<main>'
+E, [2020-01-05T09:46:33.615759 #14345] ERROR -- Kitchen: ----End Backtrace-----
