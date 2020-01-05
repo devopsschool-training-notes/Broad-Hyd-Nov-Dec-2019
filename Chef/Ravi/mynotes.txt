@@ -1,0 +1,1 @@
+explore vagrant tool for automate woking with VMs
