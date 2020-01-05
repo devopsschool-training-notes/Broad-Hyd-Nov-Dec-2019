@@ -1,0 +1,241 @@
+Company name:Broadridge
+Pro:Broadx
+--------------------
+ - each commit must go to prod or must be elgible for prod.
+- quality redefined
+- cost reduction
+    --Dev cost
+    -- run cost
+---------------------
+1 month - 10 features
+1 month - 30 featuress
+-------------------
+Release
+Major - 3 months - 1day
+Minor -1-1month  - 1 Hr.
+Patch - 2 weeks - 10 minutes
+---------------------------
+Manager -MgrX
+PLSAN->Code->Test->deploy
+
+Architect-Jira-Confluence
+
+Code - 10 Dev-10 featuress- 10 micro services
+IDE - Visual studio - ecliplse
+Code integration - - GIT - perforce
+
+Code review -
+Peer -
+static - SomarQUBE-Resharper
+Build management - Maven-MSBuild
+Unit testing
+Package 
+ SYS
+ APP
+Package repositoryy - Nexus,Nuget
+Deplyment to QA
+
+
+
+
+100 serevrs with different environments(IIS,Tomcat,Oraclee)
+1 deployment - 9 minutes
+100 deployments -?
+-----------------------------
+Parallel deployment 
+-Ansible
+-Chef
+-Puppet
+-Salt
+-Octocpus deploy
+-Udeploy
+-------------------------
+100 or 100 deployments - 1 second - dockers tool
+
+testing
+
+AcceptanceTesting-
+
+code coverage -- JACOCO,NCOVER
+---------------------------------------
+Jenkins
+--
+SCHEDULING
+FEEDBACK
+    EMAIL
+WHATSAPP
+DASHBOARD
+REPORTING
+
+
+
+IF FAILED - BUT DONE AUTOMATICALLY_IMMEDIATE FEEDBACK->Continuous integartion(CI)
+
+IF PASSED - 
+Continuous delivery(CD)
+Continuous deployment
+-----------------------------
+after production 
+ Monitoring 
+--
+  INFRA - Nagios,Data
+   PERFORMING- NEWRELIC,APPDINA
+    LOG - SPLUNK - ELK
+----------------------------------------------------
+PLATFORM 
+- SELF
+
+PHYSICAL MACHINE
+VIRTUAL MACHINES(VMs)
+CLOUD
+--PUBLIC CLOUD - AWS - GC - AZURE
+--PRIVATE CLOUD- OPENSTAKE
+--------------------------------------------------------
+https://www.devopsschool.com/path/
+DevOps
+
+
+Preperation done
+
+Task1-Goto github.com and registerr
+and fill this formm
+http://bit.ly/2p3HAVO
+Rules are rules
+https://www.devopsschool.com/path/
+
+there are 15 regions for AWS Centres around teh worldd and they are different physical entities
+
+to create ec2
+
+
+login to AWS with master accountt
+- has access of everything
+
+'master account
+ shared with multiple people + specific access
+using
+IAM
+
+Human to service - group->USER
+
+Service to service - ROLE
+POLICY->GRROUP->USER
+
+
+broad
+Broad$1290
+
+Virtual machine
+1.OS
+CPU+RAM
+storage
+install operating system
+Login	
+-->User id
+password
+
+Security group
+EC2-Types of Ec2 - 
+Shared -
+-- on demand
+-- reserved
+--spot instance
+dedicated - on demand
+Linyx - ssh - username -key
+windows - RDP - username/password
+
+
+13.127.68.142
+Administrator
+
+(CQ%79qLSB5-UTL4Rml$$hgodTMlV&O3
+
+
+
+cs
+///////////////////
+
+GIT
+
+git
+WHY DO WE nEED TO IT
+
+
+who
+why
+when
+
+how to install it
+ 
+www.git-scm.com->EXE->Install it
+
+git for command
+gitbash
+
+
+how to get started with git
+
+1.craete a repo
+2.create a file using editor
+3.add a file to git
+4.commit file to git
+5.see acommited file
+
+git config --list
+git commit -m
+git log
+
+history
+status cokmand shows 
+
+git commit will track by sha1 id - b870d82c634d70d8e67649a7849917c770972bc9
+
+git log --oneline
+
+fifference between soft reset,hard reset and mixed reset?
+
+
+https://gitlab.com/nagabushan/iwsbroadx.git
+
+
+
+git push https://gitlab.com/nagabushan/iwsbroadx.git master
+
+git push https://gitlab.com/rajeshkumarin/broadx
+
+ https://gitlab.com/nagabushan/iwsbroadx.git
+
+
+git push https://gitlab.com/pradyumnaakhi/jcprojecta.git
+nagabushan
+
+git push https://gitlab.com/pradyumnaakhi/jcprojecta.git
+
+
+git push https://gitlab.com/rajeshkumarin/broadx
+git pull https://gitlab.com/rajeshkumarin/broadx
+
+ git remote add origin https://gitlab.com/rajeshkumarin/broadx.git
+
+a97bd7c
+
+cs
+nexus:
+what is Nexus
+Artifact managementory tool
+what is artifact
+buinaries
+packages
+docs 
+images
+pdf
+source code
+--repository -- managed by Nexus
+kind of repositoryy
+----------------
+yum
+apt
+nuget
+
+
+
