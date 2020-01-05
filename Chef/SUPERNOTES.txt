@@ -1121,3 +1121,41 @@ inspec exec hello_spec.rb
 
 
 file('/Users/myuser').directory?
+==================================================
+CHEF
+
+tutorials
+http://devopsschool.com/tutorial/chef
+
+blog
+https://www.devopsschool.com/blog/?s=chef
+
+videos
+https://www.devopsschool.com/videos/show/chef?type=video
+
+Slides
+https://www.devopsschool.com/slides/chef/index.html
+
+PDF
+https://www.devopsschool.com/pdf/chef/slides/
+
+Sample Programs
+DevOpsSchool GIThub handle
+
+QA 
+https://www.devopsschool.com/lms
+
+
+How to reach out to me for QA?
+email 
+phone
+http://rajeshkumar.xyz/
+
+How to get Training Ceritificate?
+DevOps Professional Certified Engineer
+http://devopscertification.co/
+
+FEEBACK
+      INTERNAL FEEDBACK
+      EXTERNAL FEEDBACK
+      https://www.google.com/search?q=devopsschool&rlz=1C1CHBF_enIN872IN872&oq=devopsschool&aqs=chrome..69i57j69i60l5j69i65l2.3735j0j7&sourceid=chrome&ie=UTF-8
