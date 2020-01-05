@@ -1042,3 +1042,82 @@ suites:
     attributes:
 
 
+inspec
+=============================================
+Sample Code
+https://github.com/burtlo?tab=repositories
+https://github.com/burtlo/tomcat_profile
+https://github.com/inspec/inspec/tree/master/examples
+
+
+below are some examples of using exec with different test locations:
+
+automate: 
+  inspec compliance login
+  inspec exec compliance://username/linux-baseline
+
+supermarket: 
+  inspec exec supermarket://username/linux-baseline
+
+local profile (executes all tests in controls/): 
+  inspec exec /path/to/profile
+
+local single test (doesn’t allow inputs or custom resources) 
+  inspec exec /path/to/a_test.rb
+
+git via ssh 
+  inspec exec git@github.com:dev-sec/linux-baseline.git
+
+git via https (.git suffix is required): 
+  inspec exec https://github.com/dev-sec/linux-baseline.git
+
+private git via https (.git suffix is required): 
+  inspec exec https://api_token@github.com/dev-sec/linux-baseline.git
+
+private git via https and cached credentials (.git suffix is required): 
+  git config credential.helper cache
+  git ls-remote https://github.com/dev-sec/linux-baseline.git
+  inspec exec https://github.com/dev-sec/linux-baseline.git
+
+web hosted fileshare (also supports .zip): 
+  inspec exec https://webserver/linux-baseline.tar.gz
+
+web hosted fileshare with basic authentication (supports .zip): 
+  inspec exec https://username:password@webserver/linux-baseline.tar.gz
+
+
+  https://github.com/inspec/inspec/tree/master/examples
+
+  =====================
+
+  control "world-1.0" do                                # A unique ID for this control
+  impact 1.0                                          # Just how critical is
+  title "Hello World"                                 # Readable by a human
+  desc "Text should include the words 'hello world'." # Optional description
+  describe file('hello.txt') do                       # The actual test
+   its('content') { should match 'Hello World' }      # You could just do the "describe file" block if you want. The  
+  end                                                 # rest is just metadata, but it's a good habit to get into.
+end
+
+inspec exec hello_spec.rb
+
+  inspec archive PATH                # archive a profile to tar.gz (default) or zip
+  inspec artifact SUBCOMMAND         # Manage Chef InSpec Artifacts
+  inspec check PATH                  # verify all tests at the specified PATH
+  inspec compliance SUBCOMMAND       # Chef Compliance commands
+  inspec detect                      # detect the target OS
+  inspec env                         # Output shell-appropriate completion configuration
+  inspec exec LOCATIONS              # Run all test files at the specified LOCATIONS. Loads the give...
+  inspec habitat SUBCOMMAND          # Manage Habitat with Chef InSpec
+  inspec help [COMMAND]              # Describe available commands or one specific command
+  inspec init SUBCOMMAND             # Generate InSpec code
+  inspec json PATH                   # read all tests in PATH and generate a JSON summary
+  inspec nothing                     # does nothing
+  inspec plugin SUBCOMMAND           # Manage Chef InSpec and Train plugins
+  inspec shell                       # open an interactive debugging shell
+  inspec supermarket SUBCOMMAND ...  # Supermarket commands
+  inspec vendor PATH                 # Download all dependencies and generate a lockfile in a `vendo...
+  inspec version                     # prints the version of this tool
+
+
+file('/Users/myuser').directory?
