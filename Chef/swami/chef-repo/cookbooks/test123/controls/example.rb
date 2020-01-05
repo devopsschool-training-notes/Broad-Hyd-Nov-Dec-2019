@@ -20,4 +20,9 @@ describe service 'httpd' do
   it { should be_enabled }
   it { should be_running }
 end
+
+describe file("/tmp") do
+  its('content') { should match /good news/ }
+  its('content') { should_not match /shenanigans/ }
+end
 end

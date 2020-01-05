@@ -1,3 +1,4 @@
+
 # copyright: 2018, The Authors
 title "sample section"
 # you can also use plain tests
@@ -17,5 +18,9 @@ control "httptest" do
 describe service 'httpd' do
   it { should be_enabled  }
   it { should be_running }
+end
+
+describe package('git') do
+  it { should be_installed }
 end
 end
