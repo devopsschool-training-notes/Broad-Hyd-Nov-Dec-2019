@@ -23,4 +23,10 @@ end
 describe package('git') do
   it { should be_installed }
 end
+
+describe file('filetest.txt') do
+  its('content') { should match /Chef/ }
+  its('content') { should_not match /shenanigans/ }
+end
+
 end
