@@ -1,0 +1,60 @@
+pipeline {
+   agent { label 'master' }
+
+   tools {
+      // Install the Maven version configured as "M3" and add it to the path.
+      maven "maven3.6.3"
+   }
+
+   stages {
+      stage('Build') {
+         steps {
+            // Get some code from a GitHub repository
+            git 'https://github.com/sreekanthpola1/helloworld-java-maven'
+            script {
+                if(isUnix()) {
+                    // Run Maven on a Unix agent.
+                    echo 'This is Linux Box'
+                    sh "mvn -Dmaven.test.failure.ignore=true clean package"    
+                } else {
+                    // To run Maven on a Windows agent, use
+                    bat "mvn -Dmaven.test.failure.ignore=true clean package"   
+                }
+            }
+         }
+
+         post {
+            // If Maven was able to run the tests, even if some of the test
+            // failed, record the test results and archive the jar file.
+            success {
+               junit '**/target/surefire-reports/TEST-*.xml'
+               archiveArtifacts 'target/*.jar'
+            }
+         }
+      }
+
+	stage('Install') {
+         steps {
+            // Get some code from a GitHub repository
+            git 'https://github.com/sreekanthpola1/helloworld-java-maven'
+
+            // Run Maven on a Unix agent.
+            sh "mvn -Dmaven.test.failure.ignore=true clean install"
+
+            // To run Maven on a Windows agent, use
+            // bat "mvn -Dmaven.test.failure.ignore=true clean package"
+         }
+
+         post {
+            // If Maven was able to run the tests, even if some of the test
+            // failed, record the test results and archive the jar file.
+            success {
+               junit '**/target/surefire-reports/TEST-*.xml'
+               archiveArtifacts 'target/*.jar'
+               emailext body: 'Test', subject: 'Test', to: 'SreekanthPola@gmail.com'
+            }
+         }
+      }
+
+   }
+}

@@ -1,0 +1,287 @@
+Company Name - BroadRidge
+Prod - BroadX
+       -------------
+       IR - EACH COMMIT MUST GO TO PROD OR MUST BE ELIGLIBLE 4 PROD
+       - Quality REDEFINED
+       - Cost Reduction
+            - DEV Cost
+            - RUN Cost
+        ----
+        1 MONTH - 10 FEA
+        1 MONTH - 30 FEA
+
+---------
+Release 
+            MAJOR - 3 months ---> 1 DAY
+            MINOR - 1 month  ---> 1 Hour
+            PATCH - 2 Weeks  ---> 10 Mins
+===============================================
+Manager - MgrX
+---------------------------
+Hiring 
+
+PLAN -> CODE -> TEST -> DEPLOY
+-------------------------------
+
+Architect - JIRA - Confluence
+Code - 10 DEV - 10 FEA - 10 MS
+    IDE - VS - EC
+    Code Integ - GIT
+    Code Review - 
+        PEER - 
+        STATIC - SonarQUBE
+    Build mgmt - Maven - MSBULD
+    UNit Testing - 
+    Package
+        SYS
+        APP
+    Package Rpeo - 
+    Dep2QA - 
+    BroadX50.5 -----> 100 SERVER
+    - 50 W - 50 L
+    - 50 AP - 50 NG
+    - 25 TOM - 25 IIS - 25 - JB - 25 WL
+    - 25 MYSQL 25 OR 25 MS 25 PS
+    - 100 Config
+    ==============================
+    1 DEP - 9 mins.....
+    100 DEP - 9 mins?????
+    ---------
+    Parrell Dep
+        - Ansible
+        - Puppet
+        - Chef
+        - Salt
+    
+        - Octocpus DEPLOY
+        - UDeploy
+    --------------------------
+    100 OR 1000 Deployment - 1 SEC.
+            Docker and KUBERNETE
+
+    AT - 
+    Code Coverage - JACOCO, NCOVER
+    ------------------------------------
+---------------------------------------------------
+                JENKINS
+
+            SCHEDLUING
+            FEEDBACk        
+                    EMAIL
+                    WHATSAPP
+                    DASHBOARD
+            REPORTING
+
+    IF FAILED - BUT DONE AUTOMATICALLY- IMM FEEDBACk ->>>CI
+    IF PASSED - 
+             Continous Delivery - 
+             Continous Deployment  
+=============================================
+Deployment
+        Parrell Dep
+        - Ansible
+        - Puppet
+        - Chef
+        - Salt
+    
+        - Octocpus DEPLOY
+        - UDeploy
+Monitoring
+        INFRA - Nagios, Data
+        PERFORMANING - NEWRELIC, APPDYNA
+        LOG - SPLUNK - ELK
+====================================================
+PLATFORM 
+        PHYSICAL MACHINE
+        VMS
+            CLOUD
+                PUBLIC CLOUD - AWS - GC - AZ
+                PRIVATE CLOUD - OPENSTAKE
+==================================================
+https://www.devopsschool.com/path/
+
+DevOps
+---------------------------
+https://www.youtube.com/watch?v=-VaVmb_UOC8  - 8 HOURS
+
+Preparatiosn DONE - 
+https://github.com/devopsschool-lab-exercise/Broad-Hyd-Nov-Dec-2019
+
+Task 1 - Goto github.com and register and verlify one account.
+Task 2 - Fill this form http://bit.ly/2p3HAVO
+Task 3 - RULES ARE RULES
+https://github.com/devopsschool-lab-exercise/Broad-Hyd-Nov-Dec-2019
+
+
+=============
+https://broadridgefinancial.webex.com/join/Debasish.Mishra
+
+===========================================
+
+
+AWS
+    Foundation Services
+        COMPUTE
+                EC2 AKA VIRTUAL MACHINE
+        STORAGE 
+
+        NETWORKING
+    PLATFORM
+    SOFTWARE
+
+EC2 AKA VIRTUAL MACHINE
+==============================
+How to get EC2 created on AWS.
+
+Step1 - Login to AWS using MASTER ACCOUNT.
+                - HAS ACCESS OF EVERYTHING
+==========================================
+MASTER ACCOUNT
+            SHARED WITH MULTIPLE WITH PEOPLE + SPECIFIC ACCESS 
+            USING
+            IAM - 
+                HUMEN   to SERVICE - GROUP -> USER
+                SERVICE to SERVICE - ROLE 
+
+POLICY(S)
+        --> GROUP       
+                -> USER
+------IAM ------------------------
+https://devopsschool.signin.aws.amazon.com/console
+
+VM - 
+    1. OS
+    2. CPU + RAM
+    3. STORAGE
+    ----INSTALL OS
+    Login -----> 
+            USER ID 
+            PASSWORD
+    ---------------------
+    Security Group AKA FIREWALL
+=============================
+EC2 - 
+    TYPES OF EC2
+    SHARED 
+        - ON DEMAND
+        - RESERVED
+        - SPOT
+    DEDICATED
+        - ON DEMAND
+
+        LINUX --- SSH -- USERNAME-KEY
+        WINDOWS --RDP -- USERNAME|PASSWORD
+
+---------------------
+LINUX TO LINUX
+ssh -i "RAJESH1.pem" ubuntu@ec2-13-232-135-133.ap-south-1.compute.amazonaws.com
+
+WINDOWS TO LINUX
+PUTTY
+Step1 - RAJESH1.pem TO RAJESH1.ppk using PUTTYGEN
+Step2 - Open PUTTY
+Step3 - ec2-13-232-135-133.ap-south-1.compute.amazonaws.com
+        &
+        KEY - ---> PPK
+
+How to set password auth in EC2 Instance
+https://comtechies.com/password-authentication-aws-ec2.html
+
+=============
+
+Public DNS 	ec2-13-233-116-141.ap-south-1.compute.amazonaws.com
+User name 	Administrator
+Password 	
+?9y3Y4DPPeyp9PSopw$zvW4bqLajGVNz 
+
+
+69d7hd4h
+=============================================================
+EBS with EC2 LINUX  
+                RHEL 7.5
+                RHEL-7.5_HVM_GA-20180322-x86_64-1-Hourly2-GP2 (ami-5b673c34)
+                13.126.239.213
+ssh -i "RAJESH1.pem" ec2-user@ec2-13-126-239-213.ap-south-1.compute.amazonaws.com
+https://www.devopsschool.com/notes/aws/notes/EBS-mount.txt
+
+EBS with EC2 Windows - 
+                Windows 2016 Server
+                13.233.255.63
+
+
+ssh -i "RAJESH1.pem" ec2-user@ec2-13-126-239-213.ap-south-1.compute.amazonaws.com
+
+Public DNS	ec2-13-233-255-63.ap-south-1.compute.amazonaws.com
+User name	Administrator
+Password	
+UO8HcUDnWedZJlZlS@R!)YQdIGZUHj?X
+====================================
+RULE - 
+ - Region IRELAND
+ - 
+
+13.126.239.213
+ssh -i "RAJESH1.pem" ec2-user@ec2-13-126-239-213.ap-south-1.compute.amazonaws.com
+
+MINE efs
+---------------------
+fs-1a1fd5cb.efs.ap-south-1.amazonaws.com
+
+https://www.devopsschool.com/notes/aws/notes/EFS.txt
+
+sudo mount -t nfs -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2 fs-1a1fd5cb.efs.ap-south-1.amazonaws.com:/   /rajesh
+
+sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2 fs-1a1fd5cb.efs.ap-south-1.amazonaws.com:/ rajesh
+
+
+SETUP - 
+https://www.devopsschool.com/notes/aws/notes/EFS.txt
+
+EFS --> LINUX  ---> SMB --> WINDOWS
+
+Setup a VPC a with
+        PUBLIC SUBNET   - IGW THORUHG ROUTE
+        PRIVATE SUBNET  -
+                    NAT INSTANCE(PUBLIC )
+                    NAT GATEWAY(PUBLIC )
+
+https://www.devopsschool.com/notes/aws/notes/VPC-Setup-Manually.txt
+
+
+
+Public IP 	13.233.93.215
+User name 	Administrator
+Password 	
+O*JeBbiyvETf-23AqupV7gF*oR%&g3mn
+
+
+Why Containers: 
+		a. Scalability
+		Monitoring tool-->Network-->OS-->Kernal-->Namespace-->NETNS (Network Namespace)
+		b. Availability 
+		Load Balancer --> Network-->OS-->Kernel-->Namespace
+		c. Security 
+		Firewall-->Network-->OS-->Kernel-->Namespace
+		
+Namespace:
+		a. Users Namespace
+		b. Process Map PMAP
+		c. Mount MNT
+		d. Network NET
+
+How Docker works with Kernel:
+	LXC --> LIBCONTAINER
+
+We call it Docker Engine: (Client talks to Daemon using rest apis)
+	Docker Client
+	Docker Daemon
+	
+Docker Components:
+	Docker Engine
+	Images --> Complete package of our application runtime (Example : OS, JRE, JENKINS)
+	Containers
+	Registries and Repositories --> Registries and Repositories will have images
+	
+
+
+

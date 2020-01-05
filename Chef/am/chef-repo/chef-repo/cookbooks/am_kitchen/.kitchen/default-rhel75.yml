@@ -1,0 +1,6 @@
+---
+username: ec2-user
+server_id: i-0eb45271ff4a3f5d0
+hostname: ec2-13-233-214-21.ap-south-1.compute.amazonaws.com
+last_action: create
+last_error: Kitchen::ActionFailed

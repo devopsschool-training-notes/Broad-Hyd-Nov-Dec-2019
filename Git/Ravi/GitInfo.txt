@@ -1,0 +1,24 @@
+GIT Reset
+==========
+
+Soft
+The --soft parameter tells Git to reset HEAD to another commit, but that’s it. If you specify --soft Git will stop there and nothing else will change. What this means is that the index and working copy don’t get touched, so all of the files that changed between the original HEAD and the commit you reset to appear to be staged.
+
+Mixed (default)
+The --mixed parameter (which is the default if you don’t specify anything) will reset HEAD to another commit, and will reset the index to match it, but will stop there. The working copy will not be touched. So, all of the changes between the original HEAD and the commit you reset to are still in the working copy and appear as modified, but not staged.
+
+Hard
+The --hard parameter will blow out everything – it resets HEAD back to another commit, resets the index to match it, and resets the working copy to match it as well. This is the more dangerous of the commands and is where you can cause damage. Data might get lost here*!
+
+
+
+Way of handling Commits for files/objects in GIT
+=================================================
+
+Git logically stores each file under its SHA1. What this means is if you have two files with exactly the same content in a repository (or if you rename a file), only one copy is stored.
+
+But this also means that when you modify a small part of a file and commit, another copy of the file is stored. The way git solves this is using pack files. Once in a while, all the “loose” files (actually, not just files, but objects containing commit and directory information too) from a repo are gathered and compressed into a pack file. The pack file is compressed using zlib. And similar files are also delta-compressed.
+
+The same format is also used when pulling or pushing (at least with some protocols), so those files don't have to be recompressed again.
+
+The result of this is that a git repository, containing the whole uncompressed working copy, uncompressed recent files and compressed older files is usually relatively small, two times smaller than the size of the working copy. And this means it's smaller than SVN repo with the same files, even though SVN doesn't store the history locally.

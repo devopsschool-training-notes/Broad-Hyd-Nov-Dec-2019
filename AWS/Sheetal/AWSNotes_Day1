@@ -1,0 +1,400 @@
+FIRST DAY
+
+PARAMETERS FOR CLOUD
+
+- IR - Each commit must go to PROD or must be eligible for PROD  (IR - Immediate Release)
+- Quality Redifined
+- Cost Reduction (Reduction of waste)
+
+
+Release : (Usual vs Cloud expectation)
+
+	- Major - 3 months -----> 1 Day
+	- Minor - 1 Month -------> 1 Hour
+	- Patch - 2 weeks   -----> 10 mins
+
+
+PROJECT DEVELOPMENT
+
+	- For cloud Develop and Deploy on Services basis
+
+Break 1 Project to => Features(10)= 10 (Micro services) to => Services(100)
+
+DevOps Concept => 1 person doing everthing like
+		- codding
+		- codding for testing
+		- codding for Infrastructure
+
+
+----------------------------------------------------------
+
+Static code review Tools => like SonarQUBE( generic tool for any language)
+
+
+Parallel Deploy Tools 
+	- Ansible
+	- Puppet
+	- Chef
+	- Salt
+
+	- UDeploy
+	- Octopus Deploy
+
+Code Coverage = (to validate whether all the test cases cover)
+NCover tool
+
+CI => Continuous Integration
+CD => Continuous Delivery/Deployment(o/p of CI)
+
+
+1 SEC Deploy => Docker and kubernet
+-----------------------------------------------
+
+JENKINS - CI TOOL
+
+Scheduling
+Feedback- Email etc
+Reporting
+
+Monitoring Tool
+
+INFRA Monitoring - Nagios, Data
+ Performing M - APPDYNA, NEWRELIC
+Logs M -   - SPLUNK, ELK
+
+--------------------------------------------------------------------------------------
+SESSION 1
+
+
+Platform as a service => Sales Force
+
+Software as a Service => Gmail, Axis bank etc...
+
+AWS Infra
+- AWS has 15 regions around the world -
+- Each reasion has different AZ - AVAILABILITY ZO
+
+
+-THERE IS ONLY ONE MASTER ACCOUNT - BILLING GOES ON MASTER ACCOUNT EG. Entire broadrige would be having only one master account.
+
+IAM Access Type:
+
+	 - Human to Service access - Group -> User
+	 - Service to Service access  - Role
+
+
+* AMI : kind of virtual machine with OS
+
+
+FIRST DAY
+
+PARAMETERS FOR CLOUD
+
+- IR - Each commit must go to PROD or must be eligible for PROD  (IR - Immediate Release)
+- Quality Redifined
+- Cost Reduction (Reduction of waste)
+
+
+Release : (Usual vs Cloud expectation)
+
+	- Major - 3 months -----> 1 Day
+	- Minor - 1 Month -------> 1 Hour
+	- Patch - 2 weeks   -----> 10 mins
+
+
+PROJECT DEVELOPMENT
+
+	- For cloud Develop and Deploy on Services basis
+
+Break 1 Project to => Features(10)= 10 (Micro services) to => Services(100)
+
+DevOps Concept => 1 person doing everthing like
+		- codding
+		- codding for testing
+		- codding for Infrastructure
+
+
+----------------------------------------------------------
+
+Static code review Tools => like SonarQUBE( generic tool for any language)
+
+
+Parallel Deploy Tools 
+	- Ansible
+	- Puppet
+	- Chef
+	- Salt
+
+	- UDeploy
+	- Octopus Deploy
+
+Code Coverage = (to validate whether all the test cases cover)
+NCover tool
+
+CI => Continuous Integration
+CD => Continuous Delivery/Deployment(o/p of CI)
+
+
+1 SEC Deploy => Docker and kubernet
+-----------------------------------------------
+
+JENKINS - CI TOOL
+
+Scheduling
+Feedback- Email etc
+Reporting
+
+Monitoring Tool
+
+INFRA Monitoring - Nagios, Data
+ Performing M - APPDYNA, NEWRELIC
+Logs M -   - SPLUNK, ELK
+
+--------------------------------------------------------------------------------------
+SESSION 1
+
+
+Platform as a service => Sales Force
+
+Software as a Service => Gmail, Axis bank etc...
+
+AWS Infra
+- AWS has 15 regions around the world -
+- Each reasion has different AZ - AVAILABILITY ZO
+
+
+-THERE IS ONLY ONE MASTER ACCOUNT - BILLING GOES ON MASTER ACCOUNT EG. Entire broadrige would be having only one master account.
+
+IAM Access Type:
+
+	 - Human to Service access - Group -> User
+	 - Service to Service access  - Role
+
+
+* AMI : kind of virtual machine with OS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
