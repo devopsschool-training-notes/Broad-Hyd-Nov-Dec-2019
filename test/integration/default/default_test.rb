@@ -1,4 +1,8 @@
 # # encoding: utf-8
+describe file('/var/www/html/index.html') do
+  it { should exist }
+end
+
 describe package("httpd") do
   it { should be_installed }
 end
