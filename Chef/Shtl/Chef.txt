@@ -60,13 +60,46 @@ STEP 5 : DEPLOY COOKBOOK ON NODES
 #Chef uses 'Ohai' tool to read system information.
 #Ancible or puppet uses tool named 'factor' to read system information..
 
+
+SUPERMARKET
+
 # supermarket.chef.io => existing community ookbooks
- knife supermarket install cookbook_name(eg. Java, xyz..)
- knife supermarket download cookbook_name(eg. Java..)
+Commnad:  knife supermarket install cookbook_name(eg. Java, xyz..)
+Commnad : knife supermarket download cookbook_name(eg. Java..)
 
+FOODCRITIC
 
+# foodcritic.io = > to anlyse/ bug list for cookbooks.
+# Command foodcritic cookbookName
 
+==================================================================================================================================================================
+DAY -3
+==================================================================================================================================================================
 
+TEST KITCHEN 
+
+Provies temparary environment ( production like) on a local environment
+
+# VAGRANT Tool : VM in localmachine in Dev environment.
+
+# Kitchen Workflow =>  Create => Converge => Login => Verify => destroy
+# Kitchen.yml
+
+#Provisioners (Specifies how to run a Chef)
+  - Chef Client
+  - Chef Solo
+  - Chef Zero
+  - Chef Server
+# Command : 
+
+kitchen list
+Kitche init
+kitchen create ( creates VM)
+kitchen converge ()
+kitchen login (for manual validation)
+or
+kitchne exec -c 'curl localhost' (checkin externally- no need to login to the machine n all..)
+kitchen destroy
 
 
 
