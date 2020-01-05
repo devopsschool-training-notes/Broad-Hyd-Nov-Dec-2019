@@ -402,8 +402,12 @@ ec2-user
 127.0.0.1 localhost
 52.66.246.148 172.31.12.0 chef-server
 
+default["web"]["name"] = "rajesh"
 
+name = node[web][name]
+default['web']['name'] = 'rajesh'
 
+#{node['web']['name']}
 
 [root@ip-172-31-12-0 opt]# chef-server-ctl status
 run: bookshelf: (pid 9437) 133s; run: log: (pid 2535) 232s
@@ -931,3 +935,111 @@ Server
 52.66.246.148
 rajeshkumar
 password123
+======================================================================
+======================================================================
+======================================================================
+Chef Attributes
+Files Operations in Cookbook
+Templates Operations in Cookbook
+Chef Supermarket
+Foodcritic
+
+log "Hello #{node['web']['name']}" do
+  level :info
+end
+
+file '/opt/#{node['web']['name']}' do
+  content                    "<h1>Welcome to DevOpsSchool Chef Class<h1>"
+end
+
+set[:about_me][:first_name] = "Rajesh Kumar"
+default[:about_me][:favorite][:food] = "pizza"
+default[:about_me][:favorite][:drink] = "water"
+default[:about_me][:favorite][:hobby] = "running"
+
+first_name = node[:about_me][:first_name]
+food = node[:about_me][:favorite][:food]
+drink = node[:about_me][:favorite][:drink]
+hobby = node[:about_me][:favorite][:hobby]
+  
+  log "Hi, my name is #{first_name} and I like #{food}, #{drink} and #{hobby}."
+
+
+  https://www.devopsschool.com/videos
+  https://www.devopsschool.com/blog/implement-chef-roles-using-chef-server/
+
+  =================================================================================
+
+Ensure your IAM role grants permission to launch instances
+Create your credentials file
+Note your region and availability zone
+Note your VPC subnet
+Create a security group
+Get the AMI ID for CentOS 7 in your region
+Prepare your key pair file
+
+AKIAZDCVQDIXRPYVQCWK
++9kddnxURqNUfkP0yK7hEqe6wCc+4yXXBqCfNeFm
+
+ap-south-1
+
+ap-south-1a
+
+subnet-8c19b3e5
+
+sg-fdb42694
+
+ami-5b673c34
+
+rajesh-mumbai
+
+curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
+unzip awscli-bundle.zip
+./awscli-bundle/install -b ~/bin/aws
+
+Get the learn_chef_httpd cookbook from GitHub
+mkdir ~/learn-chef/cookbooks
+cd ~/learn-chef/cookbooks
+git clone https://github.com/learn-chef/learn_chef_httpd.git
+cd ~/learn-chef/cookbooks/learn_chef_httpd
+Create the Test Kitchen configuration file
+	When you use the chef generate cookbook command to create a 	cookbook, Chef creates a file named .kitchen.yml in the root directory 	of your cookbook. .kitchen.yml defines what's needed to run Test 	Kitchen, including which virtualization provider to use, how to run 	Chef, and what platforms to run your code on.
+
+  https://www.devopsschool.com/blog/example-of-kitchen-yml-for-aws-ec2-chef-test-kitchen/
+
+
+
+---
+driver:
+  name: ec2
+  aws_ssh_key_id: rajesh-mumbai
+  region: ap-south-1
+  availability_zone: a
+  subnet_id: subnet-8c19b3e5
+  instance_type: t2.micro
+  image_id: ami-5b673c34
+  security_group_ids: ["sg-fdb42694"]
+  retryable_tries: 120
+
+provisioner:
+  name: chef_zero
+
+verifier:
+  name: inspec
+
+transport:
+  ssh_key: /root/Broad-Hyd-Nov-Dec-2019/Chef/rajesh/chef-repo/rajesh-mumbai.pem
+
+platforms:
+  - name: rhel75
+
+suites:
+  - name: default
+    run_list:
+      - recipe[learn_chef_httpd::default]
+    verifier:
+      inspec_tests:
+        - test/integration/default
+    attributes:
+
+
