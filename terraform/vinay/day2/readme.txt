@@ -22,15 +22,15 @@ Variables:
 
 
 provider "github" {
-  token        = "47eeea1c2621874b9767757381ecfd8db4c9c871"
+  token        = ""
   organization = "devopsvinayacc"
 }
 
 
 provider "aws" {
   region     = "ap-south-1"
-  access_key = "AKIAZDCVQDIXWDMOE5Q4"
-  secret_key = "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"
+  access_key = ""
+  secret_key = ""
 }
 
 
@@ -39,8 +39,8 @@ terraform {
     bucket = "terraform777777777777"
     key    = "vinay/test."
     region     = "ap-south-1"
-  access_key = "AKIAZDCVQDIXWDMOE5Q4"
-  secret_key = "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"
+  access_key = ""
+  secret_key = ""
 
   }
 }
